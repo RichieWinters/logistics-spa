@@ -13,11 +13,11 @@ export default function RootLayout() {
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
-              <Link to="/" className="text-xl font-bold text-white">
-                Logistics SPA
+              <Link to="/" className="text-xl font-bold text-yellow-400">
+                Logistics Transfers
               </Link>
               <div className="flex space-x-6">
-                <Link 
+                {/* <Link 
                   to="/" 
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive('/') 
@@ -26,16 +26,16 @@ export default function RootLayout() {
                   }`}
                 >
                   Home
-                </Link>
+                </Link> */}
                 <Link 
-                  to="/dashboard" 
+                  to="/services" 
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive('/dashboard') 
+                    isActive('/services') 
                       ? 'bg-white/20 text-white' 
                       : 'text-white/80 hover:text-white'
                   }`}
                 >
-                  Dashboard
+                  Услуги
                 </Link>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function RootLayout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t bg-card mt-auto">
+      <footer className="border-t mt-auto">
         <div className="container mx-auto px-4 py-6">
           <p className="text-center text-muted-foreground">
             © 2025.
