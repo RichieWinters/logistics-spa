@@ -1,26 +1,37 @@
-import { createBrowserRouter } from 'react-router-dom'
-import RootLayout from '@/layouts/RootLayout'
-import Home from '@/pages/home'
-import Services from '@/pages/services'
-import NotFound from '@/pages/NotFound'
+import { createBrowserRouter } from "react-router-dom";
+import RootLayout from "@/layouts/RootLayout";
+import Home from "@/pages/home";
+import NotFound from "@/pages/NotFound";
+import { PAGES } from "./pageNames";
+import Section from "@/pages/section";
+import { SECTION_TYPES } from "@/types/section";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: PAGES.main.path,
     element: <RootLayout />,
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
+      },
+
+      {
+        path: PAGES.services.main.path,
+        element: <Section type={SECTION_TYPES.services.value} />,
       },
       {
-        path: 'services',
-        element: <Services />
-      }
-    ]
+        path: PAGES.excursions.main.path,
+        element: <Section type={SECTION_TYPES.excursions.value} />,
+      },
+      {
+        path: PAGES.roadsideAssistance.main.path,
+        element: <Section type={SECTION_TYPES.roadsideAssistance.value} />,
+      },
+    ],
   },
   {
-    path: '*',
-    element: <NotFound />
-  }
-])
+    path: "*",
+    element: <NotFound />,
+  },
+]);

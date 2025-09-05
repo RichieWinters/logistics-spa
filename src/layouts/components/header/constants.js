@@ -1,36 +1,22 @@
+import { PAGES } from "@/routes/pageNames";
+
 export const navigationItems = [
   {
-    title: "Услуги",
-    path: "/services",
+    title: PAGES.services.main.title,
+    path: PAGES.services.main.path,
     dropdown: "services",
-    items: [
-      { title: "Авто на мероприятие", path: "/services/events" },
-      { title: "Трансфер аэропорт", path: "/services/airport" },
-      { title: "Индивидуальный трансфер", path: "/services/individual" },
-      { title: "Аренда авто с водителем", path: "/services/rental" },
-      { title: "Трезвый водитель", path: "/services/sober-driver" },
-    ],
+    items: PAGES.concreteServices,
   },
   {
-    title: "Экскурсии",
-    path: "/excursions",
+    title: PAGES.excursions.main.title,
+    path: PAGES.excursions.main.path,
     dropdown: "excursions",
-    items: [
-      { title: "Экскурсия по замкам Беларуси", path: "/excursions/castles" },
-      { title: "Экскурсия в Хатынь", path: "/excursions/khatyn" },
-      { title: "Экскурсия в БелАЗ", path: "/excursions/belaz" },
-      { title: "Экскурсия в музей Дудутки", path: "/excursions/dudutki" },
-    ],
+    items: PAGES.concreteExcursions,
   },
   {
-    title: "Помощь на дороге",
-    path: "/roadside",
+    title: PAGES.roadsideAssistance.main.title,
+    path: PAGES.roadsideAssistance.main.path,
     dropdown: "roadside",
-    items: [
-      { title: "Прикурить авто", path: "/roadside/jump-start" },
-      { title: "Подкачка колес", path: "/roadside/tire-inflation" },
-      { title: "Подвоз топлива", path: "/roadside/fuel-delivery" },
-      { title: "Буксировка", path: "/roadside/towing" },
-    ],
+    items: PAGES.concreteAssistances,
   },
 ];
