@@ -1,15 +1,17 @@
-import React from 'react'
-import { Outlet, Link, useLocation } from 'react-router-dom'
+import React from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import Footer from "@/components/footer";
+import Header from "@/layouts/components/header/Header";
 
 export default function RootLayout() {
-  const location = useLocation()
-  
-  const isActive = (path) => location.pathname === path
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/20 bg-black/20 backdrop-blur-sm">
+      <header className="hidden fixed top-0 left-0 right-0 z-50 border-b border-white/20 bg-black/20 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
@@ -27,12 +29,10 @@ export default function RootLayout() {
                 >
                   Home
                 </Link> */}
-                <Link 
-                  to="/services" 
+                <Link
+                  to="/services"
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive('/services') 
-                      ? 'bg-white/20 text-white' 
-                      : 'text-white/80 hover:text-white'
+                    isActive("/services") ? "bg-white/20 text-white" : "text-white/80 hover:text-white"
                   }`}
                 >
                   Услуги
@@ -42,6 +42,7 @@ export default function RootLayout() {
           </nav>
         </div>
       </header>
+      <Header />
 
       {/* Main Content */}
       <main className="flex-1">
@@ -49,13 +50,10 @@ export default function RootLayout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t mt-auto">
-        <div className="container mx-auto px-4 py-6">
-          <p className="text-center text-muted-foreground">
-            © 2025.
-          </p>
-        </div>
+      <footer className="mt-auto bg-black">
+        <Footer />
+        <p className="text-center text-muted-foreground text-white">© 2025.</p>
       </footer>
     </div>
-  )
+  );
 }
