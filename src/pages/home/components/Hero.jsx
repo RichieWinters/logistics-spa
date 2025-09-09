@@ -1,10 +1,11 @@
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
     <div className="relative min-h-[77vh] flex items-center justify-center">
       <div className="container mx-auto px-4">
         {/* Content */}
-        <div className="relative flex flex-col items-start justify-center text-start">
+        <div className="relative flex flex-col items-start justify-center text-start mt-16 md:mt-0">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 drop-shadow-2xl shadow-black/50">
             ПРЕМИУМ-ТРАНСФЕР В БЕЛАРУСИ
           </h1>
@@ -15,6 +16,10 @@ export default function Hero() {
             комфорта. Заблаговременное резервирование гарантирует экономию времени
             и максимально приятное путешествие для каждого клиента.
           </p>
+          <div className="flex w-full flex-col md:flex-row gap-8 mt-4">
+          <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-9 py-6 min-w-[150px] text-lg transition-colors disabled:opacity-50 cursor-pointer rounded-xl">Обратный звонок</Button>
+          <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-9 py-6 min-w-[150px] text-lg transition-colors disabled:opacity-50 cursor-pointer rounded-xl">+375 29 123 45 67</Button>
+          </div>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { Shield, Clock, Star } from 'lucide-react'
 
 export default function Benefits() {
   return (
-    <div className="py-16 bg-white">
+    <div className="py-10 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Benefit 1 */}

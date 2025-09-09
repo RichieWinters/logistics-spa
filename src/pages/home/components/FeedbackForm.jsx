@@ -202,7 +202,7 @@ export default function FeedbackForm() {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 <Label htmlFor="name" className="text-sm font-medium text-white/80 mb-2 block">
-                  Имя *
+                  Имя <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="name"
@@ -214,13 +214,13 @@ export default function FeedbackForm() {
                   className={errors.name ? 'border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-yellow-400 focus:ring-yellow-400/20' : 'bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20'}
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1 text-white/80">{errors.name.message}</p>
+                  <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
                 )}
               </div>
 
               <div className="flex-1">
                 <Label htmlFor="phone" className="text-sm font-medium text-white/80 mb-2 block">
-                  Номер телефона *
+                  Номер телефона <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="phone"
@@ -241,7 +241,7 @@ export default function FeedbackForm() {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 <Label htmlFor="tripDate" className="text-sm font-medium text-white/80 mb-2 block">
-                  Дата поездки *
+                  Дата поездки <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="tripDate"
@@ -258,7 +258,7 @@ export default function FeedbackForm() {
 
               <div className="flex-1">
                 <Label htmlFor="tripTime" className="text-sm font-medium text-white/80 mb-2 block">
-                  Ориентировочное время *
+                  Ориентировочное время <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="tripTime"
@@ -298,7 +298,7 @@ export default function FeedbackForm() {
                         {startSuggestions.map((suggestion, index) => (
                           <div
                             key={index}
-                            className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                            className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors"
                             onClick={() => {
                               setValue('startAddress', suggestion.text || suggestion?.address?.formatted_address);
                               setShowStartSuggestions(false);
@@ -330,7 +330,7 @@ export default function FeedbackForm() {
                         {endSuggestions.map((suggestion, index) => (
                           <div
                             key={index}
-                            className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                            className="p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors"
                             onClick={() => {
                               setValue('endAddress', suggestion.text || suggestion?.address?.formatted_address);
                               setShowEndSuggestions(false);

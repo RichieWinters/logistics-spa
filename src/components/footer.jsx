@@ -2,8 +2,8 @@ import { Instagram, MessageCircle, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <div className="container flex justify-between mx-auto px-4 py-12 pb-24">
-      <div className="flex flex-col flex-1">
+    <div className="container flex justify-between mx-auto px-4 py-8 md:py-12 pb-8 md:pb-24">
+      <div className="hidden md:flex flex-col flex-1">
         <h3 className="text-lg font-bold text-yellow-400">
           Logistics Transfers
         </h3>
@@ -60,14 +60,14 @@ export default function Footer() {
       </div>
       <div className="flex flex-col flex-1">
         <h3 className="text-lg font-bold text-white mb-4">Социальные сети</h3>
-        <div className="flex space-x-4">
+        <div className="flex flex-col gap-4 items-center md:flex-row space-x-4">
           <a href="#" className="text-gray-300 hover:text-pink-500 transition-colors duration-200">
             <Instagram className="w-6 h-6" />
           </a>
           <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
             <MessageCircle className="w-6 h-6" />
           </a>
-          <a href="#" className="text-gray-300 hover:text-green-500 transition-colors duration-200">
+          <a href="#" className="text-gray-300 hover:text-green-500 transition-colors duration-200 mr-4 md:mr-0">
             <Phone className="w-6 h-6" />
           </a>
         </div>

@@ -52,7 +52,7 @@ export default function RootLayout() {
       {/* Footer */}
       <footer className="mt-auto bg-black">
         <Footer />
-        <p className="text-center text-muted-foreground text-white">© 2025.</p>
+        <p className="text-center text-muted-foreground text-white">Copyright © 2025. All rights reserved.</p>
       </footer>
     </div>
   );

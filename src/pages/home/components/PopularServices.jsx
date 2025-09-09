@@ -1,7 +1,11 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import { useState, useEffect } from 'react'
 import Service1 from '@/assets/images/Service1.jpg'
 
 export default function PopularServices() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [api, setApi] = useState()
+  
   const services = [
     {
       id: 1,
@@ -35,6 +39,22 @@ export default function PopularServices() {
     }
   ]
 
+  // Track slide changes
+  useEffect(() => {
+    if (!api) return
+
+    const onSelect = () => {
+      setCurrentSlide(api.selectedScrollSnap())
+    }
+
+    api.on('select', onSelect)
+    onSelect() // Set initial slide
+
+    return () => {
+      api.off('select', onSelect)
+    }
+  }, [api])
+
   return (
     <div className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -49,7 +69,10 @@ export default function PopularServices() {
         {/* Carousel Container */}
         <div className="relative">
           {/* Shadcn Carousel */}
-          <Carousel className="w-full sm:max-w-2xl md:max-w-6xl mx-auto">
+          <Carousel 
+            className="w-full sm:max-w-2xl md:max-w-6xl mx-auto"
+            setApi={setApi}
+          >
             <CarouselContent className="-ml-4">
               {services.map((service) => (
                 <CarouselItem key={service.id} className="pl-4 basis-full  md:basis-full lg:basis-1/2 xl:basis-1/3">
@@ -77,10 +100,28 @@ export default function PopularServices() {
               ))}
             </CarouselContent>
             
-            {/* Navigation Buttons - Responsive positioning */}
-            <CarouselPrevious className="absolute left-8 sm:-left-0 md:left-8 lg:-left-4 xl:-left-16 top-1/2 transform -translate-y-1/2 h-10 w-10 sm:h-12 sm:w-12" />
-            <CarouselNext className="absolute right-8 sm:-right-0 md:right-8 lg:-right-4 xl:-right-16 top-1/2 transform -translate-y-1/2 h-10 w-10 sm:h-12 sm:w-12" />
+            {/* Navigation Buttons - Hidden on small screens, visible from sm: */}
+            <CarouselPrevious className="hidden sm:flex absolute left-2 sm:-left-0 md:left-8 lg:-left-4 xl:-left-16 2xl:-left-32 top-1/2 transform -translate-y-1/2 h-10 w-10 sm:h-12 sm:w-12" />
+            <CarouselNext className="hidden sm:flex absolute right-2 sm:-right-0 md:right-8 lg:-right-4 xl:-right-16 2xl:-right-32 top-1/2 transform -translate-y-1/2 h-10 w-10 sm:h-12 sm:w-12" />
           </Carousel>
+          
+          {/* Dots Indicator - Only visible on small screens */}
+          <div className="flex justify-center mt-6 sm:hidden">
+            <div className="flex space-x-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    api?.scrollTo(index)
+                  }}
+                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                    currentSlide === index ? 'bg-yellow-400' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
