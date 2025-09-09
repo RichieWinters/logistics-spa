@@ -1,7 +1,7 @@
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative min-h-[77vh] flex items-center justify-center">
       <div className="container mx-auto px-4">
         {/* Content */}
         <div className="relative flex flex-col items-start justify-center text-start">
