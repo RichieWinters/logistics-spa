@@ -8,23 +8,23 @@ export const PAGES = {
 
     airportTransfer: {
       path: "/services/airport-transfer",
-      title: "Авто на мероприятие",
+      title: "Трансфер аэропорт",
     },
     privateTransfer: {
       path: "/services/private-transfer",
-      title: "Трансфер аэропорт",
+      title: "Индивидуальный трансфер",
     },
     carsForTheEvent: {
       path: "/services/cars-for-the-event",
-      title: "Индивидуальный трансфер",
+      title: "Авто на мероприятие",
     },
     soberDriver: {
       path: "/services/sober-driver",
-      title: "Аренда авто с водителем",
+      title: "Трезвый водитель",
     },
     carWithDriver: {
       path: "/services/car-with-driver",
-      title: "Трезвый водитель",
+      title: "Аренда авто с водителем",
     },
   },
   excursions: {
