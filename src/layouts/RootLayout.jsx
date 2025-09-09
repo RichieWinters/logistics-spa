@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Footer from "@/components/footer";
 import Header from "@/layouts/components/header/Header";
 
 export default function RootLayout() {
   const location = useLocation();
+
+  // Автоскролл вверх при смене страницы
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const isActive = (path) => location.pathname === path;
 

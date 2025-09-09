@@ -36,10 +36,10 @@ export default function Section({ type }) {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-24">
-        <div className="bg-background-light w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[3vw] mx-auto">
-          {items.map((item) => (
-            <SectionItem {...item} />
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {items.map((item, index) => (
+            <SectionItem key={index} {...item} />
           ))}
         </div>
       </div>

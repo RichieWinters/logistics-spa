@@ -7,23 +7,23 @@ export const PAGES = {
     },
 
     airportTransfer: {
-      path: "/services/airport-transfer",
+      path: "/offers/airport-transfer",
       title: "Трансфер аэропорт",
     },
-    privateTransfer: {
-      path: "/services/private-transfer",
-      title: "Индивидуальный трансфер",
+    personalTransfer: {
+      path: "/offers/personal-transfer",
+      title: "Персональный трансфер",
     },
-    carsForTheEvent: {
-      path: "/services/cars-for-the-event",
-      title: "Авто на мероприятие",
+    eventTransport: {
+      path: "/offers/event-transport",
+      title: "Транспорт на мероприятие",
     },
     soberDriver: {
-      path: "/services/sober-driver",
+      path: "/offers/sober-driver",
       title: "Трезвый водитель",
     },
     carWithDriver: {
-      path: "/services/car-with-driver",
+      path: "/offers/car-with-driver",
       title: "Аренда авто с водителем",
     },
   },
@@ -34,19 +34,19 @@ export const PAGES = {
     },
 
     belarusCastlesTour: {
-      path: "/excursion/belarus-castles-tour",
+      path: "/excursions/belarus-castles-tour",
       title: "Экскурсия по замкам Беларуси",
     },
     khatynCityTour: {
-      path: "/excursion/khatyn-city-tour",
+      path: "/excursions/khatyn-city-tour",
       title: "Экскурсия в Хатынь",
     },
     belAZTour: {
-      path: "/excursion/belAZ-tour",
+      path: "/excursions/belaz-tour",
       title: "Экскурсия в БелАЗ",
     },
     dudutkaMuseumTour: {
-      path: "/excursion/dudutka-museum-tour",
+      path: "/excursions/dudutka-museum-tour",
       title: "Экскурсия в музей Дудутки",
     },
   },
@@ -56,20 +56,20 @@ export const PAGES = {
       title: "Помощь на дороге",
     },
 
-    lightUpCar: {
-      path: "/roadside-assistance/light-up-car",
+    lockoutAssistance: {
+      path: "/roadside-assistance/lockout-assistance",
       title: "Прикурить авто",
     },
-    wheelPumping: {
-      path: "/roadside-assistance/wheel-pumping",
-      title: "Подкачка колес",
+    tireChange: {
+      path: "/roadside-assistance/tire-change",
+      title: "Замена колеса",
     },
     fuelDelivery: {
       path: "/roadside-assistance/fuel-delivery",
       title: "Подвоз топлива",
     },
-    towing: {
-      path: "/roadside-assistance/towing",
+    emergencyTowing: {
+      path: "/roadside-assistance/emergency-towing",
       title: "Буксировка",
     },
   },
