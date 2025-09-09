@@ -45,7 +45,7 @@ export default function RootLayout() {
       <Header />
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main className="flex-1 pt-16">
         <Outlet />
       </main>
 
