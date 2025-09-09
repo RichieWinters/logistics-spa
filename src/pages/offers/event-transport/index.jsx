@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Calendar, Users, Music, Gift, CheckCircle, Star, Heart } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
-import mercedes from "@/assets/images/mercedes.jpg";
 
 export const EventTransportPage = () => {
   return (
@@ -93,7 +93,7 @@ export const EventTransportPage = () => {
             {/* Right Column - Image and Features */}
             <div>
               <img
-                src={mercedes}
+                src={mercedesLarge}
                 alt="Премиум автомобиль для мероприятий"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />
@@ -184,6 +184,18 @@ export const EventTransportPage = () => {
                 <p className="text-yellow-600 font-bold text-xl">от 350 BYN</p>
               </div>
             </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Сделайте ваше мероприятие незабываемым</h3>
+              <p className="text-gray-600">Закажите премиум-транспорт для особого дня</p>
+            </div>
+            <ContactForm
+              title="Заказать авто на мероприятие"
+              description="Обсудим детали вашего торжества и подберем идеальный вариант"
+            />
           </div>
         </div>
       </div>

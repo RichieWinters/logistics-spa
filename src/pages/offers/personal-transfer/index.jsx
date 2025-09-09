@@ -1,6 +1,6 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, User, Phone, CheckCircle, Navigation, Shield } from "lucide-react";
-import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
+import ContactForm from "@/components/ContactForm";
 import mercedes from "@/assets/images/mercedes.jpg";
 
 export const PersonalTransferPage = () => {
@@ -8,7 +8,7 @@ export const PersonalTransferPage = () => {
     <>
       {/* Hero Section */}
       <div className="relative">
-        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${mercedesLarge})` }}>
+        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${mercedes})` }}>
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
 
@@ -196,6 +196,18 @@ export const PersonalTransferPage = () => {
                 <p className="text-yellow-600 font-bold">45 BYN</p>
               </div>
             </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Нужен персональный трансфер?</h3>
+              <p className="text-gray-600">Быстро доставим вас в любую точку города или области</p>
+            </div>
+            <ContactForm
+              title="Заказать персональный трансфер"
+              description="Расскажите о маршруте и мы рассчитаем стоимость"
+            />
           </div>
         </div>
       </div>

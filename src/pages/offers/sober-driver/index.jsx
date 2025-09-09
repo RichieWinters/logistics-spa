@@ -1,14 +1,14 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Shield, Clock, Car, Phone, CheckCircle, AlertTriangle, Heart, Star } from "lucide-react";
-import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
-import mercedes from "@/assets/images/mercedes.jpg";
+import ContactForm from "@/components/ContactForm";
+import Service1 from "@/assets/images/Service1.jpg";
 
 export const SoberDriverPage = () => {
   return (
     <>
       {/* Hero Section */}
       <div className="relative">
-        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${mercedesLarge})` }}>
+        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Service1})` }}>
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
 
@@ -122,7 +122,7 @@ export const SoberDriverPage = () => {
             {/* Right Column - Image and Features */}
             <div>
               <img
-                src={mercedes}
+                src={Service1}
                 alt="Услуга трезвого водителя"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />
@@ -216,6 +216,15 @@ export const SoberDriverPage = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600 italic">"Безопасность не имеет цены. Доверьте свою жизнь профессионалам."</p>
             </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Вызвать трезвого водителя</h3>
+              <p className="text-gray-600">Безопасная доставка домой - звоните в любое время</p>
+            </div>
+            <ContactForm title="Заказать трезвого водителя" description="Укажите контакты для экстренного вызова" />
           </div>
         </div>
       </div>

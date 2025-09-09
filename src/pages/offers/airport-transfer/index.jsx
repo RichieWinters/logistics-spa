@@ -1,14 +1,14 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Clock, Shield, Car, Users, CheckCircle, Star } from "lucide-react";
-import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
-import mercedes from "@/assets/images/mercedes.jpg";
+import ContactForm from "@/components/ContactForm";
+import Service1Large from "@/assets/images/Service1Large.jpg";
 
 export const AirportTransferPage = () => {
   return (
     <>
       {/* Hero Section */}
       <div className="relative">
-        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${mercedesLarge})` }}>
+        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Service1Large})` }}>
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
 
@@ -76,7 +76,7 @@ export const AirportTransferPage = () => {
             {/* Right Column - Image and Features */}
             <div>
               <img
-                src={mercedes}
+                src={Service1Large}
                 alt="Премиум автомобиль для трансфера в аэропорт"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />
@@ -132,6 +132,18 @@ export const AirportTransferPage = () => {
                 <p className="text-yellow-600 font-bold text-xl">от 60 BYN</p>
               </div>
             </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Готовы заказать трансфер в аэропорт?</h3>
+              <p className="text-gray-600">Оставьте заявку и получите персональное предложение</p>
+            </div>
+            <ContactForm
+              title="Заказать трансфер в аэропорт"
+              description="Укажите контакты для быстрого оформления заказа"
+            />
           </div>
         </div>
       </div>

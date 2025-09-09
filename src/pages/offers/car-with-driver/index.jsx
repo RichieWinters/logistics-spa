@@ -1,14 +1,14 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Calendar, Clock, Briefcase, Users, CheckCircle, Car, Shield, Star } from "lucide-react";
-import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
-import mercedes from "@/assets/images/mercedes.jpg";
+import ContactForm from "@/components/ContactForm";
+import Service2 from "@/assets/images/Service2.jpg";
 
 export const CarWithDriverPage = () => {
   return (
     <>
       {/* Hero Section */}
       <div className="relative">
-        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${mercedesLarge})` }}>
+        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Service2})` }}>
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
 
@@ -112,7 +112,7 @@ export const CarWithDriverPage = () => {
             {/* Right Column - Image and Features */}
             <div>
               <img
-                src={mercedes}
+                src={Service2}
                 alt="Аренда автомобиля с водителем"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />
@@ -228,6 +228,18 @@ export const CarWithDriverPage = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600">🚗 В стоимость включено: топливо, страховка, услуги водителя</p>
             </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Нужен личный водитель?</h3>
+              <p className="text-gray-600">Закажите аренду автомобиля с профессиональным водителем</p>
+            </div>
+            <ContactForm
+              title="Заказать аренду с водителем"
+              description="Подберем оптимальный тариф для ваших потребностей"
+            />
           </div>
         </div>
       </div>
