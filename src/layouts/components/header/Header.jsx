@@ -34,9 +34,29 @@ const Header = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Подготовка данных для бэкенда (аналогично FeedbackForm, но только name, phone, message)
+    const data = {
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      message: formData.comment?.trim() || "Сообщение не указано",
+      tripDateTime: null,
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      referrer: document.referrer || "Прямой переход",
+      route: null,
+    };
+
     try {
-      // Здесь обычно отправляются данные на бэкенд
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Имитация API запроса
+      const BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL || "http://localhost:3000";
+      const response = await fetch(`${BACKEND_API_URL}/telegram/notify`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error("Ошибка отправки");
 
       setFormData({ name: "", phone: "", comment: "" });
       setIsCallbackOpen(false);

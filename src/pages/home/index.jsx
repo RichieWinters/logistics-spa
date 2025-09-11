@@ -1,8 +1,8 @@
 import Hero from "./components/Hero";
 import Benefits from "./components/Benefits";
 import FeedbackForm from "./components/FeedbackForm";
-import AboutUs from './components/AboutUs'
-import PopularServices from './components/PopularServices'
+import AboutUs from "./components/AboutUs";
+import PopularServices from "./components/PopularServices";
 import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
 
 export default function Home() {

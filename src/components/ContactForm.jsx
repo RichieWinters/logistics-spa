@@ -21,9 +21,29 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Подготовка данных для бэкенда (аналогично FeedbackForm)
+    const data = {
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      message: "Заявка с контактной формы",
+      tripDateTime: null,
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      referrer: document.referrer || "Прямой переход",
+      route: null,
+    };
+
     try {
-      // Здесь будет отправка данных на сервер
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Имитация API запроса
+      const BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL || "http://localhost:3000";
+      const response = await fetch(`${BACKEND_API_URL}/telegram/notify`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error("Ошибка отправки");
 
       toast.success("Заявка отправлена", {
         description: "Мы свяжемся с вами в ближайшее время",
