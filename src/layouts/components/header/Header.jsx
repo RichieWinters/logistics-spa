@@ -1,79 +1,20 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
+import { useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import Logo from "@/layouts/components/header/components/Logo";
 import { navigationItems } from "@/layouts/components/header/constants";
 import NavList from "@/layouts/components/header/components/NavList";
 import MobileNavList from "@/layouts/components/header/components/MobileNavList";
-import DialogForm from "@/layouts/components/header/components/DialogForm";
+import CallbackDialog from "@/components/CallbackDialog";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [isCallbackOpen, setIsCallbackOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    comment: "",
-  });
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
 
   const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Подготовка данных для бэкенда (аналогично FeedbackForm, но только name, phone, message)
-    const data = {
-      name: formData.name.trim(),
-      phone: formData.phone.trim(),
-      message: formData.comment?.trim() || "Сообщение не указано",
-      tripDateTime: null,
-      timestamp: new Date().toISOString(),
-      userAgent: navigator.userAgent,
-      referrer: document.referrer || "Прямой переход",
-      route: null,
-    };
-
-    try {
-      const BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL || "http://localhost:3000";
-      const response = await fetch(`${BACKEND_API_URL}/telegram/notify`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) throw new Error("Ошибка отправки");
-
-      setFormData({ name: "", phone: "", comment: "" });
-      setIsCallbackOpen(false);
-      toast.success("Заявка отправлена", {
-        description: "Мы свяжемся с вами в ближайшее время",
-      });
-    } catch {
-      toast.error("Ошибка", {
-        description: "Не удалось отправить заявку. Попробуйте позже.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleInputChange = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -83,103 +24,20 @@ const Header = () => {
           <Logo />
           <div className="hidden lg:flex items-center space-x-8">
             <NavList items={navigationItems} isActive={isActive} />
-            <Dialog open={isCallbackOpen} onOpenChange={setIsCallbackOpen}>
-              <DialogTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Обратный звонок
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md bg-black/90 backdrop-blur-sm border-white/20 text-white">
-                <DialogHeader>
-                  <DialogTitle className="text-yellow-400">Заказать обратный звонок</DialogTitle>
-                </DialogHeader>
-                <form onSubmit={handleFormSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white/80">
-                      Имя
-                    </Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                      placeholder="Ваше имя"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-white/80">
-                      Телефон
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                      placeholder="+375 (XX) XXX-XX-XX"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="comment" className="text-white/80">
-                      Комментарий (необязательно)
-                    </Label>
-                    <Textarea
-                      id="comment"
-                      value={formData.comment}
-                      onChange={(e) => handleInputChange("comment", e.target.value)}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50 resize-none"
-                      placeholder="Дополнительная информация"
-                      rows={3}
-                    />
-                  </div>
-                  <div className="flex space-x-3">
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="flex-1 bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300"
-                    >
-                      {isSubmitting ? "Отправка..." : "Отправить"}
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      onClick={() => setIsCallbackOpen(false)}
-                      className="border-white/20 text-white/80 hover:bg-white/10"
-                    >
-                      Отмена
-                    </Button>
-                  </div>
-                </form>
-              </DialogContent>
-            </Dialog>
+            <CallbackDialog
+              variant="outline"
+              className="bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
+            />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-2">
-            <Dialog open={isCallbackOpen} onOpenChange={setIsCallbackOpen}>
-              <DialogTrigger asChild>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
-                >
-                  <Phone className="w-4 h-4" />
-                </Button>
-              </DialogTrigger>
-              <DialogForm
-                formData={formData}
-                handleFormSubmit={handleFormSubmit}
-                handleInputChange={handleInputChange}
-                isSubmitting={isSubmitting}
-                setIsCallbackOpen={setIsCallbackOpen}
-              />
-            </Dialog>
+            <CallbackDialog
+              size="sm"
+              variant="outline"
+              className="bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
+              showIcon={false}
+            />
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -208,21 +66,9 @@ const Header = () => {
         >
           <div className="py-4 space-y-2">
             <div className="px-3 pb-2">
-              <Dialog open={isCallbackOpen} onOpenChange={setIsCallbackOpen}>
-                <DialogTrigger asChild>
-                  <Button className="w-full bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Обратный звонок
-                  </Button>
-                </DialogTrigger>
-                <DialogForm
-                  formData={formData}
-                  handleFormSubmit={handleFormSubmit}
-                  handleInputChange={handleInputChange}
-                  isSubmitting={isSubmitting}
-                  setIsCallbackOpen={setIsCallbackOpen}
-                />
-              </Dialog>
+              <CallbackDialog
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300"
+              />
             </div>
 
             <MobileNavList

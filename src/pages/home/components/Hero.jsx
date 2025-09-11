@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import CallbackDialog from "@/components/CallbackDialog";
 
 export default function Hero() {
   return (
@@ -17,8 +18,18 @@ export default function Hero() {
             и максимально приятное путешествие для каждого клиента.
           </p>
           <div className="flex w-full flex-col md:flex-row gap-8 mt-4">
-          <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-9 py-6 min-w-[150px] text-lg transition-colors disabled:opacity-50 cursor-pointer rounded-xl">Обратный звонок</Button>
-          <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-9 py-6 min-w-[150px] text-lg transition-colors disabled:opacity-50 cursor-pointer rounded-xl">+375 29 123 45 67</Button>
+            {/* First Button - Opens Dialog */}
+            <CallbackDialog
+              className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-9 py-6 min-w-[150px] text-lg transition-colors disabled:opacity-50 cursor-pointer rounded-xl"
+            />
+
+            {/* Second Button - Makes Phone Call */}
+            <Button 
+              asChild
+              className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-9 py-6 min-w-[150px] text-lg transition-colors disabled:opacity-50 cursor-pointer rounded-xl"
+            >
+              <a href="tel:+375291234567">+375 29 123 45 67</a>
+            </Button>
           </div>
         </div>
       </div>

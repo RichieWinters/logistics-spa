@@ -165,7 +165,7 @@ export const initMap = (mapRef, multiRouteRef, myMapRef, balloonRef, updateRoute
   multiRouteRef.current.model.events.add("requestsuccess", updateRouteInfo);
 };
 
-export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, routeData, setRouteData) => {
+export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, setRouteData) => {
   const routes = multiRouteRef.current.getRoutes();
   const route = routes.get(0);
   const bounds = route.getBounds();
@@ -182,13 +182,17 @@ export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, routeData, 
     const time = route.properties.get("duration");
     const distance = route.properties.get("distance");
 
+    // Get addresses from the multiRoute object where they were stored
+    const startAddress = multiRouteRef.current._currentStartAddress || '';
+    const endAddress = multiRouteRef.current._currentEndAddress || '';
+
     const newRouteData = {
       distance: distance.value / 1000, // в километрах
       duration: time.value, // в секундах
       startCoords: referencePoints[0],
       endCoords: referencePoints[1],
-      startAddress: routeData.startAddress,
-      endAddress: routeData.endAddress,
+      startAddress: startAddress,
+      endAddress: endAddress,
     };
 
     setRouteData(newRouteData);
@@ -224,6 +228,10 @@ export const buildRoute = async (startAddress, endAddress, multiRouteRef, routeD
 
     const startCoords = startResult.geoObjects.get(0).geometry.getCoordinates();
     const endCoords = endResult.geoObjects.get(0).geometry.getCoordinates();
+
+    // Store addresses in the multiRoute object for later use
+    multiRouteRef.current._currentStartAddress = startAddress;
+    multiRouteRef.current._currentEndAddress = endAddress;
 
     setRouteData((prev) => ({
       ...prev,

@@ -96,7 +96,7 @@ export default function FeedbackForm() {
 
   // Map update handler
   const handleUpdateRouteInfo = () => {
-    updateRouteInfo(multiRouteRef, myMapRef, balloonRef, routeData, setRouteData);
+    updateRouteInfo(multiRouteRef, myMapRef, balloonRef, setRouteData);
   };
 
   // Build route handler

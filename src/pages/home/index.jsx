@@ -13,7 +13,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${mercedesLarge})` }}
       >
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/30 max-h-[77vh]" />
+        <div className="absolute inset-0 bg-black/30 max-h-[84.7vh]" />
 
         <Hero />
       </div>
