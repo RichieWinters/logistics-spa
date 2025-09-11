@@ -9,12 +9,11 @@ export default function Home() {
   return (
     <>
       <div
-        className="max-h-[77vh] bg-cover bg-center bg-no-repeat inset-0 bg-black/30"
-        style={{ backgroundImage: `url(${mercedesLarge})` }}
+        className="max-h-[77svh] bg-cover bg-center bg-no-repeat inset-0"
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${mercedesLarge})` 
+        }}
       >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/30 max-h-[84vh]" />
-
         <Hero />
       </div>
 
