@@ -9,7 +9,7 @@ export default function Footer() {
         </h3>
       </div>
       <div className="flex flex-col flex-1">
-        <h3 className="text-lg font-bold text-white mb-4">Услуги</h3>
+        <h3 className="text-lg font-bold text-white min-h-[56px]">Услуги</h3>
         <ul className="space-y-2">
           <li className="flex items-center text-gray-300 text-sm">
             <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
@@ -34,7 +34,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className="flex flex-col flex-1">
-        <h3 className="text-lg font-bold text-white mb-4">Помощь на дороге</h3>
+        <h3 className="text-lg font-bold text-white min-h-[56px]">Помощь на дороге</h3>
         <ul className="space-y-2">
           <li className="flex items-center text-gray-300 text-sm">
             <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
