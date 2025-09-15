@@ -2,8 +2,13 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Clock, Shield, Car, Users, CheckCircle, Star } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import Service1Large from "@/assets/images/Service1Large.jpg";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO_CONFIG } from "@/utils/seo";
 
 export const AirportTransferPage = () => {
+  // Apply SEO for airport transfer page
+  useSEO(PAGE_SEO_CONFIG.airportTransfer);
+
   return (
     <>
       {/* Hero Section */}
