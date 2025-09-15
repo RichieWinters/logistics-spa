@@ -2,8 +2,13 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, User, Phone, CheckCircle, Navigation, Shield } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import mercedes from "@/assets/images/mercedes.jpg";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO_CONFIG } from "@/utils/seo";
 
 export const PersonalTransferPage = () => {
+  // Apply SEO for personal transfer page
+  useSEO(PAGE_SEO_CONFIG.personalTransfer);
+
   return (
     <>
       {/* Hero Section */}

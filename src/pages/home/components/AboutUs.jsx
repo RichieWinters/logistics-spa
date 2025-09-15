@@ -1,4 +1,4 @@
-import { Users, MapPin, Car } from 'lucide-react'
+import { Users, MapPin, Car } from "lucide-react";
 
 export default function AboutUs() {
   return (
@@ -7,9 +7,7 @@ export default function AboutUs() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-yellow-400 text-sm font-medium mb-4">О нас</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Premium Transfer Services
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Premium Transfer Services</h2>
         </div>
 
         {/* Main Content */}
@@ -17,14 +15,14 @@ export default function AboutUs() {
           {/* Text Content */}
           <div>
             <p className="text-lg text-gray-100 leading-relaxed mb-8">
-              Мы специализируемся на предоставлении эксклюзивных трансферных услуг по всей территории Беларуси. 
-              Наша команда профессионалов создает индивидуальные решения для каждого клиента, гарантируя 
-              безупречный сервис и максимальный комфорт во время путешествий.
+              Мы специализируемся на предоставлении эксклюзивных трансферных услуг по всей территории Беларуси. Наша
+              команда профессионалов создает индивидуальные решения для каждого клиента, гарантируя безупречный сервис и
+              максимальный комфорт во время путешествий.
             </p>
             <p className="text-lg text-gray-100 leading-relaxed">
-              Благодаря многолетнему опыту и постоянному обновлению автопарка, мы обеспечиваем 
-              высочайший уровень качества и надежности. Каждая поездка с нами - это гарантия 
-              безопасного, комфортного и своевременного прибытия к месту назначения.
+              Благодаря многолетнему опыту и постоянному обновлению автопарка, мы обеспечиваем высочайший уровень
+              качества и надежности. Каждая поездка с нами - это гарантия безопасного, комфортного и своевременного
+              прибытия к месту назначения.
             </p>
           </div>
 
@@ -65,5 +63,5 @@ export default function AboutUs() {
         </div>
       </div>
     </div>
-  )
+  );
 }

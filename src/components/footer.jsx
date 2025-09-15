@@ -6,10 +6,10 @@ export default function Footer() {
       {/* Desktop and tablet layout */}
       <div className="hidden sm:flex justify-between">
         <div className="hidden md:flex flex-col flex-1">
-          <h3 className="text-lg font-bold text-yellow-400">Logistics Transfers</h3>
+          <h4 className="text-lg font-bold text-yellow-400">Logistics Transfers</h4>
         </div>
         <div className="flex flex-col flex-1">
-          <h3 className="text-lg font-bold text-white min-h-[56px]">Услуги</h3>
+          <h4 className="text-lg font-bold text-white min-h-[56px]">Услуги</h4>
           <ul className="space-y-2">
             <li className="flex items-center text-gray-300 text-sm">
               <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
@@ -34,7 +34,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="flex flex-col flex-1">
-          <h3 className="text-lg font-bold text-white min-h-[56px]">Помощь на дороге</h3>
+          <h4 className="text-lg font-bold text-white min-h-[56px]">Помощь на дороге</h4>
           <ul className="space-y-2">
             <li className="flex items-center text-gray-300 text-sm">
               <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
@@ -59,7 +59,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="flex flex-col flex-1">
-          <h3 className="text-lg font-bold text-white mb-4">Социальные сети</h3>
+          <h4 className="text-lg font-bold text-white mb-4">Социальные сети</h4>
           <div className="flex flex-col gap-4 items-center md:flex-row space-x-4">
             <a href="#" className="text-gray-300 hover:text-pink-500 transition-colors duration-200">
               <Instagram className="w-6 h-6" />
@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="flex gap-4">
           {/* Services section */}
           <div className="flex flex-col flex-1">
-            <h3 className="text-lg font-bold text-white mb-3">Услуги</h3>
+            <h4 className="text-lg font-bold text-white mb-3">Услуги</h4>
             <ul className="space-y-2">
               <li className="flex items-center text-gray-300 text-sm">
                 <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
@@ -135,7 +135,7 @@ export default function Footer() {
 
         {/* Social media section - separate row */}
         <div className="flex flex-col">
-          <h3 className="text-lg font-bold text-white mb-4">Социальные сети</h3>
+          <h4 className="text-lg font-bold text-white mb-4">Социальные сети</h4>
           <div className="flex gap-4 justify-start">
             <a href="#" className="text-gray-300 hover:text-pink-500 transition-colors duration-200">
               <Instagram className="w-6 h-6" />

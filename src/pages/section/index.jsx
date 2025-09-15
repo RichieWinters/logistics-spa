@@ -4,8 +4,18 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { SECTION_TYPES } from "@/types/section";
 import { assistItems, excursionItems, serviceItems } from "./constants";
 import { useMemo } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { PAGE_SEO_CONFIG } from "@/utils/seo";
 
 export default function Section({ type }) {
+  // Apply SEO based on section type
+  const seoKey =
+    type === SECTION_TYPES.services.value
+      ? "services"
+      : type === SECTION_TYPES.excursions.value
+      ? "excursions"
+      : "roadsideAssistance";
+  useSEO(PAGE_SEO_CONFIG[seoKey]);
   const items = useMemo(() => {
     switch (type) {
       case SECTION_TYPES.services.value:
