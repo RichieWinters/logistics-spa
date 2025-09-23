@@ -46,7 +46,7 @@ export const BelarusCastlesTourPage = () => {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
-                  <Castle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <Castle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Мирский замок</span>
                     <p className="text-gray-600 text-sm">Памятник Всемирного наследия ЮНЕСКО XVI века</p>
@@ -100,7 +100,7 @@ export const BelarusCastlesTourPage = () => {
                 </li>
               </ul>
 
-              <div className="bg-amber-50 p-6 rounded-lg">
+              <div className="bg-emerald-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">🏰 Интересный факт</h4>
                 <p className="text-gray-600">
                   Мирский замок - единственный в Беларуси памятник готической архитектуры, включённый в список
@@ -119,31 +119,31 @@ export const BelarusCastlesTourPage = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Clock className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Clock className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Длительность</h4>
                   <p className="text-sm text-gray-600">10-12 часов</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Users className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Users className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Группа</h4>
                   <p className="text-sm text-gray-600">1-7 человек</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <MapPin className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Маршрут</h4>
                   <p className="text-sm text-gray-600">4 замка</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Camera className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Camera className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Фото</h4>
                   <p className="text-sm text-gray-600">Много красивых мест</p>
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость экскурсии:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">

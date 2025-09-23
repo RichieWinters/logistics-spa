@@ -44,7 +44,7 @@ export const TireChangePage = () => {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
-                  <Zap className="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <Zap className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Прокол или порез шины</span>
                     <p className="text-gray-600 text-sm">Быстрая установка запасного колеса</p>
@@ -98,7 +98,7 @@ export const TireChangePage = () => {
                 </li>
               </ul>
 
-              <div className="bg-orange-50 p-6 rounded-lg">
+              <div className="bg-emerald-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">🔧 Дополнительные услуги</h4>
                 <ul className="text-gray-600 space-y-1 text-sm">
                   <li>• Доставка нового колеса (при необходимости)</li>
@@ -119,31 +119,31 @@ export const TireChangePage = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Clock className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+                  <Clock className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Время работы</h4>
                   <p className="text-sm text-gray-600">15-30 минут</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Wrench className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+                  <Wrench className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Инструменты</h4>
                   <p className="text-sm text-gray-600">Профессиональные</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <MapPin className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+                  <MapPin className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">География</h4>
                   <p className="text-sm text-gray-600">Весь город</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Phone className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+                  <Phone className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Время прибытия</h4>
                   <p className="text-sm text-gray-600">20-40 минут</p>
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость услуги:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -166,7 +166,7 @@ export const TireChangePage = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">⚡ Важно знать</h5>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Наличие запасного колеса обязательно</li>

@@ -51,7 +51,7 @@ export const PersonalTransferPage = () => {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
-                  <MapPin className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Городские поездки</span>
                     <p className="text-gray-600 text-sm">Деловые встречи, медицинские центры, торговые центры</p>
@@ -84,23 +84,23 @@ export const PersonalTransferPage = () => {
 
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Подача автомобиля к указанному адресу</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Помощь с багажом и покупками</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Ожидание до 15 минут бесплатно</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Климат-контроль и Wi-Fi</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Детские кресла по запросу</span>
                 </li>
               </ul>
@@ -124,31 +124,31 @@ export const PersonalTransferPage = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Clock className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Clock className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Быстрая подача</h4>
                   <p className="text-sm text-gray-600">15-30 минут</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Shield className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Shield className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Безопасность</h4>
                   <p className="text-sm text-gray-600">Проверенные водители</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <MapPin className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Любые маршруты</h4>
                   <p className="text-sm text-gray-600">По городу и стране</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <User className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <User className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Персональный</h4>
                   <p className="text-sm text-gray-600">Только для вас</p>
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Тарифы:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -176,25 +176,25 @@ export const PersonalTransferPage = () => {
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-800 mb-2">Центр → ТЦ</h4>
                 <p className="text-gray-600 text-sm mb-2">Средняя поездка</p>
-                <p className="text-yellow-600 font-bold">12-18 BYN</p>
+                <p className="text-green-600 font-bold">12-18 BYN</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-800 mb-2">Минск → Брест</h4>
                 <p className="text-gray-600 text-sm mb-2">~350 км</p>
-                <p className="text-yellow-600 font-bold">350 BYN</p>
+                <p className="text-green-600 font-bold">350 BYN</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-800 mb-2">Минск → Гродно</h4>
                 <p className="text-gray-600 text-sm mb-2">~280 км</p>
-                <p className="text-yellow-600 font-bold">280 BYN</p>
+                <p className="text-green-600 font-bold">280 BYN</p>
               </div>
 
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-800 mb-2">Деловая встреча</h4>
                 <p className="text-gray-600 text-sm mb-2">2 часа с ожиданием</p>
-                <p className="text-yellow-600 font-bold">45 BYN</p>
+                <p className="text-green-600 font-bold">45 BYN</p>
               </div>
             </div>
           </div>

@@ -52,7 +52,7 @@ export const LockoutAssistancePage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Zap className="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <Zap className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Слабый заряд батареи</span>
                     <p className="text-gray-600 text-sm">Стартер крутит медленно, двигатель не запускается</p>
@@ -150,7 +150,7 @@ export const LockoutAssistancePage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость услуги:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -164,7 +164,7 @@ export const LockoutAssistancePage = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">⚡ Что нужно знать</h5>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Глушим двигатель автомобиля-донора</li>

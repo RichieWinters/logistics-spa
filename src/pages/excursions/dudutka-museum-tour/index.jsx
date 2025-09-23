@@ -45,7 +45,7 @@ export const DudutkaMuseumTourPage = () => {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
-                  <Home className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
+                  <Home className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Традиционные ремёсла</span>
                     <p className="text-gray-600 text-sm">Гончарная, кузнечная, ткацкая мастерские</p>
@@ -118,31 +118,31 @@ export const DudutkaMuseumTourPage = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Clock className="w-8 h-8 text-amber-400 mx-auto mb-2" />
+                  <Clock className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Длительность</h4>
                   <p className="text-sm text-gray-600">6-8 часов</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Users className="w-8 h-8 text-amber-400 mx-auto mb-2" />
+                  <Users className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Группа</h4>
                   <p className="text-sm text-gray-600">1-7 человек</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <MapPin className="w-8 h-8 text-amber-400 mx-auto mb-2" />
+                  <MapPin className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Расстояние</h4>
                   <p className="text-sm text-gray-600">40 км от Минска</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Camera className="w-8 h-8 text-amber-400 mx-auto mb-2" />
+                  <Camera className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Активности</h4>
                   <p className="text-sm text-gray-600">Интерактивные</p>
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость экскурсии:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -163,7 +163,7 @@ export const DudutkaMuseumTourPage = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">🎨 Мастер-классы</h5>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Гончарное дело - лепка из глины</li>

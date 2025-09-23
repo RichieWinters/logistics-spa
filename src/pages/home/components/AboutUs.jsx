@@ -6,7 +6,7 @@ export default function AboutUs() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-yellow-400 text-sm font-medium mb-4">О нас</p>
+          <p className="text-green-400 text-sm font-medium mb-4">О нас</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Premium Transfer Services</h2>
         </div>
 
@@ -29,7 +29,7 @@ export default function AboutUs() {
           {/* Bullet Benefits */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="w-6 h-6 bg-yellow-400 rounded-full flex-shrink-0 mt-1"></div>
+              <div className="w-6 h-6 bg-green-400 rounded-full flex-shrink-0 mt-1"></div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">Эксклюзивный автопарк</h3>
                 <p className="text-gray-400">Автомобили премиум-класса с полным набором современных удобств</p>
@@ -37,7 +37,7 @@ export default function AboutUs() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-6 h-6 bg-yellow-400 rounded-full flex-shrink-0 mt-1"></div>
+              <div className="w-6 h-6 bg-green-400 rounded-full flex-shrink-0 mt-1"></div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">Индивидуальный подход</h3>
                 <p className="text-gray-400">Персональное планирование маршрута и гибкое расписание</p>
@@ -45,7 +45,7 @@ export default function AboutUs() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-6 h-6 bg-yellow-400 rounded-full flex-shrink-0 mt-1"></div>
+              <div className="w-6 h-6 bg-green-400 rounded-full flex-shrink-0 mt-1"></div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">Профессиональная команда</h3>
                 <p className="text-gray-400">Опытные водители с безупречной репутацией и знанием местности</p>
@@ -53,7 +53,7 @@ export default function AboutUs() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-6 h-6 bg-yellow-400 rounded-full flex-shrink-0 mt-1"></div>
+              <div className="w-6 h-6 bg-green-400 rounded-full flex-shrink-0 mt-1"></div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">Круглосуточная поддержка</h3>
                 <p className="text-gray-400">Доступность в любое время дня и ночи для вашего удобства</p>
