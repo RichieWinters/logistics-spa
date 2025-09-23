@@ -8,7 +8,7 @@ export const PAGES = {
 
     airportTransfer: {
       path: "/offers/airport-transfer",
-      title: "Трансфер аэропорт",
+      title: "Трансфер до и от аэропорта",
     },
     personalTransfer: {
       path: "/offers/personal-transfer",

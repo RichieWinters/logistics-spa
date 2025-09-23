@@ -21,7 +21,9 @@ export const AirportTransferPage = () => {
           <div className="relative h-full flex items-center">
             <div className="container mx-auto px-4">
               <div className="max-w-2xl">
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-2xl">Трансфер в аэропорт</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-2xl">
+                  Трансфер до и от аэропорта
+                </h1>
                 <p className="text-xl text-white/90 leading-relaxed drop-shadow-lg">
                   Комфортная доставка в аэропорт Минска с гарантией своевременного прибытия
                 </p>
@@ -40,11 +42,12 @@ export const AirportTransferPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
             {/* Left Column - Content */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Надежный трансфер в аэропорт Минска</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Надежный трансфер до и от аэропорта Минска</h2>
 
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Забудьте о переживаниях по поводу опоздания на рейс. Наш сервис трансфера в аэропорт гарантирует
-                своевременную доставку с учетом дорожной ситуации и времени регистрации на рейс.
+                своевременную доставку с учетом дорожной ситуации и времени регистрации на рейс. Сервис трансфера от
+                аэропорта доставит вас после тяжелого перелета домой быстро и комфортно.
               </p>
 
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Преимущества нашего сервиса:</h3>

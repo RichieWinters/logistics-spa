@@ -9,7 +9,7 @@ export default function PopularServices() {
   const services = [
     {
       id: 1,
-      title: "Трансфер до аэропорта",
+      title: "Трансфер до и от аэропорта",
       description: "Быстрая и комфортная доставка в аэропорт с точным соблюдением времени вылета",
       image: Service1,
     },
