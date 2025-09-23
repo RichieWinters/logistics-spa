@@ -22,7 +22,7 @@ export default function RootLayout() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto bg-black">
+      <footer className="mt-auto bg-black pb-8">
         <Footer />
         <p className="text-center text-muted-foreground text-white">Copyright © 2025. All rights reserved.</p>
       </footer>
