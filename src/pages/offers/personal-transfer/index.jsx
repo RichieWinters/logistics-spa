@@ -1,9 +1,10 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, User, Phone, CheckCircle, Navigation, Shield } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import mercedes from "@/assets/images/mercedes.jpg";
 import { useSEO } from "@/hooks/useSEO";
 import { PAGE_SEO_CONFIG } from "@/utils/seo";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const PersonalTransferPage = () => {
   // Apply SEO for personal transfer page
@@ -27,6 +28,7 @@ export const PersonalTransferPage = () => {
                   Индивидуальные поездки по городу и за его пределы с максимальным комфортом
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -197,18 +199,6 @@ export const PersonalTransferPage = () => {
                 <p className="text-green-600 font-bold">45 BYN</p>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Нужен персональный трансфер?</h3>
-              <p className="text-gray-600">Быстро доставим вас в любую точку города или области</p>
-            </div>
-            <ContactForm
-              title="Заказать персональный трансфер"
-              description="Расскажите о маршруте и мы рассчитаем стоимость"
-            />
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Clock, Shield, Car, Users, CheckCircle, Star } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service1Large from "@/assets/images/Service1Large.jpg";
 import { useSEO } from "@/hooks/useSEO";
 import { PAGE_SEO_CONFIG } from "@/utils/seo";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const AirportTransferPage = () => {
   // Apply SEO for airport transfer page
@@ -25,6 +26,7 @@ export const AirportTransferPage = () => {
                   Комфортная доставка в аэропорт Минска с гарантией своевременного прибытия
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -137,18 +139,6 @@ export const AirportTransferPage = () => {
                 <p className="text-green-600 font-bold text-xl">договор</p>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Готовы заказать трансфер в аэропорт?</h3>
-              <p className="text-gray-600">Оставьте заявку и получите персональное предложение</p>
-            </div>
-            <ContactForm
-              title="Заказать трансфер в аэропорт"
-              description="Укажите контакты для быстрого оформления заказа"
-            />
           </div>
         </div>
       </div>

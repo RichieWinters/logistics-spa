@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Calendar, Clock, Briefcase, Users, CheckCircle, Car, Shield, Star } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service2 from "@/assets/images/Service2.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const CarWithDriverPage = () => {
   return (
@@ -22,6 +23,7 @@ export const CarWithDriverPage = () => {
                   Личный водитель и премиум-автомобиль в вашем распоряжении
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -228,18 +230,6 @@ export const CarWithDriverPage = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600">🚗 В стоимость включено: топливо, страховка, услуги водителя</p>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Нужен личный водитель?</h3>
-              <p className="text-gray-600">Закажите аренду автомобиля с профессиональным водителем</p>
-            </div>
-            <ContactForm
-              title="Заказать аренду с водителем"
-              description="Подберем оптимальный тариф для ваших потребностей"
-            />
           </div>
         </div>
       </div>

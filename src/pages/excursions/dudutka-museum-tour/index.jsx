@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Users, Camera, CheckCircle, TreePine, Home, Music, Utensils } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service1 from "@/assets/images/Service1.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const DudutkaMuseumTourPage = () => {
   return (
@@ -20,6 +21,7 @@ export const DudutkaMuseumTourPage = () => {
                   Музей народных ремёсел и технологий: погружение в белорусскую старину
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -173,18 +175,6 @@ export const DudutkaMuseumTourPage = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Окунуться в белорусскую старину</h3>
-              <p className="text-gray-600">Забронируйте экскурсию в Дудутки и познакомьтесь с традициями предков</p>
-            </div>
-            <ContactForm
-              title="Заказать экскурсию в Дудутки"
-              description="Прикоснитесь к истокам белорусской культуры"
-            />
           </div>
         </div>
       </div>
