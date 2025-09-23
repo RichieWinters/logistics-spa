@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Footer from "@/components/footer";
 import Header from "@/layouts/components/header/Header";
+import Support from "@/layouts/components/Support";
 
 export default function RootLayout() {
   const location = useLocation();
@@ -12,7 +13,7 @@ export default function RootLayout() {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       {/* Navigation Header */}
       <Header />
 
@@ -26,6 +27,9 @@ export default function RootLayout() {
         <Footer />
         <p className="text-center text-muted-foreground text-white">Copyright © 2025. All rights reserved.</p>
       </footer>
+
+      {/* Contact Us */}
+      <Support />
     </div>
   );
 }
