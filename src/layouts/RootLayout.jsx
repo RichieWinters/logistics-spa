@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Footer from "@/components/footer";
 import Header from "@/layouts/components/header/Header";
+import ContactFormSection from "@/components/ContactFormSection";
 import Support from "@/layouts/components/Support";
 
 export default function RootLayout() {
@@ -22,13 +23,15 @@ export default function RootLayout() {
         <Outlet />
       </main>
 
+      {/* Contact Form Section */}
+      <ContactFormSection />
+
       {/* Footer */}
       <footer className="mt-auto bg-black pb-8">
         <Footer />
         <p className="text-center text-muted-foreground text-white">Copyright © 2025. All rights reserved.</p>
       </footer>
-
-      {/* Contact Us */}
+      {/* Support Button */}
       <Support />
     </div>
   );

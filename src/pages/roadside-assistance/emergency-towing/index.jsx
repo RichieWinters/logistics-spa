@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Wrench, Phone, CheckCircle, Truck, AlertTriangle, Shield } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import mercedes from "@/assets/images/mercedes.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const EmergencyTowingPage = () => {
   return (
@@ -22,6 +23,7 @@ export const EmergencyTowingPage = () => {
                   Профессиональная буксировка легковых и грузовых автомобилей в Минске и области
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -180,15 +182,6 @@ export const EmergencyTowingPage = () => {
                 </ol>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Нужна буксировка автомобиля?</h3>
-              <p className="text-gray-600">Заполните форму, и мы быстро организуем буксировку вашего авто</p>
-            </div>
-            <ContactForm title="Заказать буксировку" description="Укажите откуда и куда нужно буксировать автомобиль" />
           </div>
         </div>
       </div>

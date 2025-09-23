@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Users, Camera, CheckCircle, Star, Castle, History } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service1Large from "@/assets/images/Service1Large.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const BelarusCastlesTourPage = () => {
   return (
@@ -22,6 +23,7 @@ export const BelarusCastlesTourPage = () => {
                   Путешествие сквозь века: от средневековых крепостей до дворцовых комплексов
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -164,18 +166,6 @@ export const BelarusCastlesTourPage = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Готовы отправиться в историческое путешествие?</h3>
-              <p className="text-gray-600">Забронируйте экскурсию по замкам Беларуси прямо сейчас</p>
-            </div>
-            <ContactForm
-              title="Заказать экскурсию по замкам"
-              description="Выберите удобную дату и получите незабываемые впечатления"
-            />
           </div>
         </div>
       </div>

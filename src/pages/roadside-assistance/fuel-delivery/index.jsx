@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Phone, CheckCircle, Fuel, Zap, AlertTriangle, Gauge } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service2 from "@/assets/images/Service2.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const FuelDeliveryPage = () => {
   return (
@@ -20,6 +21,7 @@ export const FuelDeliveryPage = () => {
                   Экстренная доставка топлива прямо к вашему автомобилю в любое время
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -167,15 +169,6 @@ export const FuelDeliveryPage = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Закончилось топливо?</h3>
-              <p className="text-gray-600">Закажите доставку топлива и мы быстро решим вашу проблему</p>
-            </div>
-            <ContactForm title="Заказать доставку топлива" description="Укажите тип топлива и ваше местоположение" />
           </div>
         </div>
       </div>

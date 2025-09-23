@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { MapPin, Clock, Users, Camera, CheckCircle, Truck, Cog, Factory } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import { MapPin, Clock, Users, Camera, CheckCircle, Star, Truck, Cog, Factory } from "lucide-react";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const BelazTourPage = () => {
   return (
@@ -22,6 +23,7 @@ export const BelazTourPage = () => {
                   Гиганты индустрии: знакомство с производством самых больших грузовиков в мире
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -179,20 +181,6 @@ export const BelazTourPage = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Увидеть гигантов промышленности</h3>
-              <p className="text-gray-600">
-                Забронируйте экскурсию на завод БелАЗ и познакомьтесь с мировыми рекордсменами
-              </p>
-            </div>
-            <ContactForm
-              title="Заказать экскурсию на БелАЗ"
-              description="Откройте для себя мир промышленных гигантов"
-            />
           </div>
         </div>
       </div>
