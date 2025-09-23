@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Wrench, Phone, CheckCircle, Settings, Zap, Shield } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
 import Service1 from "@/assets/images/Service1.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const TireChangePage = () => {
   return (
@@ -20,6 +20,7 @@ export const TireChangePage = () => {
                   Быстрая замена спущенного колеса в любой точке города и области
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -176,15 +177,6 @@ export const TireChangePage = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Нужна замена колеса?</h3>
-              <p className="text-gray-600">Оставьте заявку и мы быстро приедем на помощь</p>
-            </div>
-            <ContactForm title="Заказать замену колеса" description="Укажите марку авто и ваше местоположение" />
           </div>
         </div>
       </div>

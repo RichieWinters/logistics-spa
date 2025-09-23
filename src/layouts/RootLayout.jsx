@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Footer from "@/components/footer";
 import Header from "@/layouts/components/header/Header";
+import ContactFormSection from "@/components/ContactFormSection";
 
 export default function RootLayout() {
   const location = useLocation();
@@ -20,6 +21,9 @@ export default function RootLayout() {
       <main className="flex-1 pt-16">
         <Outlet />
       </main>
+
+      {/* Contact Form Section */}
+      <ContactFormSection />
 
       {/* Footer */}
       <footer className="mt-auto bg-black pb-8">

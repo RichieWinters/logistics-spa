@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Shield, Clock, Car, Phone, CheckCircle, AlertTriangle, Heart, Star } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service1 from "@/assets/images/Service1.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const SoberDriverPage = () => {
   return (
@@ -20,6 +21,7 @@ export const SoberDriverPage = () => {
                   Безопасная доставка домой на вашем автомобиле в любое время
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -212,15 +214,6 @@ export const SoberDriverPage = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600 italic">"Безопасность не имеет цены. Доверьте свою жизнь профессионалам."</p>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Вызвать трезвого водителя</h3>
-              <p className="text-gray-600">Безопасная доставка домой - звоните в любое время</p>
-            </div>
-            <ContactForm title="Заказать трезвого водителя" description="Укажите контакты для экстренного вызова" />
           </div>
         </div>
       </div>
