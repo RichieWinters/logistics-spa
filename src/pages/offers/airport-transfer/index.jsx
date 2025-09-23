@@ -122,19 +122,19 @@ export const AirportTransferPage = () => {
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-lg mb-2">Центр Минска → Аэропорт</h4>
                 <p className="text-gray-600 mb-2">Время в пути: ~45 минут</p>
-                <p className="text-yellow-600 font-bold text-xl">от 35 BYN</p>
+                <p className="text-yellow-600 font-bold text-xl">от 70 BYN</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-lg mb-2">Аэропорт → Центр Минска</h4>
                 <p className="text-gray-600 mb-2">Время в пути: ~45 минут</p>
-                <p className="text-yellow-600 font-bold text-xl">от 35 BYN</p>
+                <p className="text-yellow-600 font-bold text-xl">от 70 BYN</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-lg mb-2">Аэропорт → Области</h4>
                 <p className="text-gray-600 mb-2">По договоренности</p>
-                <p className="text-yellow-600 font-bold text-xl">от 60 BYN</p>
+                <p className="text-yellow-600 font-bold text-xl">договор</p>
               </div>
             </div>
           </div>

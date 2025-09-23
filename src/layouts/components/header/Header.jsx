@@ -26,7 +26,7 @@ const Header = () => {
             <NavList items={navigationItems} isActive={isActive} />
             <CallbackDialog
               variant="outline"
-              className="bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
+              className="cursor-pointer bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
             />
           </div>
 
@@ -35,7 +35,7 @@ const Header = () => {
             <CallbackDialog
               size="sm"
               variant="outline"
-              className="bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
+              className="cursor-pointer bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
               showIcon={false}
             />
 
@@ -66,9 +66,7 @@ const Header = () => {
         >
           <div className="py-4 space-y-2">
             <div className="px-3 pb-2">
-              <CallbackDialog
-                className="w-full bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300"
-              />
+              <CallbackDialog className="cursor-pointer w-full bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300" />
             </div>
 
             <MobileNavList

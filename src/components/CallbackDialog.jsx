@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Phone } from "lucide-react";
+import { Phone, X } from "lucide-react";
 
-const CallbackDialog = ({ 
-  trigger, 
-  variant = "default", 
-  size = "default",
-  className = "",
-  showIcon = true 
-}) => {
+const CallbackDialog = ({ trigger, variant = "default", size = "default", className = "", showIcon = true }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -70,11 +64,7 @@ const CallbackDialog = ({
   };
 
   const defaultTrigger = (
-    <Button 
-      variant={variant}
-      size={size}
-      className={className}
-    >
+    <Button variant={variant} size={size} className={className}>
       {showIcon && <Phone className="w-4 h-4 mr-2" />}
       Обратный звонок
     </Button>
@@ -82,10 +72,15 @@ const CallbackDialog = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        {trigger || defaultTrigger}
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-black/90 backdrop-blur-sm border-white/20 text-white">
+      <DialogTrigger asChild>{trigger || defaultTrigger}</DialogTrigger>
+
+      <DialogContent className="[&>button]:hidden sm:max-w-md bg-black/90 backdrop-blur-sm border-white/20 text-white">
+        <DialogClose asChild>
+          <div className="cursor-pointer absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+            <X width={20} />
+            <span className="sr-only">Close</span>
+          </div>
+        </DialogClose>
         <DialogHeader>
           <DialogTitle className="text-yellow-400">Заказать обратный звонок</DialogTitle>
         </DialogHeader>
@@ -134,7 +129,7 @@ const CallbackDialog = ({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300"
+              className="cursor-pointer flex-1 bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300"
             >
               {isSubmitting ? "Отправка..." : "Отправить"}
             </Button>
@@ -142,7 +137,7 @@ const CallbackDialog = ({
               type="button"
               variant="outline"
               onClick={() => setIsOpen(false)}
-              className="border-white/20 text-white/80 hover:bg-white/10"
+              className="cursor-pointer border-white/20 text-white/80 hover:bg-white/10"
             >
               Отмена
             </Button>

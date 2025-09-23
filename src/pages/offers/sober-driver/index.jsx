@@ -34,12 +34,10 @@ export const SoberDriverPage = () => {
             {/* Left Column - Content */}
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Ваша безопасность - наша ответственность</h2>
-
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Провели вечер с друзьями, отметили праздник или деловое мероприятие? Не рискуйте - вызовите трезвого
                 водителя. Мы доставим вас домой на вашем автомобиле быстро и безопасно.
               </p>
-
               <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
                 <div className="flex items-center">
                   <AlertTriangle className="w-6 h-6 text-red-400 mr-3" />
@@ -51,9 +49,7 @@ export const SoberDriverPage = () => {
                   </div>
                 </div>
               </div>
-
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Когда вызывать трезвого водителя:</h3>
-
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
                   <Heart className="w-6 h-6 text-red-400 flex-shrink-0 mt-0.5" />
@@ -84,9 +80,7 @@ export const SoberDriverPage = () => {
                   </div>
                 </li>
               </ul>
-
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Преимущества нашего сервиса:</h3>
-
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -109,16 +103,22 @@ export const SoberDriverPage = () => {
                   <span className="text-gray-600">Конфиденциальность и деликатность</span>
                 </li>
               </ul>
-
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-2">🚗 Как это работает</h4>
-                <p className="text-gray-600">
-                  Вызывайте водителя по телефону или через приложение. Водитель приедет на складном электросамокате,
-                  оставит его в багажнике и доставит вас домой на вашем автомобиле.
-                </p>
+              <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-lg">
+                <div className="flex items-start">
+                  <Clock className="w-6 h-6 text-amber-500 mr-3 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold text-amber-800 mb-2">Важно! Ночное время (00:00 - 06:00)</h4>
+                    <p className="text-amber-700 mb-2">
+                      <strong>Звоните по телефону, а не пишите сообщения!</strong>
+                    </p>
+                    <p className="text-amber-700 text-sm">
+                      В ночное время наши диспетчеры работают только по телефонным звонкам для быстрого реагирования.
+                      Сообщения могут быть обработаны с задержкой.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-
             {/* Right Column - Image and Features */}
             <div>
               <img
@@ -163,10 +163,6 @@ export const SoberDriverPage = () => {
                   <div className="flex justify-between">
                     <span className="text-gray-600">1 км в городе:</span>
                     <span className="font-semibold">2 BYN</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">1 км за городом:</span>
-                    <span className="font-semibold">2.5 BYN</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Ночной тариф (00:00-06:00):</span>

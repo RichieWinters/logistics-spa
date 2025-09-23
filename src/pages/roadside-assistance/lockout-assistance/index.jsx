@@ -136,13 +136,17 @@ export const LockoutAssistancePage = () => {
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <MapPin className="w-8 h-8 text-blue-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">География</h4>
-                  <p className="text-sm text-gray-600">Весь город</p>
+                  <p className="text-sm text-gray-600">
+                    Весь город Минск
+                    <br />
+                    (+ возможен выезд загород)
+                  </p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <Phone className="w-8 h-8 text-blue-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Приезд</h4>
-                  <p className="text-sm text-gray-600">15-30 минут</p>
+                  <p className="text-sm text-gray-600">15-30 минут по городу Минску</p>
                 </div>
               </div>
 
@@ -151,21 +155,12 @@ export const LockoutAssistancePage = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Легковой автомобиль:</span>
-                    <span className="font-semibold">25 BYN</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Микроавтобус:</span>
-                    <span className="font-semibold">30 BYN</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Грузовой транспорт:</span>
-                    <span className="font-semibold">35 BYN</span>
+                    <span className="font-semibold">40 BYN</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Ночное время:</span>
-                    <span className="font-semibold">+50%</span>
+                    <span className="font-semibold">60 BYN</span>
                   </div>
-                  <div className="text-xs text-gray-500 mt-2">* За город - дополнительно 1 BYN за км</div>
                 </div>
               </div>
 

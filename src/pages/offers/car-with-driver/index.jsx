@@ -121,7 +121,7 @@ export const CarWithDriverPage = () => {
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <Clock className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Почасовая</h4>
-                  <p className="text-sm text-gray-600">От 3 часов</p>
+                  <p className="text-sm text-gray-600">От 1 часа</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">

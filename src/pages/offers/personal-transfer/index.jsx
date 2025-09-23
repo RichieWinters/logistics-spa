@@ -157,11 +157,7 @@ export const PersonalTransferPage = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">1 км по городу:</span>
-                    <span className="font-semibold">1.5 BYN</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">1 км за городом:</span>
-                    <span className="font-semibold">2 BYN</span>
+                    <span className="font-semibold">1.15 BYN</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Ожидание (час):</span>

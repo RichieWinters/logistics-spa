@@ -47,7 +47,7 @@ export const FuelDeliveryPage = () => {
                 <li className="flex items-start space-x-3">
                   <Fuel className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-gray-800 font-semibold">Бензин АИ-92, АИ-95</span>
+                    <span className="text-gray-800 font-semibold">Бензин АИ-92, АИ-95, AИ-98, АИ-100</span>
                     <p className="text-gray-600 text-sm">Качественный бензин с проверенных АЗС</p>
                   </div>
                 </li>
