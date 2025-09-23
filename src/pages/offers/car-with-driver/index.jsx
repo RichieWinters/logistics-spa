@@ -67,7 +67,7 @@ export const CarWithDriverPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Star className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <Star className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">VIP-сервис</span>
                     <p className="text-gray-600 text-sm">Персональное обслуживание высокого уровня</p>
@@ -79,23 +79,23 @@ export const CarWithDriverPage = () => {
 
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Не нужно искать парковку</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Можно заниматься делами в дороге</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Знание города и маршрутов</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Помощь с багажом и покупками</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Гибкий график и маршрут</span>
                 </li>
               </ul>
@@ -119,25 +119,25 @@ export const CarWithDriverPage = () => {
 
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Clock className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Clock className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Почасовая</h4>
                   <p className="text-sm text-gray-600">От 1 часа</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Calendar className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Calendar className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">На день</h4>
                   <p className="text-sm text-gray-600">12 часов</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Car className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Car className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Премиум авто</h4>
                   <p className="text-sm text-gray-600">Новый автопарк</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Shield className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Shield className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Страховка</h4>
                   <p className="text-sm text-gray-600">Полное покрытие</p>
                 </div>
@@ -147,23 +147,23 @@ export const CarWithDriverPage = () => {
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">Что включено в стоимость:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Топливо</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Страховка</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Услуги водителя</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Мойка автомобиля</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Техническое обслуживание</span>
                   </li>
                 </ul>
@@ -191,9 +191,9 @@ export const CarWithDriverPage = () => {
                 <p className="text-sm text-gray-500">Минимум 3 часа</p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-sm border-2 border-yellow-400">
+              <div className="bg-white p-6 rounded-lg shadow-sm border-2 border-green-400">
                 <div className="text-center mb-2">
-                  <span className="bg-yellow-400 text-white px-2 py-1 rounded text-xs">ПОПУЛЯРНЫЙ</span>
+                  <span className="bg-green-400 text-white px-2 py-1 rounded text-xs">ПОПУЛЯРНЫЙ</span>
                 </div>
                 <h4 className="font-semibold text-lg mb-4">Аренда на день</h4>
                 <div className="space-y-2 mb-4">

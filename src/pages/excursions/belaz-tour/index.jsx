@@ -56,7 +56,7 @@ export const BelazTourPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Cog className="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <Cog className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Производственные цеха</span>
                     <p className="text-gray-600 text-sm">Процесс сборки карьерных самосвалов</p>
@@ -148,7 +148,7 @@ export const BelazTourPage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость экскурсии:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -169,7 +169,7 @@ export const BelazTourPage = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">📋 Требования</h5>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Паспорт обязателен для всех участников</li>

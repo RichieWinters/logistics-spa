@@ -59,7 +59,7 @@ export const SoberDriverPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Star className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <Star className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Корпоративы</span>
                     <p className="text-gray-600 text-sm">Деловые ужины, праздничные мероприятия</p>
@@ -103,15 +103,15 @@ export const SoberDriverPage = () => {
                   <span className="text-gray-600">Конфиденциальность и деликатность</span>
                 </li>
               </ul>
-              <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-lg">
+              <div className="bg-emerald-50 border-l-4 border-emerald-400 p-6 rounded-lg">
                 <div className="flex items-start">
-                  <Clock className="w-6 h-6 text-amber-500 mr-3 flex-shrink-0 mt-0.5" />
+                  <Clock className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-amber-800 mb-2">Важно! Ночное время (00:00 - 06:00)</h4>
-                    <p className="text-amber-700 mb-2">
+                    <h4 className="font-semibold text-emerald-800 mb-2">Важно! Ночное время (00:00 - 06:00)</h4>
+                    <p className="text-emerald-700 mb-2">
                       <strong>Звоните по телефону, а не пишите сообщения!</strong>
                     </p>
-                    <p className="text-amber-700 text-sm">
+                    <p className="text-emerald-700 text-sm">
                       В ночное время наши диспетчеры работают только по телефонным звонкам для быстрого реагирования.
                       Сообщения могут быть обработаны с задержкой.
                     </p>
@@ -153,7 +153,7 @@ export const SoberDriverPage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg mb-6">
+              <div className="bg-green-50 p-6 rounded-lg mb-6">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Тарифы:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">

@@ -37,7 +37,7 @@ const MobileNavItem = ({ item, isActive, toggleDropdown, activeDropdown, setActi
               }}
               className={`block px-3 py-2 rounded-md text-sm transition-all duration-300 ease-in-out hover:transform hover:translate-x-2 ${
                 isActive(subItem.path)
-                  ? "bg-yellow-400/20 text-yellow-400"
+                  ? "bg-green-400/20 text-green-400"
                   : "text-white/70 hover:bg-white/10 hover:text-white"
               }`}
             >

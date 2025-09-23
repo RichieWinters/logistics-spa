@@ -53,7 +53,7 @@ export const EventTransportPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Gift className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <Gift className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Дни рождения и юбилеи</span>
                     <p className="text-gray-600 text-sm">Праздничная подача, особый сервис</p>
@@ -74,7 +74,7 @@ export const EventTransportPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Star className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <Star className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">VIP-события</span>
                     <p className="text-gray-600 text-sm">Премиум-сервис для особых случаев</p>
@@ -82,7 +82,7 @@ export const EventTransportPage = () => {
                 </li>
               </ul>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">🎉 Включено в стоимость</h4>
                 <p className="text-gray-600">
                   Декоративное украшение автомобиля, красная дорожка, шампанское и персональный сервис водителя.
@@ -102,27 +102,27 @@ export const EventTransportPage = () => {
                 <h4 className="text-lg font-semibold text-gray-800 mb-4">Что входит в сервис:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Украшение автомобиля</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Профессиональный водитель в костюме</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Красная дорожка</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Шампанское и бокалы</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Фотосессия с автомобилем</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-yellow-400" />
+                    <CheckCircle className="w-4 h-4 text-green-400" />
                     <span className="text-gray-600">Сопровождение по маршруту</span>
                   </li>
                 </ul>
@@ -156,12 +156,12 @@ export const EventTransportPage = () => {
                   <li>• Водитель в костюме</li>
                   <li>• 2 часа обслуживания</li>
                 </ul>
-                <p className="text-yellow-600 font-bold text-xl">от 120 BYN</p>
+                <p className="text-green-600 font-bold text-xl">от 120 BYN</p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-sm border-2 border-yellow-400">
+              <div className="bg-white p-6 rounded-lg shadow-sm border-2 border-green-400">
                 <div className="text-center mb-2">
-                  <span className="bg-yellow-400 text-white px-2 py-1 rounded text-xs">ПОПУЛЯРНЫЙ</span>
+                  <span className="bg-green-400 text-white px-2 py-1 rounded text-xs">ПОПУЛЯРНЫЙ</span>
                 </div>
                 <h4 className="font-semibold text-lg mb-2">Премиум</h4>
                 <ul className="text-sm text-gray-600 mb-4 space-y-1">
@@ -170,7 +170,7 @@ export const EventTransportPage = () => {
                   <li>• Шампанское</li>
                   <li>• 4 часа обслуживания</li>
                 </ul>
-                <p className="text-yellow-600 font-bold text-xl">от 200 BYN</p>
+                <p className="text-green-600 font-bold text-xl">от 200 BYN</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -181,7 +181,7 @@ export const EventTransportPage = () => {
                   <li>• Фотограф (1 час)</li>
                   <li>• Весь день</li>
                 </ul>
-                <p className="text-yellow-600 font-bold text-xl">от 350 BYN</p>
+                <p className="text-green-600 font-bold text-xl">от 350 BYN</p>
               </div>
             </div>
           </div>

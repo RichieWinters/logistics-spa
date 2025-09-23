@@ -16,10 +16,10 @@ export const SectionItem = ({ title, path, image, imageAlt }) => {
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 group-hover:text-yellow-400 transition-colors duration-300 mb-2">
+        <h3 className="text-xl font-bold text-gray-800 group-hover:text-green-400 transition-colors duration-300 mb-2">
           {title}
         </h3>
-        <div className="flex items-center text-yellow-400 group-hover:text-yellow-500 transition-colors duration-300">
+        <div className="flex items-center text-green-400 group-hover:text-green-500 transition-colors duration-300">
           <span className="text-sm font-medium">Подробнее</span>
           <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
         </div>

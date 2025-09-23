@@ -60,8 +60,8 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto shadow-lg border-yellow-200">
-      <CardHeader className="text-center bg-gradient-to-r from-yellow-50 to-amber-50">
+    <Card className="w-full max-w-md mx-auto shadow-lg border-green-200">
+      <CardHeader className="text-center bg-gradient-to-r from-green-50 to-emerald-50">
         <CardTitle className="text-2xl font-bold text-gray-800 mb-2">{title}</CardTitle>
         <p className="text-gray-600 text-sm">{description}</p>
       </CardHeader>
@@ -69,14 +69,14 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="contact-name" className="text-gray-700 font-medium flex items-center">
-              <User className="w-4 h-4 mr-2 text-yellow-500" />
+              <User className="w-4 h-4 mr-2 text-green-500" />
               Ваше имя
             </Label>
             <Input
               id="contact-name"
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
-              className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+              className="border-gray-300 focus:border-green-400 focus:ring-green-400"
               placeholder="Введите ваше имя"
               required
             />
@@ -84,7 +84,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
 
           <div className="space-y-2">
             <Label htmlFor="contact-phone" className="text-gray-700 font-medium flex items-center">
-              <Phone className="w-4 h-4 mr-2 text-yellow-500" />
+              <Phone className="w-4 h-4 mr-2 text-green-500" />
               Номер телефона
             </Label>
             <Input
@@ -92,7 +92,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+              className="border-gray-300 focus:border-green-400 focus:ring-green-400"
               placeholder="+375 (XX) XXX-XX-XX"
               required
             />
@@ -101,7 +101,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-green-400 hover:bg-green-500 text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105"
           >
             {isSubmitting ? (
               <>

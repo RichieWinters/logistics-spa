@@ -188,7 +188,7 @@ export default function FeedbackForm() {
       <div className="container mx-auto px-4 max-w-8xl">
         <Card className="p-8 shadow-lg bg-black/90 backdrop-blur-sm border-white/20 text-white rounded-4xl">
           <div className="text-center mb-8">
-            <span className="text-sm font-bold text-yellow-400 mb-2">Легко и удобно</span>
+            <span className="text-sm font-bold text-green-400 mb-2">Легко и удобно</span>
             <h2 className="text-white text-3xl font-bold">ЗАКАЗАТЬ ТРАНСФЕР</h2>
           </div>
 
@@ -208,8 +208,8 @@ export default function FeedbackForm() {
                   })}
                   className={
                     errors.name
-                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
+                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                   }
                 />
                 {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
@@ -228,8 +228,8 @@ export default function FeedbackForm() {
                   })}
                   className={
                     errors.phone
-                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
+                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                   }
                 />
                 {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>}
@@ -250,8 +250,8 @@ export default function FeedbackForm() {
                   })}
                   className={
                     errors.tripDate
-                      ? "border-red-500 bg-white text-gray-900 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      ? "border-red-500 bg-white text-gray-900 focus:border-green-400 focus:ring-green-400/20"
+                      : "bg-white text-gray-900 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                   }
                 />
                 {errors.tripDate && <p className="text-red-400 text-sm mt-1">{errors.tripDate.message}</p>}
@@ -269,8 +269,8 @@ export default function FeedbackForm() {
                   })}
                   className={
                     errors.tripTime
-                      ? "border-red-500 bg-white text-gray-900 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      ? "border-red-500 bg-white text-gray-900 focus:border-green-400 focus:ring-green-400/20"
+                      : "bg-white text-gray-900 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                   }
                 />
                 {errors.tripTime && <p className="text-red-400 text-sm mt-1">{errors.tripTime.message}</p>}
@@ -292,7 +292,7 @@ export default function FeedbackForm() {
                     <Input
                       placeholder="Введите адрес отправления"
                       {...register("startAddress")}
-                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                     />
                     {showStartSuggestions && startSuggestions.length > 0 && (
                       <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-48 overflow-y-auto">
@@ -323,7 +323,7 @@ export default function FeedbackForm() {
                     <Input
                       placeholder="Введите адрес назначения"
                       {...register("endAddress")}
-                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                     />
                     {showEndSuggestions && endSuggestions.length > 0 && (
                       <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-48 overflow-y-auto">
@@ -354,7 +354,7 @@ export default function FeedbackForm() {
                 <Button
                   type="button"
                   onClick={handleBuildRoute}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 transition-colors cursor-pointer"
+                  className="bg-green-400 hover:bg-green-500 text-gray-900 font-semibold px-6 py-2 transition-colors cursor-pointer"
                 >
                   Построить маршрут
                 </Button>
@@ -375,8 +375,8 @@ export default function FeedbackForm() {
                 })}
                 className={
                   errors.message
-                    ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-yellow-400 focus:ring-yellow-400/20"
-                    : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                    ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
+                    : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                 }
               />
               {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
@@ -395,7 +395,7 @@ export default function FeedbackForm() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-3 min-w-[150px] transition-colors disabled:opacity-50 cursor-pointer"
+                className="bg-green-400 hover:bg-green-500 text-gray-900 font-semibold px-6 py-3 min-w-[150px] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {isLoading ? "Отправка..." : "Отправить"}
               </Button>

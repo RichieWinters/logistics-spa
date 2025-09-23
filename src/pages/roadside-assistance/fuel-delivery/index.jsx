@@ -59,7 +59,7 @@ export const FuelDeliveryPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Gauge className="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <Gauge className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Минимальная заправка</span>
                     <p className="text-gray-600 text-sm">От 5 литров - достаточно до ближайшей АЗС</p>
@@ -134,7 +134,7 @@ export const FuelDeliveryPage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость услуги:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -157,7 +157,7 @@ export const FuelDeliveryPage = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">💡 Полезные советы</h5>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Всегда следите за уровнем топлива</li>

@@ -49,28 +49,28 @@ export const AirportTransferPage = () => {
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-600">Отслеживание рейсов в режиме реального времени</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-600">Встреча с табличкой в зале прилета</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-600">Помощь с багажом</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-600">Фиксированная стоимость без доплат</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-600">Бесплатное ожидание до 1 часа</span>
                 </li>
               </ul>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">💡 Рекомендация</h4>
                 <p className="text-gray-600">
                   Бронируйте трансфер минимум за 24 часа до вылета для гарантированного места и лучшей цены.
@@ -88,25 +88,25 @@ export const AirportTransferPage = () => {
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Clock className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Clock className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">24/7</h4>
                   <p className="text-sm text-gray-600">Работаем круглосуточно</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Shield className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Shield className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Безопасность</h4>
                   <p className="text-sm text-gray-600">Опытные водители</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Car className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Car className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Комфорт</h4>
                   <p className="text-sm text-gray-600">Премиум автомобили</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <Users className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
+                  <Users className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">1-8 мест</h4>
                   <p className="text-sm text-gray-600">Любые группы</p>
                 </div>
@@ -122,19 +122,19 @@ export const AirportTransferPage = () => {
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-lg mb-2">Центр Минска → Аэропорт</h4>
                 <p className="text-gray-600 mb-2">Время в пути: ~45 минут</p>
-                <p className="text-yellow-600 font-bold text-xl">от 70 BYN</p>
+                <p className="text-green-600 font-bold text-xl">от 70 BYN</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-lg mb-2">Аэропорт → Центр Минска</h4>
                 <p className="text-gray-600 mb-2">Время в пути: ~45 минут</p>
-                <p className="text-yellow-600 font-bold text-xl">от 70 BYN</p>
+                <p className="text-green-600 font-bold text-xl">от 70 BYN</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-lg mb-2">Аэропорт → Области</h4>
                 <p className="text-gray-600 mb-2">По договоренности</p>
-                <p className="text-yellow-600 font-bold text-xl">договор</p>
+                <p className="text-green-600 font-bold text-xl">договор</p>
               </div>
             </div>
           </div>

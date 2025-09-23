@@ -8,29 +8,29 @@ export default function Footer() {
       {/* Desktop and tablet layout */}
       <div className="hidden sm:flex justify-between">
         <div className="hidden md:flex flex-col flex-1">
-          <h4 className="text-lg font-bold text-yellow-400">Logistics Transfers</h4>
+          <h4 className="text-lg font-bold text-green-400">Logistics Transfers</h4>
         </div>
         <div className="flex flex-col flex-1">
           <h4 className="text-lg font-bold text-white min-h-[56px]">Услуги</h4>
           <ul className="space-y-2">
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Трансфер аэропорт
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Индивидуальный трансфер
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Аренда авто с водителем
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Авто на мероприятие
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Трезвый водитель
             </li>
           </ul>
@@ -39,23 +39,23 @@ export default function Footer() {
           <h4 className="text-lg font-bold text-white min-h-[56px]">Помощь на дороге</h4>
           <ul className="space-y-2">
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               'Прикурить' авто
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Подкачка колёс
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Подвоз топлива
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Буксировка
             </li>
             <li className="flex items-center text-gray-300 text-sm">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
               Трезвый водитель
             </li>
           </ul>
@@ -85,23 +85,23 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-white mb-3">Услуги</h4>
             <ul className="space-y-2">
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Трансфер аэропорт
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Индивидуальный трансфер
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Аренда авто с водителем
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Авто на мероприятие
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Трезвый водитель
               </li>
             </ul>
@@ -111,23 +111,23 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-white mb-3">Помощь на дороге</h3>
             <ul className="space-y-2">
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 'Прикурить' авто
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Подкачка колёс
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Подвоз топлива
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Буксировка
               </li>
               <li className="flex items-center text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
                 Трезвый водитель
               </li>
             </ul>
