@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, User, Send } from "lucide-react";
 import { toast } from "sonner";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 const ContactForm = ({ title = "Заказать услугу", description = "Оставьте свои контакты и мы свяжемся с вами" }) => {
   const [formData, setFormData] = useState({
@@ -87,11 +88,11 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
               <Phone className="w-4 h-4 mr-2 text-green-500" />
               Номер телефона
             </Label>
-            <Input
+            <PhoneInput
               id="contact-phone"
               type="tel"
               value={formData.phone}
-              onChange={(e) => handleInputChange("phone", e.target.value)}
+              onChange={(value) => handleInputChange("phone", value)}
               className="border-gray-300 focus:border-green-400 focus:ring-green-400"
               placeholder="+375 (XX) XXX-XX-XX"
               required

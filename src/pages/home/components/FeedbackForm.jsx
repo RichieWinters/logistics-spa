@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,6 +21,7 @@ import {
   prepareFormData,
   submitForm,
 } from "./feedbackFormUtils";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 export default function FeedbackForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +53,7 @@ export default function FeedbackForm() {
     watch,
     reset,
     setError,
+    control,
     clearErrors,
   } = useForm({
     defaultValues: {
@@ -216,23 +218,31 @@ export default function FeedbackForm() {
               </div>
 
               <div className="flex-1">
-                <Label htmlFor="phone" className="text-sm font-medium text-white/80 mb-2 block">
-                  Номер телефона <span className="text-red-500">*</span>
-                </Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="+375 29 123 45 67"
-                  {...register("phone", {
+                <Controller
+                  name="phone"
+                  control={control}
+                  rules={{
                     validate: validatePhone,
-                  })}
-                  className={
-                    errors.phone
-                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
-                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
-                  }
+                  }}
+                  render={({ field }) => (
+                    <>
+                      <Label htmlFor="phone" className="text-sm font-medium text-white/80 mb-2 block">
+                        Номер телефона <span className="text-red-500">*</span>
+                      </Label>
+                      <PhoneInput
+                        id="phone"
+                        {...field}
+                        placeholder="Введите ваш номер телефона"
+                        className={
+                          errors.phone
+                            ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
+                            : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
+                        }
+                      />
+                      {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>}
+                    </>
+                  )}
                 />
-                {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>}
               </div>
             </div>
 

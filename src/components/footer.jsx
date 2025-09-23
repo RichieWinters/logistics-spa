@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12 pb-8 md:pb-24">
+    <div className="container mx-auto px-4 py-8 md:py-10 pb-8 md:pb-18">
       {/* Desktop and tablet layout */}
       <div className="hidden sm:flex justify-between">
         <div className="flex flex-col gap-3">
@@ -14,6 +14,7 @@ export default function Footer() {
           <ul className="space-y-2">
             {PAGES.concreteServices.map((s) => (
               <Link
+                key={s.path}
                 className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
                 to={s.path}
               >
@@ -27,6 +28,7 @@ export default function Footer() {
           <ul className="space-y-2">
             {PAGES.concreteExcursions.map((s) => (
               <Link
+                key={s.path}
                 className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
                 to={s.path}
               >
@@ -35,11 +37,12 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mr-1">
           <h4 className="text-lg font-bold text-white">Помощь на дороге</h4>
           <ul className="space-y-2">
             {PAGES.concreteAssistances.map((s) => (
               <Link
+                key={s.path}
                 className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
                 to={s.path}
               >
@@ -74,6 +77,7 @@ export default function Footer() {
             <ul className="space-y-2 flex flex-col gap-2">
               {PAGES.concreteServices.map((s) => (
                 <Link
+                  key={s.path}
                   className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
                   to={s.path}
                 >
@@ -88,6 +92,7 @@ export default function Footer() {
             <ul className="space-y-2 flex flex-col gap-2">
               {PAGES.concreteAssistances.map((s) => (
                 <Link
+                  key={s.path}
                   className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
                   to={s.path}
                 >

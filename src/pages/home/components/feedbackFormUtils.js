@@ -24,23 +24,19 @@ export const validatePhone = (phone) => {
   }
 
   const cleanPhone = phone.replace(/\D/g, "");
+  if (cleanPhone.startsWith("375")) {
+    if (cleanPhone.length < 9) {
+      return "Номер телефона должен содержать минимум 9 цифр";
+    }
+    if (cleanPhone.length > 12) {
+      return "Номер телефона не должен превышать 12 цифр";
+    }
+    const operatorCode = cleanPhone.substring(3, 5);
+    const validOperators = ["25", "29", "33", "44"];
 
-  if (cleanPhone.length < 9) {
-    return "Номер телефона должен содержать минимум 9 цифр";
-  }
-  if (cleanPhone.length > 12) {
-    return "Номер телефона не должен превышать 12 цифр";
-  }
-
-  if (!cleanPhone.startsWith("375")) {
-    return "Номер телефона должен начинаться с 375 (Беларусь)";
-  }
-
-  const operatorCode = cleanPhone.substring(3, 5);
-  const validOperators = ["25", "29", "33", "44"];
-
-  if (!validOperators.includes(operatorCode)) {
-    return "Некорректный код оператора. Допустимые коды: 25, 29, 33, 44";
+    if (!validOperators.includes(operatorCode)) {
+      return "Некорректный код оператора. Допустимые коды: 25, 29, 33, 44";
+    }
   }
 
   return null;
@@ -183,8 +179,8 @@ export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, setRouteDat
     const distance = route.properties.get("distance");
 
     // Get addresses from the multiRoute object where they were stored
-    const startAddress = multiRouteRef.current._currentStartAddress || '';
-    const endAddress = multiRouteRef.current._currentEndAddress || '';
+    const startAddress = multiRouteRef.current._currentStartAddress || "";
+    const endAddress = multiRouteRef.current._currentEndAddress || "";
 
     const newRouteData = {
       distance: distance.value / 1000, // в километрах

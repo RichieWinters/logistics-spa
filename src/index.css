@@ -52,3 +52,7 @@
     font-size: 120%;
   }
 }
+
+.h-inherit {
+  height: inherit;
+}
