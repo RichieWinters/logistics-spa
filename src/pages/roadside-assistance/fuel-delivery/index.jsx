@@ -98,17 +98,6 @@ export const FuelDeliveryPage = () => {
                   <span className="text-gray-600">Оплата наличными или по карте</span>
                 </li>
               </ul>
-
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-800 mb-2 flex items-center">
-                  <AlertTriangle className="w-5 h-5 mr-2 text-green-400" />
-                  Безопасность превыше всего
-                </h4>
-                <p className="text-gray-600">
-                  Наши специалисты имеют сертификаты для работы с топливом. Используем только сертифицированные ёмкости
-                  и соблюдаем все требования безопасности при заправке.
-                </p>
-              </div>
             </div>
 
             {/* Right Column - Image and Features */}
