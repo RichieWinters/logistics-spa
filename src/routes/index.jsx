@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
       // Services pages
       { path: PAGES.services.airportTransfer.path, element: <AirportTransferPage /> },
       { path: PAGES.services.carWithDriver.path, element: <CarWithDriverPage /> },
-      { path: PAGES.services.eventTransport.path, element: <EventTransportPage /> },
+      // { path: PAGES.services.eventTransport.path, element: <EventTransportPage /> },
       { path: PAGES.services.personalTransfer.path, element: <PersonalTransferPage /> },
       { path: PAGES.services.soberDriver.path, element: <SoberDriverPage /> },
 
@@ -60,9 +60,9 @@ export const router = createBrowserRouter([
 
       // Roadside assistance pages
       { path: PAGES.roadsideAssistance.lockoutAssistance.path, element: <LockoutAssistancePage /> },
-      { path: PAGES.roadsideAssistance.tireChange.path, element: <TireChangePage /> },
+      // { path: PAGES.roadsideAssistance.tireChange.path, element: <TireChangePage /> },
       { path: PAGES.roadsideAssistance.fuelDelivery.path, element: <FuelDeliveryPage /> },
-      { path: PAGES.roadsideAssistance.emergencyTowing.path, element: <EmergencyTowingPage /> },
+      // { path: PAGES.roadsideAssistance.emergencyTowing.path, element: <EmergencyTowingPage /> },
     ],
   },
   {

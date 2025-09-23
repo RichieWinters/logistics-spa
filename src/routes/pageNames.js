@@ -14,10 +14,10 @@ export const PAGES = {
       path: "/offers/personal-transfer",
       title: "Персональный трансфер",
     },
-    eventTransport: {
-      path: "/offers/event-transport",
-      title: "Транспорт на мероприятие",
-    },
+    // eventTransport: {
+    //   path: "/offers/event-transport",
+    //   title: "Транспорт на мероприятие",
+    // },
     soberDriver: {
       path: "/offers/sober-driver",
       title: "Трезвый водитель",
@@ -60,18 +60,18 @@ export const PAGES = {
       path: "/roadside-assistance/lockout-assistance",
       title: "Прикурить авто",
     },
-    tireChange: {
-      path: "/roadside-assistance/tire-change",
-      title: "Замена колеса",
-    },
+    // tireChange: {
+    //   path: "/roadside-assistance/tire-change",
+    //   title: "Замена колеса",
+    // },
     fuelDelivery: {
       path: "/roadside-assistance/fuel-delivery",
       title: "Подвоз топлива",
     },
-    emergencyTowing: {
-      path: "/roadside-assistance/emergency-towing",
-      title: "Буксировка",
-    },
+    // emergencyTowing: {
+    //   path: "/roadside-assistance/emergency-towing",
+    //   title: "Буксировка",
+    // },
   },
 };
 
