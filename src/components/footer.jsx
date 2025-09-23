@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="container mx-auto px-4 py-8 md:py-10 pb-8 md:pb-18">
+    <div className="container mx-auto px-4 py-8 md:py-10 pb-8">
       {/* Desktop and tablet layout */}
       <div className="hidden sm:flex justify-between">
         <div className="flex flex-col gap-3">

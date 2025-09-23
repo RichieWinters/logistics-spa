@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ScrollToContactButton from "@/components/ScrollToContactButton";
+import { CircleAlert } from "lucide-react";
 
 export default function Hero() {
   const handleScrollToForm = (e) => {
@@ -47,6 +48,10 @@ export default function Hero() {
               <Link onClick={handleScrollToForm}>Построить маршрут</Link>
             </Button>
           </div>
+          <p className="text-md text-white italic my-4 p-1 bg-green-500/60 rounded-lg border-emerald-600 border-2 flex items-center gap-2">
+            <CircleAlert />
+            <span>При звонке с 24:00 до 6:00 заявка будет обработана после 6:00.</span>
+          </p>
         </div>
       </div>
     </div>

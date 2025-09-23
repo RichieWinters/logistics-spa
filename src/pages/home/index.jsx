@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="max-h-[77svh] bg-cover bg-center bg-no-repeat inset-0"
+        className="py-7 bg-cover bg-center bg-no-repeat inset-0"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${mercedesLarge})`,
         }}
