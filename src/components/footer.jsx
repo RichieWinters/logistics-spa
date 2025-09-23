@@ -1,4 +1,6 @@
-import { Instagram, MessageCircle, Phone } from "lucide-react";
+import InstagramIcon from "@/assets/icons/instagram.png";
+import TelegramIcon from "@/assets/icons/telegram.svg?react";
+import WhatsappIcon from "@/assets/icons/whatsapp.svg?react";
 
 export default function Footer() {
   return (
@@ -60,15 +62,15 @@ export default function Footer() {
         </div>
         <div className="flex flex-col flex-1">
           <h4 className="text-lg font-bold text-white mb-4">Социальные сети</h4>
-          <div className="flex flex-col gap-4 items-center md:flex-row space-x-4">
-            <a href="#" className="text-gray-300 hover:text-pink-500 transition-colors duration-200">
-              <Instagram className="w-6 h-6" />
+          <div className="flex justify-start gap-4 items-center">
+            <a href="#">
+              <img src={InstagramIcon} alt="Instagram" className="w-8 h-8 rounded-2xl" />
             </a>
-            <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
-              <MessageCircle className="w-6 h-6" />
+            <a href="#">
+              <TelegramIcon className="w-8 h-8 rounded-2xl" />
             </a>
-            <a href="#" className="text-gray-300 hover:text-green-500 transition-colors duration-200 mr-4 md:mr-0">
-              <Phone className="w-6 h-6" />
+            <a href="#">
+              <WhatsappIcon className="w-8 h-8 rounded-2xl" />
             </a>
           </div>
         </div>
@@ -104,7 +106,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
           {/* Roadside assistance section */}
           <div className="flex flex-col flex-1">
             <h3 className="text-lg font-bold text-white mb-3">Помощь на дороге</h3>
@@ -137,14 +138,14 @@ export default function Footer() {
         <div className="flex flex-col">
           <h4 className="text-lg font-bold text-white mb-4">Социальные сети</h4>
           <div className="flex gap-4 justify-start">
-            <a href="#" className="text-gray-300 hover:text-pink-500 transition-colors duration-200">
-              <Instagram className="w-6 h-6" />
+            <a href="#">
+              <img src={InstagramIcon} alt="Instagram" className="w-8 h-8 rounded-2xl" />
             </a>
-            <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
-              <MessageCircle className="w-6 h-6" />
+            <a href="#">
+              <TelegramIcon className="w-8 h-8 rounded-2xl" />
             </a>
-            <a href="#" className="text-gray-300 hover:text-green-500 transition-colors duration-200">
-              <Phone className="w-6 h-6" />
+            <a href="#">
+              <WhatsappIcon className="w-8 h-8 rounded-2xl" />
             </a>
           </div>
         </div>
