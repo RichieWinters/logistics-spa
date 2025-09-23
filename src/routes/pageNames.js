@@ -30,7 +30,7 @@ export const PAGES = {
   excursions: {
     main: {
       path: "/excursions",
-      title: "Экскурсии",
+      title: "Экскурсия",
     },
 
     belarusCastlesTour: {

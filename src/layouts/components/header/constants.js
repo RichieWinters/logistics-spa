@@ -11,7 +11,7 @@ export const navigationItems = [
     title: PAGES.excursions.main.title,
     path: PAGES.excursions.main.path,
     dropdown: "excursions",
-    items: PAGES.concreteExcursions,
+    items: [],
   },
   {
     title: PAGES.roadsideAssistance.main.title,
