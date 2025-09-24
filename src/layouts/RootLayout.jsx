@@ -27,9 +27,14 @@ export default function RootLayout() {
       <ContactFormSection />
 
       {/* Footer */}
-      <footer className="mt-auto bg-black pb-8">
+      <footer className="mt-auto bg-black pb-1">
         <Footer />
-        <p className="text-center text-muted-foreground text-white">Copyright © 2025. All rights reserved.</p>
+        <div className="flex gap-4 items-center justify-center container max-auto px-4">
+          <p className="text-center text-muted-foreground text-gray-400 text-xs">Copyright © 2025. All rights reserved.</p>
+          <Link to={"#"} className="text-gray-400 text-xs">
+            Политика обработки персональных данных
+          </Link>
+        </div>
       </footer>
       {/* Support Button */}
       <Support />
