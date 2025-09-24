@@ -1,5 +1,15 @@
+import { carTypes } from "./carTypesConfig";
+
 // Constants
-export const DISTANCE_COEFFICIENT = 2.5; // рублей за километр
+export const DISTANCE_COEFFICIENT = 2.5; // рублей за километр (по умолчанию для старых расчетов)
+
+// Get price coefficient based on car type
+export const getCarTypePriceCoefficient = (carTypeId) => {
+  // Import here to avoid circular dependency
+  const carType = carTypes.find((type) => type.id === carTypeId);
+
+  return carType?.pricePerKm || DISTANCE_COEFFICIENT;
+};
 
 // Validation functions
 export const validateName = (name) => {
@@ -161,8 +171,13 @@ export const initMap = (mapRef, multiRouteRef, myMapRef, balloonRef, updateRoute
   multiRouteRef.current.model.events.add("requestsuccess", updateRouteInfo);
 };
 
-export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, setRouteData) => {
+export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, setRouteData, selectedCarType = "sedan") => {
   const routes = multiRouteRef.current.getRoutes();
+
+  if (routes.getLength() === 0) {
+    return; // Нет маршрутов для обработки
+  }
+
   const route = routes.get(0);
   const bounds = route.getBounds();
 
@@ -182,24 +197,29 @@ export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, setRouteDat
     const startAddress = multiRouteRef.current._currentStartAddress || "";
     const endAddress = multiRouteRef.current._currentEndAddress || "";
 
+    const distanceKm = distance.value / 1000;
+    const priceCoefficient = getCarTypePriceCoefficient(selectedCarType);
+
     const newRouteData = {
-      distance: distance.value / 1000, // в километрах
+      distance: distanceKm,
       duration: time.value, // в секундах
       startCoords: referencePoints[0],
       endCoords: referencePoints[1],
       startAddress: startAddress,
       endAddress: endAddress,
+      selectedCarType: selectedCarType,
+      priceCoefficient: priceCoefficient,
     };
 
     setRouteData(newRouteData);
 
     const hours = Math.floor(time.value / 3600);
     const minutes = Math.floor((time.value % 3600) / 60);
-    const cost = (newRouteData.distance * DISTANCE_COEFFICIENT).toFixed(2);
+    const cost = (distanceKm * priceCoefficient).toFixed(2);
 
-    const routeInfo = `Время в пути: ${hours} ч. ${minutes} мин.<br>Расстояние: ${newRouteData.distance.toFixed(
+    const routeInfo = `Время в пути: ${hours} ч. ${minutes} мин.<br>Расстояние: ${distanceKm.toFixed(
       2,
-    )} км<br>Стоимость: ${cost} руб`;
+    )} км<br>Стоимость (${selectedCarType}): ${cost} byn`;
 
     const paths = route.getPaths();
     const coords = paths.get(0).properties.get("coordinates");
@@ -243,9 +263,11 @@ export const buildRoute = async (startAddress, endAddress, multiRouteRef, routeD
 };
 
 // Form submission
-export const prepareFormData = (data, routeData) => {
+export const prepareFormData = (data, routeData, selectedCarType = "sedan") => {
   const tripDateTimeISO =
     data.tripDate && data.tripTime ? new Date(`${data.tripDate}T${data.tripTime}:00`).toISOString() : null;
+
+  const priceCoefficient = routeData.priceCoefficient || getCarTypePriceCoefficient(selectedCarType);
 
   return {
     name: data.name.trim(),
@@ -255,6 +277,7 @@ export const prepareFormData = (data, routeData) => {
     timestamp: new Date().toISOString(),
     userAgent: navigator.userAgent,
     referrer: document.referrer || "Прямой переход",
+    selectedCarType: selectedCarType,
     route: {
       distance: routeData.distance,
       duration: routeData.duration,
@@ -262,8 +285,9 @@ export const prepareFormData = (data, routeData) => {
       endAddress: routeData.endAddress,
       startCoords: routeData.startCoords,
       endCoords: routeData.endCoords,
-      cost: (routeData.distance * DISTANCE_COEFFICIENT).toFixed(2),
-      coefficient: DISTANCE_COEFFICIENT,
+      cost: (routeData.distance * priceCoefficient).toFixed(2),
+      coefficient: priceCoefficient,
+      carType: selectedCarType,
     },
   };
 };

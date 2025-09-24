@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { CheckCircle } from "lucide-react";
 import {
   DISTANCE_COEFFICIENT,
   validateName,
@@ -22,10 +23,12 @@ import {
   submitForm,
 } from "./feedbackFormUtils";
 import { PhoneInput } from "@/components/ui/phone-input";
+import CarTypes from "./CarTypes";
 
 export default function FeedbackForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [selectedCarType, setSelectedCarType] = useState("sedan");
   const [routeData, setRouteData] = useState({
     distance: 0,
     duration: 0,
@@ -98,11 +101,6 @@ export default function FeedbackForm() {
     }, 700),
   );
 
-  // Map update handler
-  const handleUpdateRouteInfo = () => {
-    updateRouteInfo(multiRouteRef, myMapRef, balloonRef, setRouteData);
-  };
-
   // Build route handler
   const handleBuildRoute = async () => {
     await buildRoute(watchedStartAddress, watchedEndAddress, multiRouteRef, routeData, setRouteData);
@@ -120,7 +118,7 @@ export default function FeedbackForm() {
 
     try {
       const formData = {
-        ...prepareFormData(data, routeData),
+        ...prepareFormData(data, routeData, selectedCarType),
         paymentMethod: data.paymentMethod,
         contactMethod: data.contactMethod,
       };
@@ -158,16 +156,23 @@ export default function FeedbackForm() {
     setValue("tripDate", today);
   }, [setValue]);
 
-  // Initialize map
+  // Initialize map ТОЛЬКО ОДИН РАЗ
   useEffect(() => {
     if (typeof window.ymaps !== "undefined") {
       window.ymaps.ready(() => {
-        initMap(mapRef, multiRouteRef, myMapRef, balloonRef, handleUpdateRouteInfo);
+        // Создаем карту только если она еще не создана
+        if (!myMapRef.current) {
+          initMap(mapRef, multiRouteRef, myMapRef, balloonRef, () => {
+            // В этом колбэке мы не передаем selectedCarType, чтобы не создавать зависимость
+            // Обновление цены будет происходить через отдельный useEffect
+            updateRouteInfo(multiRouteRef, myMapRef, balloonRef, setRouteData);
+          });
+        }
       });
     } else {
       console.error("Yandex Maps API не загружен");
     }
-  }, []);
+  }, []); // Пустой массив зависимостей - карта создается только один раз
 
   // Handle autocomplete
   useEffect(() => {
@@ -190,6 +195,13 @@ export default function FeedbackForm() {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
+  // Update route info when car type changes
+  useEffect(() => {
+    if (multiRouteRef.current && routeData.distance > 0) {
+      updateRouteInfo(multiRouteRef, myMapRef, balloonRef, setRouteData, selectedCarType);
+    }
+  }, [selectedCarType, routeData.distance]);
 
   return (
     <div className="pb-16" id="form">
@@ -304,6 +316,9 @@ export default function FeedbackForm() {
                 {errors.tripTime && <p className="text-red-400 text-sm mt-1">{errors.tripTime.message}</p>}
               </div>
             </div>
+
+            {/* Car Selection Section */}
+            <CarTypes selectedCarType={selectedCarType} onCarTypeChange={setSelectedCarType} />
 
             {/* Map and Route Selection */}
             <div>
