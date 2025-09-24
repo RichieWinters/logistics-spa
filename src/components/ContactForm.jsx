@@ -6,12 +6,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, User, Send } from "lucide-react";
 import { toast } from "sonner";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { useLocation } from "react-router-dom";
+import { PAGES } from "@/routes/pageNames";
 
 const ContactForm = ({ title = "Заказать услугу", description = "Оставьте свои контакты и мы свяжемся с вами" }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    category: "",
   });
+  const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (field, value) => {
@@ -26,6 +30,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
     const data = {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
+      category: formData.category || null,
       message: "Заявка с контактной формы",
       tripDateTime: null,
       timestamp: new Date().toISOString(),
@@ -50,7 +55,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
         description: "Мы свяжемся с вами в ближайшее время",
       });
 
-      setFormData({ name: "", phone: "" });
+      setFormData({ name: "", phone: "", category: "" });
     } catch {
       toast.error("Ошибка", {
         description: "Не удалось отправить заявку. Попробуйте позже.",
@@ -98,6 +103,25 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
               required
             />
           </div>
+
+          {location && location.pathname === PAGES.services.personalTransfer.path && (
+            <div className="space-y-2">
+              <Label htmlFor="contact-category" className="text-gray-700 font-medium">
+                Категория услуги (предварительно)
+              </Label>
+              <select
+                id="contact-category"
+                value={formData.category}
+                onChange={(e) => handleInputChange("category", e.target.value)}
+                className="w-full border border-gray-300 focus:border-green-400 focus:ring-green-400 rounded px-3 py-2"
+              >
+                <option value="">Не выбрано</option>
+                <option value="basic">Базовый</option>
+                <option value="premium">Премиум</option>
+                <option value="vip">VIP</option>
+              </select>
+            </div>
+          )}
 
           <Button
             type="submit"

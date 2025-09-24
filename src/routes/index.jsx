@@ -54,11 +54,11 @@ export const router = createBrowserRouter([
       { path: PAGES.services.soberDriver.path, element: <SoberDriverPage /> },
 
       // Excursion pages
-      { path: PAGES.excursions.belarusCastlesTour.path, element: <BelarusCastlesTourPage /> },
+      /*       { path: PAGES.excursions.belarusCastlesTour.path, element: <BelarusCastlesTourPage /> },
       { path: PAGES.excursions.khatynCityTour.path, element: <KhatynCityTourPage /> },
       { path: PAGES.excursions.belAZTour.path, element: <BelazTourPage /> },
       { path: PAGES.excursions.dudutkaMuseumTour.path, element: <DudutkaMuseumTourPage /> },
-
+ */
       // Roadside assistance pages
       { path: PAGES.roadsideAssistance.lockoutAssistance.path, element: <LockoutAssistancePage /> },
       // { path: PAGES.roadsideAssistance.tireChange.path, element: <TireChangePage /> },
