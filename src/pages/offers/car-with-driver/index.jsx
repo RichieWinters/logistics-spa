@@ -20,7 +20,7 @@ export const CarWithDriverPage = () => {
                   Аренда авто с водителем
                 </h1>
                 <p className="text-xl text-white/90 leading-relaxed drop-shadow-lg">
-                  Личный водитель и премиум-автомобиль в вашем распоряжении
+                  Личный водитель и комфортный автомобиль в вашем распоряжении
                 </p>
               </div>
               <HeaderButtons />
@@ -71,8 +71,8 @@ export const CarWithDriverPage = () => {
                 <li className="flex items-start space-x-3">
                   <Star className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-gray-800 font-semibold">VIP-сервис</span>
-                    <p className="text-gray-600 text-sm">Персональное обслуживание высокого уровня</p>
+                    <span className="text-gray-800 font-semibold">Индивидуальный сервис</span>
+                    <p className="text-gray-600 text-sm">Персональное обслуживание для вашего удобства</p>
                   </div>
                 </li>
               </ul>
@@ -134,8 +134,8 @@ export const CarWithDriverPage = () => {
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <Car className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                  <h4 className="font-semibold text-gray-800">Премиум авто</h4>
-                  <p className="text-sm text-gray-600">Новый автопарк</p>
+                  <h4 className="font-semibold text-gray-800">Комфортный авто</h4>
+                  <p className="text-sm text-gray-600">Современный автопарк</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">

@@ -20,7 +20,7 @@ export const EventTransportPage = () => {
                   Автомобили для мероприятий
                 </h1>
                 <p className="text-xl text-white/90 leading-relaxed drop-shadow-lg">
-                  Сделайте ваше торжество незабываемым с премиум-транспортом
+                  Сделайте ваше торжество незабываемым с комфортным транспортом
                 </p>
               </div>
               <HeaderButtons />
@@ -40,7 +40,7 @@ export const EventTransportPage = () => {
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Транспорт для особых событий</h2>
 
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Каждое важное событие в жизни заслуживает особого подхода. Мы предоставляем премиум-автомобили для
+                Каждое важное событие в жизни заслуживает особого подхода. Мы предоставляем современные автомобили для
                 свадеб, юбилеев, корпоративных мероприятий и других торжественных случаев.
               </p>
 
@@ -78,8 +78,8 @@ export const EventTransportPage = () => {
                 <li className="flex items-start space-x-3">
                   <Star className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-gray-800 font-semibold">VIP-события</span>
-                    <p className="text-gray-600 text-sm">Премиум-сервис для особых случаев</p>
+                    <span className="text-gray-800 font-semibold">Особые события</span>
+                    <p className="text-gray-600 text-sm">Высокий уровень сервиса для важных случаев</p>
                   </div>
                 </li>
               </ul>
@@ -96,7 +96,7 @@ export const EventTransportPage = () => {
             <div>
               <img
                 src={mercedesLarge}
-                alt="Премиум автомобиль для мероприятий"
+                alt="Автомобиль для мероприятий"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />
 
@@ -165,7 +165,7 @@ export const EventTransportPage = () => {
                 <div className="text-center mb-2">
                   <span className="bg-green-400 text-white px-2 py-1 rounded text-xs">ПОПУЛЯРНЫЙ</span>
                 </div>
-                <h4 className="font-semibold text-lg mb-2">Премиум</h4>
+                <h4 className="font-semibold text-lg mb-2">Комфорт</h4>
                 <ul className="text-sm text-gray-600 mb-4 space-y-1">
                   <li>• Все из базового</li>
                   <li>• Красная дорожка</li>
@@ -176,9 +176,9 @@ export const EventTransportPage = () => {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h4 className="font-semibold text-lg mb-2">VIP</h4>
+                <h4 className="font-semibold text-lg mb-2">Максимальный комфорт</h4>
                 <ul className="text-sm text-gray-600 mb-4 space-y-1">
-                  <li>• Все из премиум</li>
+                  <li>• Все из комфорт</li>
                   <li>• Живые цветы</li>
                   <li>• Фотограф (1 час)</li>
                   <li>• Весь день</li>

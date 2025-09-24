@@ -7,7 +7,7 @@ export default function AboutUs() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-green-400 text-sm font-medium mb-4">О нас</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Premium Transfer Services</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Доступные трансферы для каждого</h2>
         </div>
 
         {/* Main Content */}
@@ -15,13 +15,13 @@ export default function AboutUs() {
           {/* Text Content */}
           <div>
             <p className="text-lg text-gray-100 leading-relaxed mb-8">
-              Мы специализируемся на предоставлении эксклюзивных трансферных услуг по всей территории Беларуси. Наша
-              команда профессионалов создает индивидуальные решения для каждого клиента, гарантируя безупречный сервис и
-              максимальный комфорт во время путешествий.
+              Мы специализируемся на предоставлении доступных трансферных услуг по всей территории Беларуси. Наша
+              команда профессионалов создает индивидуальные решения для каждого клиента, гарантируя отличный сервис и
+              комфорт во время путешествий.
             </p>
             <p className="text-lg text-gray-100 leading-relaxed">
-              Благодаря многолетнему опыту и постоянному обновлению автопарка, мы обеспечиваем высочайший уровень
-              качества и надежности. Каждая поездка с нами - это гарантия безопасного, комфортного и своевременного
+              Благодаря многолетнему опыту и постоянному обновлению автопарка, мы обеспечиваем высокий уровень
+              качества и надежности. Каждая поездка с нами — это гарантия безопасного, комфортного и своевременного
               прибытия к месту назначения.
             </p>
           </div>
@@ -31,8 +31,8 @@ export default function AboutUs() {
             <div className="flex items-start space-x-4">
               <div className="w-6 h-6 bg-green-400 rounded-full flex-shrink-0 mt-1"></div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Эксклюзивный автопарк</h3>
-                <p className="text-gray-400">Автомобили премиум-класса с полным набором современных удобств</p>
+                <h3 className="text-xl font-semibold mb-2">Современный автопарк</h3>
+                <p className="text-gray-400">Комфортные автомобили с полным набором современных удобств</p>
               </div>
             </div>
 

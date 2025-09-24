@@ -87,7 +87,7 @@ export const AirportTransferPage = () => {
             <div>
               <img
                 src={Service1Large}
-                alt="Премиум автомобиль для трансфера в аэропорт"
+                alt="Автомобиль для трансфера в аэропорт"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />
 
@@ -107,7 +107,7 @@ export const AirportTransferPage = () => {
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <Car className="w-8 h-8 text-green-400 mx-auto mb-2" />
                   <h4 className="font-semibold text-gray-800">Комфорт</h4>
-                  <p className="text-sm text-gray-600">Премиум автомобили</p>
+                  <p className="text-sm text-gray-600">Комфортные автомобили</p>
                 </div>
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
