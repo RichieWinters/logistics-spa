@@ -197,9 +197,9 @@ export const updateRouteInfo = (multiRouteRef, myMapRef, balloonRef, setRouteDat
     const minutes = Math.floor((time.value % 3600) / 60);
     const cost = (newRouteData.distance * DISTANCE_COEFFICIENT).toFixed(2);
 
-    const routeInfo = `Время в пути: ${hours} ч ${minutes} мин, Расстояние: ${newRouteData.distance.toFixed(
+    const routeInfo = `Время в пути: ${hours} ч. ${minutes} мин.<br>Расстояние: ${newRouteData.distance.toFixed(
       2,
-    )} км, Стоимость: ${cost} руб`;
+    )} км<br>Стоимость: ${cost} руб`;
 
     const paths = route.getPaths();
     const coords = paths.get(0).properties.get("coordinates");
