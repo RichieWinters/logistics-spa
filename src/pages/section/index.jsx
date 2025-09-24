@@ -31,7 +31,6 @@ export default function Section({ type }) {
         return [];
     }
   }, [type]);
-
   return (
     <>
       {/* Dark Overlay */}
