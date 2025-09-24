@@ -53,6 +53,11 @@ function formatTelegramMessage(data) {
   if (data.contactMethod === "whatsapp") contactText = "Написать в WhatsApp";
   if (data.contactMethod === "viber") contactText = "Написать в Viber";
 
+  let categoryText = "Не указан";
+  if (data.category === "basic") categoryText = "Базовый";
+  if (data.category === "premium") categoryText = "Премиум";
+  if (data.category === "vip") categoryText = "VIP";
+
   return `
 🚗 <b>НОВАЯ ЗАЯВКА НА ПОЕЗДКУ</b>
 
@@ -61,6 +66,7 @@ function formatTelegramMessage(data) {
 💬 <b>Сообщение:</b> ${data.message || "Не указано"}
 💳 <b>Способ оплаты:</b> ${paymentText}
 📬 <b>Предпочтительный контакт:</b> ${contactText}
+🪪 <b>Категория услуги:</b> ${categoryText}
 
 🗓 <b>Дата поездки:</b> ${tripDate}
 ⏰ <b>Заявка подана:</b> ${requestDate}
