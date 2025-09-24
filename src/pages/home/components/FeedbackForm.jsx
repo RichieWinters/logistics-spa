@@ -119,7 +119,10 @@ export default function FeedbackForm() {
     setIsLoading(true);
 
     try {
-      const formData = prepareFormData(data, routeData);
+      const formData = {
+        ...prepareFormData(data, routeData),
+        paymentMethod: data.paymentMethod,
+      };
       await submitForm(formData);
 
       setShowSuccess(true);
@@ -407,6 +410,30 @@ export default function FeedbackForm() {
               />
               {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
             </div>
+
+            {/* Payment method radio buttons */}
+            <div className="mb-4 flex gap-6 items-center">
+              <span className="text-sm font-medium text-white/80">Способ оплаты:</span>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  value="cash"
+                  {...register("paymentMethod", { required: true })}
+                  className="accent-green-400"
+                />
+                <span className="text-white">Наличный расчет</span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  value="card"
+                  {...register("paymentMethod", { required: true })}
+                  className="accent-green-400"
+                />
+                <span className="text-white">Безналичный</span>
+              </label>
+            </div>
+            {errors.paymentMethod && <p className="text-red-400 text-sm mb-2">Пожалуйста, выберите способ оплаты</p>}
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
