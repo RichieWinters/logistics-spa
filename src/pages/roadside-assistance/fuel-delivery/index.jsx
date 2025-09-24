@@ -145,15 +145,23 @@ export const FuelDeliveryPage = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Бензин АИ-95:</span>
-                    <span className="font-semibold">2.65 BYN/л</span>
+                    <span className="font-semibold">2.60 BYN/л</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Бензин АИ-98:</span>
+                    <span className="font-semibold">2.82 BYN/л</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Бензин АИ-100:</span>
+                    <span className="font-semibold">2.83 BYN/л</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Дизельное топливо:</span>
-                    <span className="font-semibold">2.40 BYN/л</span>
+                    <span className="font-semibold">2.60 BYN/л</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Стоимость доставки:</span>
-                    <span className="font-semibold">20 BYN</span>
+                    <span className="font-semibold">40 BYN</span>
                   </div>
                   <div className="text-xs text-gray-500 mt-2">* За город - дополнительно 1 BYN за км</div>
                 </div>
