@@ -199,7 +199,10 @@ export default function FeedbackForm() {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 <Label htmlFor="name" className="text-sm font-medium text-white/80 mb-2 block">
-                  Имя <span className="text-red-500">*</span>
+                  Имя{" "}
+                  {watch("name") && validateName(watch("name")) === null && (
+                    <span className="text-green-500 font-bold">✓</span>
+                  )}
                 </Label>
                 <Input
                   id="name"
@@ -227,7 +230,10 @@ export default function FeedbackForm() {
                   render={({ field }) => (
                     <>
                       <Label htmlFor="phone" className="text-sm font-medium text-white/80 mb-2 block">
-                        Номер телефона <span className="text-red-500">*</span>
+                        Номер телефона{" "}
+                        {watch("phone") && validatePhone(watch("phone")) === null && (
+                          <span className="text-green-500 font-bold">✓</span>
+                        )}
                       </Label>
                       <PhoneInput
                         id="phone"
@@ -250,7 +256,10 @@ export default function FeedbackForm() {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 <Label htmlFor="tripDate" className="text-sm font-medium text-white/80 mb-2 block">
-                  Дата поездки <span className="text-red-500">*</span>
+                  Дата поездки{" "}
+                  {watch("tripDate") && validateDate(watch("tripDate")) === null && (
+                    <span className="text-green-500 font-bold">✓</span>
+                  )}
                 </Label>
                 <Input
                   id="tripDate"
@@ -269,7 +278,10 @@ export default function FeedbackForm() {
 
               <div className="flex-1">
                 <Label htmlFor="tripTime" className="text-sm font-medium text-white/80 mb-2 block">
-                  Ориентировочное время <span className="text-red-500">*</span>
+                  Ориентировочное время{" "}
+                  {watch("tripTime") && validateTime(watch("tripTime")) === null && (
+                    <span className="text-green-500 font-bold">✓</span>
+                  )}
                 </Label>
                 <Input
                   id="tripTime"
