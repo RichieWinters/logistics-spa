@@ -122,6 +122,7 @@ export default function FeedbackForm() {
       const formData = {
         ...prepareFormData(data, routeData),
         paymentMethod: data.paymentMethod,
+        contactMethod: data.contactMethod,
       };
       await submitForm(formData);
 
@@ -392,6 +393,28 @@ export default function FeedbackForm() {
 
             {/* Message */}
             <div>
+              {/* Preferred contact method dropdown */}
+              <div className="mb-4">
+                <Label htmlFor="contactMethod" className="text-sm font-medium text-white/80 mb-2 block">
+                  Как с вами лучше связаться?
+                </Label>
+                <div className="relative">
+                  <select
+                    id="contactMethod"
+                    {...register("contactMethod")}
+                    className="w-full bg-white text-gray-900 border border-gray-300 rounded-lg px-3 py-2 focus:border-green-400 focus:ring-green-400/20 appearance-none cursor-pointer"
+                    defaultValue=""
+                  >
+                    <option value="">Выберите способ связи (не обязательно)</option>
+                    <option value="phone">Позвонить по телефону</option>
+                    <option value="telegram">Написать в Telegram</option>
+                    <option value="whatsapp">Написать в WhatsApp</option>
+                    <option value="viber">Написать в Viber</option>
+                  </select>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">▼</span>
+                </div>
+              </div>
+
               <Label htmlFor="message" className="text-sm lg:text-base font-medium text-white/80 mb-2 block">
                 Сообщение
               </Label>
@@ -437,6 +460,9 @@ export default function FeedbackForm() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="w-full text-center text-xs text-gray-300 mb-2">
+                * Цена примерная, окончательная стоимость обсуждается после оформления заявки с менеджером.
+              </div>
               <Button
                 type="button"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-3 min-w-[200px] transition-colors"

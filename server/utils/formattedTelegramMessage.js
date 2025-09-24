@@ -47,6 +47,12 @@ function formatTelegramMessage(data) {
   if (data.paymentMethod === "cash") paymentText = "Наличный расчет";
   if (data.paymentMethod === "card") paymentText = "Безналичный";
 
+  let contactText = "Не указан";
+  if (data.contactMethod === "phone") contactText = "Позвонить по телефону";
+  if (data.contactMethod === "telegram") contactText = "Написать в Telegram";
+  if (data.contactMethod === "whatsapp") contactText = "Написать в WhatsApp";
+  if (data.contactMethod === "viber") contactText = "Написать в Viber";
+
   return `
 🚗 <b>НОВАЯ ЗАЯВКА НА ПОЕЗДКУ</b>
 
@@ -54,6 +60,7 @@ function formatTelegramMessage(data) {
 📞 <b>Телефон:</b> <code>${data.phone || "Не указан"}</code>
 💬 <b>Сообщение:</b> ${data.message || "Не указано"}
 💳 <b>Способ оплаты:</b> ${paymentText}
+📬 <b>Предпочтительный контакт:</b> ${contactText}
 
 🗓 <b>Дата поездки:</b> ${tripDate}
 ⏰ <b>Заявка подана:</b> ${requestDate}
