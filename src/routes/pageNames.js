@@ -72,6 +72,10 @@ export const PAGES = {
     //   path: "/roadside-assistance/emergency-towing",
     //   title: "Буксировка",
     // },
+    wheelSwapping: {
+      path: "/roadside-assistance/wheel-swapping",
+      title: "Подкачка колеса",
+    },
   },
 };
 

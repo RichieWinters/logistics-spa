@@ -22,6 +22,7 @@ import { EmergencyTowingPage } from "@/pages/roadside-assistance/emergency-towin
 import { TireChangePage } from "@/pages/roadside-assistance/tire-change";
 import { FuelDeliveryPage } from "@/pages/roadside-assistance/fuel-delivery";
 import { LockoutAssistancePage } from "@/pages/roadside-assistance/lockout-assistance";
+import { WheelSwapping } from "@/pages/roadside-assistance/wheel-swapping";
 
 export const router = createBrowserRouter([
   {
@@ -62,7 +63,7 @@ export const router = createBrowserRouter([
       { path: PAGES.roadsideAssistance.lockoutAssistance.path, element: <LockoutAssistancePage /> },
       // { path: PAGES.roadsideAssistance.tireChange.path, element: <TireChangePage /> },
       { path: PAGES.roadsideAssistance.fuelDelivery.path, element: <FuelDeliveryPage /> },
-      // { path: PAGES.roadsideAssistance.emergencyTowing.path, element: <EmergencyTowingPage /> },
+      { path: PAGES.roadsideAssistance.wheelSwapping.path, element: <WheelSwapping /> },
     ],
   },
   {
