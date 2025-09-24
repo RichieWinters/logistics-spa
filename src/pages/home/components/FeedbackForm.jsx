@@ -70,31 +70,33 @@ export default function FeedbackForm() {
   const watchedStartAddress = watch("startAddress");
   const watchedEndAddress = watch("endAddress");
 
-  // Handle start address autocomplete
-  const handleStartAutocomplete = debounce(async (value) => {
-    if (!value.trim()) {
-      setStartSuggestions([]);
-      setShowStartSuggestions(false);
-      return;
-    }
+  // Handle start address autocomplete (debounced)
+  // Memoize debounced autocomplete handlers with useRef to avoid useCallback dependency issues
+  const handleStartAutocompleteRef = useRef(
+    debounce(async (value) => {
+      if (!value.trim()) {
+        setStartSuggestions([]);
+        setShowStartSuggestions(false);
+        return;
+      }
+      const suggestions = await getSimilarRoutes(value);
+      setStartSuggestions(suggestions);
+      setShowStartSuggestions(suggestions.length > 0);
+    }, 700),
+  );
 
-    const suggestions = await getSimilarRoutes(value);
-    setStartSuggestions(suggestions);
-    setShowStartSuggestions(suggestions.length > 0);
-  });
-
-  // Handle end address autocomplete
-  const handleEndAutocomplete = debounce(async (value) => {
-    if (!value.trim()) {
-      setEndSuggestions([]);
-      setShowEndSuggestions(false);
-      return;
-    }
-
-    const suggestions = await getSimilarRoutes(value);
-    setEndSuggestions(suggestions);
-    setShowEndSuggestions(suggestions.length > 0);
-  });
+  const handleEndAutocompleteRef = useRef(
+    debounce(async (value) => {
+      if (!value.trim()) {
+        setEndSuggestions([]);
+        setShowEndSuggestions(false);
+        return;
+      }
+      const suggestions = await getSimilarRoutes(value);
+      setEndSuggestions(suggestions);
+      setShowEndSuggestions(suggestions.length > 0);
+    }, 700),
+  );
 
   // Map update handler
   const handleUpdateRouteInfo = () => {
@@ -165,11 +167,11 @@ export default function FeedbackForm() {
 
   // Handle autocomplete
   useEffect(() => {
-    handleStartAutocomplete(watchedStartAddress);
+    handleStartAutocompleteRef.current(watchedStartAddress);
   }, [watchedStartAddress]);
 
   useEffect(() => {
-    handleEndAutocomplete(watchedEndAddress);
+    handleEndAutocompleteRef.current(watchedEndAddress);
   }, [watchedEndAddress]);
 
   // Close suggestions when clicking outside
@@ -325,6 +327,7 @@ export default function FeedbackForm() {
                             onClick={() => {
                               setValue("startAddress", suggestion.text || suggestion?.address?.formatted_address);
                               setShowStartSuggestions(false);
+                              setStartSuggestions([]);
                             }}
                           >
                             <div className="font-medium text-gray-900">
@@ -356,6 +359,7 @@ export default function FeedbackForm() {
                             onClick={() => {
                               setValue("endAddress", suggestion.text || suggestion?.address?.formatted_address);
                               setShowEndSuggestions(false);
+                              setEndSuggestions([]);
                             }}
                           >
                             <div className="font-medium text-gray-900">
