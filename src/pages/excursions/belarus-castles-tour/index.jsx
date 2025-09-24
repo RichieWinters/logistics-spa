@@ -82,7 +82,7 @@ export const BelarusCastlesTourPage = () => {
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-600">Комфортная поездка на премиум-автомобиле</span>
+                  <span className="text-gray-600">Комфортная поездка на современном автомобиле</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />

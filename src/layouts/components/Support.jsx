@@ -46,7 +46,7 @@ const Support = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-1000 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 flex flex-col items-end z-50">
       <div
         className="relative flex items-center justify-center cursor-pointer"
         onMouseEnter={() => setOpen(true)}
@@ -55,7 +55,11 @@ const Support = () => {
       >
         <span className="relative flex items-center justify-center">
           <span className="absolute inset-0 rounded-full animate-pulse-support-ring"></span>
-          <img src={supportIcon} className="w-20 h-20 relative z-10  rounded-full p-2 shadow-lg" alt="Support" />
+          <img
+            src={supportIcon}
+            className="w-20 h-20 relative rounded-full p-2 shadow-2xl bg-green-50/95"
+            alt="Support"
+          />
         </span>
         {/* Popup absolutely positioned above the button */}
         <div
@@ -70,7 +74,7 @@ const Support = () => {
               onClick={item.name === "Телефон" ? handleScrollToForm : undefined}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white/90 hover:bg-green-100 px-3 py-2 rounded-2xl shadow-lg transition-colors justify-between"
+              className="flex items-center gap-2 bg-white/95 backdrop-blur-sm border border-gray-200/60 hover:bg-green-50 px-3 py-2 rounded-2xl shadow-2xl transition-colors justify-between"
               style={{ minWidth: "180px", width: "200px" }}
             >
               <span className="flex items-center gap-2">

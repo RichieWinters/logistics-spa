@@ -70,31 +70,33 @@ export default function FeedbackForm() {
   const watchedStartAddress = watch("startAddress");
   const watchedEndAddress = watch("endAddress");
 
-  // Handle start address autocomplete
-  const handleStartAutocomplete = debounce(async (value) => {
-    if (!value.trim()) {
-      setStartSuggestions([]);
-      setShowStartSuggestions(false);
-      return;
-    }
+  // Handle start address autocomplete (debounced)
+  // Memoize debounced autocomplete handlers with useRef to avoid useCallback dependency issues
+  const handleStartAutocompleteRef = useRef(
+    debounce(async (value) => {
+      if (!value.trim()) {
+        setStartSuggestions([]);
+        setShowStartSuggestions(false);
+        return;
+      }
+      const suggestions = await getSimilarRoutes(value);
+      setStartSuggestions(suggestions);
+      setShowStartSuggestions(suggestions.length > 0);
+    }, 700),
+  );
 
-    const suggestions = await getSimilarRoutes(value);
-    setStartSuggestions(suggestions);
-    setShowStartSuggestions(suggestions.length > 0);
-  });
-
-  // Handle end address autocomplete
-  const handleEndAutocomplete = debounce(async (value) => {
-    if (!value.trim()) {
-      setEndSuggestions([]);
-      setShowEndSuggestions(false);
-      return;
-    }
-
-    const suggestions = await getSimilarRoutes(value);
-    setEndSuggestions(suggestions);
-    setShowEndSuggestions(suggestions.length > 0);
-  });
+  const handleEndAutocompleteRef = useRef(
+    debounce(async (value) => {
+      if (!value.trim()) {
+        setEndSuggestions([]);
+        setShowEndSuggestions(false);
+        return;
+      }
+      const suggestions = await getSimilarRoutes(value);
+      setEndSuggestions(suggestions);
+      setShowEndSuggestions(suggestions.length > 0);
+    }, 700),
+  );
 
   // Map update handler
   const handleUpdateRouteInfo = () => {
@@ -117,7 +119,11 @@ export default function FeedbackForm() {
     setIsLoading(true);
 
     try {
-      const formData = prepareFormData(data, routeData);
+      const formData = {
+        ...prepareFormData(data, routeData),
+        paymentMethod: data.paymentMethod,
+        contactMethod: data.contactMethod,
+      };
       await submitForm(formData);
 
       setShowSuccess(true);
@@ -165,11 +171,11 @@ export default function FeedbackForm() {
 
   // Handle autocomplete
   useEffect(() => {
-    handleStartAutocomplete(watchedStartAddress);
+    handleStartAutocompleteRef.current(watchedStartAddress);
   }, [watchedStartAddress]);
 
   useEffect(() => {
-    handleEndAutocomplete(watchedEndAddress);
+    handleEndAutocompleteRef.current(watchedEndAddress);
   }, [watchedEndAddress]);
 
   // Close suggestions when clicking outside
@@ -325,6 +331,7 @@ export default function FeedbackForm() {
                             onClick={() => {
                               setValue("startAddress", suggestion.text || suggestion?.address?.formatted_address);
                               setShowStartSuggestions(false);
+                              setStartSuggestions([]);
                             }}
                           >
                             <div className="font-medium text-gray-900">
@@ -356,6 +363,7 @@ export default function FeedbackForm() {
                             onClick={() => {
                               setValue("endAddress", suggestion.text || suggestion?.address?.formatted_address);
                               setShowEndSuggestions(false);
+                              setEndSuggestions([]);
                             }}
                           >
                             <div className="font-medium text-gray-900">
@@ -385,6 +393,28 @@ export default function FeedbackForm() {
 
             {/* Message */}
             <div>
+              {/* Preferred contact method dropdown */}
+              <div className="mb-4">
+                <Label htmlFor="contactMethod" className="text-sm font-medium text-white/80 mb-2 block">
+                  Как с вами лучше связаться?
+                </Label>
+                <div className="relative">
+                  <select
+                    id="contactMethod"
+                    {...register("contactMethod")}
+                    className="w-full bg-white text-gray-900 border border-gray-300 rounded-lg px-3 py-2 focus:border-green-400 focus:ring-green-400/20 appearance-none cursor-pointer"
+                    defaultValue=""
+                  >
+                    <option value="">Выберите способ связи (не обязательно)</option>
+                    <option value="phone">Позвонить по телефону</option>
+                    <option value="telegram">Написать в Telegram</option>
+                    <option value="whatsapp">Написать в WhatsApp</option>
+                    <option value="viber">Написать в Viber</option>
+                  </select>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">▼</span>
+                </div>
+              </div>
+
               <Label htmlFor="message" className="text-sm lg:text-base font-medium text-white/80 mb-2 block">
                 Сообщение
               </Label>
@@ -404,8 +434,35 @@ export default function FeedbackForm() {
               {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
             </div>
 
+            {/* Payment method radio buttons */}
+            <div className="mb-4 flex gap-6 items-center">
+              <span className="text-sm font-medium text-white/80">Способ оплаты:</span>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  value="cash"
+                  {...register("paymentMethod", { required: true })}
+                  className="accent-green-400"
+                />
+                <span className="text-white">Наличный расчет</span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  value="card"
+                  {...register("paymentMethod", { required: true })}
+                  className="accent-green-400"
+                />
+                <span className="text-white">Безналичный</span>
+              </label>
+            </div>
+            {errors.paymentMethod && <p className="text-red-400 text-sm mb-2">Пожалуйста, выберите способ оплаты</p>}
+
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="w-full text-center text-xs text-gray-300 mb-2">
+                * Цена примерная, окончательная стоимость обсуждается после оформления заявки с менеджером.
+              </div>
               <Button
                 type="button"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-3 min-w-[200px] transition-colors"

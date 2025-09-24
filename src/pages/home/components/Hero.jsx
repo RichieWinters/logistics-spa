@@ -23,13 +23,12 @@ export default function Hero() {
         {/* Content */}
         <div className="relative flex flex-col items-start justify-center text-start md:mt-0">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white sm:mb-8 drop-shadow-2xl shadow-black/50">
-            ПРЕМИУМ-ТРАНСФЕР В БЕЛАРУСИ
+            ТРАНСФЕР В БЕЛАРУСИ
           </h1>
           <p className="text-md sm:text-2xl text-white max-w-3xl leading-relaxed drop-shadow-2xl shadow-black/50">
-            Наша служба трансфера обеспечивает премиум-перевозки по всей территории Беларуси. Мы соединяем города,
-            аэропорты и популярные туристические направления современным автопарком разного уровня комфорта.
-            Заблаговременное резервирование гарантирует экономию времени и максимально приятное путешествие для каждого
-            клиента.
+            Наша служба трансфера обеспечивает комфортные перевозки по всей территории Беларуси. Мы соединяем города,
+            аэропорты и популярные туристические направления современным автопарком. Заблаговременное резервирование
+            гарантирует экономию времени и приятное путешествие для каждого клиента.
           </p>
           <div className="flex w-full flex-col md:flex-row gap-4 sm:gap-8 mt-4">
             {/* First Button - Opens Dialog */}
