@@ -61,7 +61,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto shadow-lg border-green-200">
+    <Card id="form" className="w-full max-w-md mx-auto shadow-lg border-green-200">
       <CardHeader className="text-center bg-gradient-to-r from-green-50 to-emerald-50">
         <CardTitle className="text-2xl font-bold text-gray-800 mb-2">{title}</CardTitle>
         <p className="text-gray-600 text-sm">{description}</p>
