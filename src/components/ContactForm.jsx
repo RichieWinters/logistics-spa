@@ -104,7 +104,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
             />
           </div>
 
-          {location && location.pathname === PAGES.services.personalTransfer.path && (
+          {location && location.pathname === PAGES.services.carWithDriver.path && (
             <div className="space-y-2">
               <Label htmlFor="contact-category" className="text-gray-700 font-medium">
                 Категория услуги (предварительно)
