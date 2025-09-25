@@ -1,4 +1,9 @@
+const { PAGES } = require("@/routes/pageNames");
 const getBrowserInfo = require("./getBrowserInfo");
+
+const excursionNamesMap = new Map(
+  PAGES.concreteExcursions.map((excursion) => [excursion.path.split("/").pop(), excursion.name]),
+);
 
 // Функция для форматирования сообщения для Telegram
 function formatTelegramMessage(data) {
@@ -22,8 +27,40 @@ function formatTelegramMessage(data) {
     }
   };
 
-  const tripDate = formatDate(data.tripDateTime);
+  // Определяем тип заявки по наличию специфических полей
+  const isExcursionRequest = data.excursionTitle || data.tripDateTime;
+
   const requestDate = formatDate(data.timestamp);
+  const browserInfo = data.userAgent ? getBrowserInfo(data.userAgent) : "Не определено";
+
+  // Обработка экскурсионных заявок
+  if (isExcursionRequest) {
+    const tripDateTime = data.tripDateTime ? `${formatDate(data.tripDateTime)}` : "Не указана";
+    const excursionTitle = data.excursionTitle || "Не указана";
+    const peopleCount = data.peopleCount || "Не указано";
+    const message = data.message || "Не указан";
+
+    return `
+🎯 <b>НОВАЯ ЗАЯВКА НА ЭКСКУРСИЮ</b>
+
+👤 <b>Клиент:</b> ${data.name || "Не указано"}
+📞 <b>Телефон:</b> <code>${data.phone || "Не указан"}</code>
+🎪 <b>Экскурсия:</b> ${excursionNamesMap.get(excursionTitle) || excursionTitle}
+
+📅 <b>Дата и время экскурсии:</b> ${tripDateTime}
+👥 <b>Количество человек:</b> ${peopleCount}
+💬 <b>Комментарий:</b> ${message}
+🪪 <b>Категория услуги:</b> ${categoryText}
+
+⏰ <b>Заявка подана:</b> ${requestDate}
+🌐 <b>Источник:</b> ${data.referrer || "Не указан"}
+📱 <b>Устройство:</b> ${browserInfo}
+📄 <b>Страница:</b> ${data.route || "Не указана"}
+    `.trim();
+  }
+
+  // Обработка обычных заявок на поездки
+  const tripDate = formatDate(data.tripDateTime);
 
   const route = data.route || {};
   const distance = route.distance ? route.distance.toFixed(2) : "Не указано";
@@ -40,8 +77,6 @@ function formatTelegramMessage(data) {
 
   const startCoords = getCoords(route.startCoords);
   const endCoords = getCoords(route.endCoords);
-
-  const browserInfo = data.userAgent ? getBrowserInfo(data.userAgent) : "Не определено";
 
   let paymentText = "Не указан";
   if (data.paymentMethod === "cash") paymentText = "Наличный расчет";
@@ -79,7 +114,7 @@ function formatTelegramMessage(data) {
 ⏰ <b>Заявка подана:</b> ${requestDate}
 
 🛣 <b>МАРШРУТ:</b>
-📍 <b>Автомобиль:<b> ${carTypeText}
+📍 <b>Автомобиль:</b> ${carTypeText}
 📍 <b>Откуда:</b> ${route.startAddress || "Не указано"}
 📍 <b>Куда:</b> ${route.endAddress || "Не указано"}
 
