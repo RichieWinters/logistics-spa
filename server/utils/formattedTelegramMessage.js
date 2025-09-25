@@ -58,6 +58,13 @@ function formatTelegramMessage(data) {
   if (data.category === "premium") categoryText = "Премиум";
   if (data.category === "vip") categoryText = "VIP";
 
+  let carTypeText = "Не указана";
+  if (data.selectedCarType === "sedan") carTypeText = "Седан";
+  if (data.selectedCarType === "universal") carTypeText = "Универсал";
+  if (data.selectedCarType === "minivan") carTypeText = "Минивэн";
+  if (data.selectedCarType === "business") carTypeText = "Бизнес";
+  if (data.selectedCarType === "bus") carTypeText = "Бус";
+
   return `
 🚗 <b>НОВАЯ ЗАЯВКА НА ПОЕЗДКУ</b>
 
@@ -72,6 +79,7 @@ function formatTelegramMessage(data) {
 ⏰ <b>Заявка подана:</b> ${requestDate}
 
 🛣 <b>МАРШРУТ:</b>
+📍 <b>Автомобиль:<b> ${carTypeText}
 📍 <b>Откуда:</b> ${route.startAddress || "Не указано"}
 📍 <b>Куда:</b> ${route.endAddress || "Не указано"}
 
