@@ -1,9 +1,4 @@
-const { PAGES } = require("@/routes/pageNames");
 const getBrowserInfo = require("./getBrowserInfo");
-
-const excursionNamesMap = new Map(
-  PAGES.concreteExcursions.map((excursion) => [excursion.path.split("/").pop(), excursion.name]),
-);
 
 // Функция для форматирования сообщения для Telegram
 function formatTelegramMessage(data) {
@@ -28,7 +23,7 @@ function formatTelegramMessage(data) {
   };
 
   // Определяем тип заявки по наличию специфических полей
-  const isExcursionRequest = data.excursionTitle || data.tripDateTime;
+  const isExcursionRequest = data.excursionTitle;
 
   const requestDate = formatDate(data.timestamp);
   const browserInfo = data.userAgent ? getBrowserInfo(data.userAgent) : "Не определено";
@@ -45,17 +40,30 @@ function formatTelegramMessage(data) {
 
 👤 <b>Клиент:</b> ${data.name || "Не указано"}
 📞 <b>Телефон:</b> <code>${data.phone || "Не указан"}</code>
-🎪 <b>Экскурсия:</b> ${excursionNamesMap.get(excursionTitle) || excursionTitle}
+🎪 <b>Экскурсия:</b> ${excursionTitle}
 
 📅 <b>Дата и время экскурсии:</b> ${tripDateTime}
 👥 <b>Количество человек:</b> ${peopleCount}
 💬 <b>Комментарий:</b> ${message}
-🪪 <b>Категория услуги:</b> ${categoryText}
 
 ⏰ <b>Заявка подана:</b> ${requestDate}
 🌐 <b>Источник:</b> ${data.referrer || "Не указан"}
 📱 <b>Устройство:</b> ${browserInfo}
-📄 <b>Страница:</b> ${data.route || "Не указана"}
+    `.trim();
+  }
+
+  if (data.type && data.message === "Заявка с контактной формы") {
+    return `
+📩 <b>НОВАЯ ЗАЯВКА С КОНТАКТНОЙ ФОРМЫ</b>
+
+👤 <b>Клиент:</b> ${data.name || "Не указано"}
+📞 <b>Телефон:</b> <code>${data.phone || "Не указан"}</code>
+💬 <b>Сообщение:</b> ${data.message || "Не указано"}
+🪪 <b>Категория услуги:</b> ${data.type || "Не указана"}
+
+🗓 <b>Дата заявки:</b> ${requestDate}
+🌐 <b>Источник:</b> ${data.referrer || "Не указан"}
+📱 <b>Устройство:</b> ${browserInfo}
     `.trim();
   }
 

@@ -1,8 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import ExcursionsCarousel from "@/components/ExcursionsCarousel";
-
-export const RUB_RATE = 27.48;
-export const USD_RATE = 0.32;
+import { RUB_RATE, USD_RATE } from "@/constants";
 
 export const ExcursionTemplate = ({ title, description, images, time, distance, location, price }) => {
   const rendertCurrencies = (price) => {

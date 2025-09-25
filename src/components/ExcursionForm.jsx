@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { useLocation } from "react-router-dom";
 import { PAGES } from "@/routes/pageNames";
+import { pageNamesMap } from "@/constants";
 
 const ExcursionForm = ({
   title = "Заказать экскурсию",
@@ -34,16 +35,18 @@ const ExcursionForm = ({
     e.preventDefault();
     setIsSubmitting(true);
 
+    const excursionTitle = location.pathname.split("/").pop();
     // Подготовка данных для бэкенда (аналогично FeedbackForm)
     const data = {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
       message: formData.comment.trim() || "Заявка с контактной формы",
-      excursionTitle: location.pathname.split("/").pop() || "Экскурсия не определена",
+      excursionTitle: pageNamesMap.get(excursionTitle) || excursionTitle || "Экскурсия не определена",
       tripDateTime: formData.date && formData.time ? `${formData.date} ${formData.time}` : null,
       peopleCount: formData.peopleCount ? parseInt(formData.peopleCount) : null,
       timestamp: new Date().toISOString(),
       userAgent: navigator.userAgent,
+      referrer: document.referrer || "Прямой переход",
     };
 
     try {

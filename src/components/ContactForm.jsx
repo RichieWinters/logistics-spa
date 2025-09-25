@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { useLocation } from "react-router-dom";
 import { PAGES } from "@/routes/pageNames";
+import { pageNamesMap } from "@/constants";
 
 const ContactForm = ({ title = "Заказать услугу", description = "Оставьте свои контакты и мы свяжемся с вами" }) => {
   const [formData, setFormData] = useState({
@@ -30,6 +31,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
     const data = {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
+      type: pageNamesMap.get(location.pathname.split("/").pop()) || location.pathname.split("/").pop(),
       category: formData.category || null,
       message: "Заявка с контактной формы",
       tripDateTime: null,

@@ -1,4 +1,5 @@
-import { ExcursionTemplate, RUB_RATE, USD_RATE } from "./components/ExcursionTemplate";
+import { ExcursionTemplate } from "./components/ExcursionTemplate";
+import { RUB_RATE, USD_RATE } from "@/constants";
 import image1 from "@/../public/sula/1.jpeg";
 import image2 from "@/../public/sula/2.webp";
 import image3 from "@/../public/sula/3.jpg";

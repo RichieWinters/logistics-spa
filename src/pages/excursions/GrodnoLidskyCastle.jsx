@@ -1,4 +1,5 @@
-import { ExcursionTemplate, RUB_RATE, USD_RATE } from "./components/ExcursionTemplate";
+import { ExcursionTemplate } from "./components/ExcursionTemplate";
+import { RUB_RATE, USD_RATE } from "@/constants";
 import image1 from "@/../public/lidskiy-castle/1.jpg";
 import image2 from "@/../public/lidskiy-castle/2.jpg";
 import image3 from "@/../public/lidskiy-castle/3.jpg";
