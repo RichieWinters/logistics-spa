@@ -64,7 +64,11 @@ export default function CarTypes({ selectedCarType, onCarTypeChange }) {
           >
             {/* Car Icon */}
             <div className="flex justify-center mb-3">
-              <img src={carType.icon} alt={carType.name} className="w-30 h-12 object-contain" />
+              {carType.id === "universal" ? (
+                <img src={carType.icon} alt={carType.name} className="w-35 h-12 object-cover bg-no-repeat" />
+              ) : (
+                <img src={carType.icon} alt={carType.name} className="w-30 h-12 object-contain" />
+              )}
             </div>
 
             {/* Car Name */}
@@ -87,7 +91,9 @@ export default function CarTypes({ selectedCarType, onCarTypeChange }) {
 
               {/* Price per km */}
 
-              <div className="text-green-400 font-semibold text-sm mt-auto w-full text-center">{carType.pricePerKm} byn/км</div>
+              <div className="text-green-400 font-semibold text-sm mt-auto w-full text-center">
+                {carType.pricePerKm} byn/км
+              </div>
             </div>
 
             {/* Selected Indicator */}
