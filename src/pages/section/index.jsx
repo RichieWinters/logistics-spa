@@ -6,8 +6,6 @@ import { assistItems, excursionItems, serviceItems } from "./constants";
 import { useMemo } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import { PAGE_SEO_CONFIG } from "@/utils/seo";
-import { Button } from "@/components/ui/button";
-import ScrollToContactButton from "@/components/ScrollToContactButton";
 import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export default function Section({ type, heroImg }) {

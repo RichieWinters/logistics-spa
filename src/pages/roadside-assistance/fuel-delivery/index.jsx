@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Phone, CheckCircle, Fuel, Zap, AlertTriangle, Gauge } from "lucide-react";
-import ScrollToContactButton from "@/components/ScrollToContactButton";
-import Service2 from "@/assets/images/Service2.jpg";
+import roadside2 from "@/../public/roadside-assistance/lockout-assistance/2.jpg";
+
 import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const FuelDeliveryPage = () => {
@@ -9,7 +9,7 @@ export const FuelDeliveryPage = () => {
     <>
       {/* Hero Section */}
       <div className="relative">
-        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Service2})` }}>
+        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${roadside2})` }}>
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
 
@@ -105,7 +105,7 @@ export const FuelDeliveryPage = () => {
             {/* Right Column - Image and Features */}
             <div>
               <img
-                src={Service2}
+                src={roadside2}
                 alt="Доставка топлива на дорогу"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />

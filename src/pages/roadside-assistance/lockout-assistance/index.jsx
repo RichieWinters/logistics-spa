@@ -1,6 +1,5 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Phone, CheckCircle, Battery, Shield, Zap, Car } from "lucide-react";
-import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
 import lockoutAssistanceImg from "/roadside-assistance/lockout-assistance/image.jpg";
 import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
