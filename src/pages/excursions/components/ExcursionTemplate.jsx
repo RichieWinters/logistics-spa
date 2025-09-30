@@ -6,12 +6,14 @@ export const ExcursionTemplate = ({
   title,
   description,
   images,
-  time,
-  distance,
-  location,
+  time = null,
+  distance = null,
+  location = null,
   price,
   extraInfo = null,
+  customDetails = null,
   isFullPrice = false,
+  customPriceCondition = null,
 }) => {
   const rendertCurrencies = (price) => {
     if (!Number.isNaN(Number(price))) {
@@ -43,29 +45,33 @@ export const ExcursionTemplate = ({
 
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Детали поездки:</h3>
 
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-800 font-semibold">Время в пути до точки</span>
-                    <p className="text-gray-600 text-sm">{time}</p>
-                  </div>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-800 font-semibold">Километров в пути до точки</span>
-                    <p className="text-gray-600 text-sm">{distance}</p>
-                  </div>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-800 font-semibold">Местоположение</span>
-                    <p className="text-gray-600 text-sm">{location}</p>
-                  </div>
-                </li>
-              </ul>
+              {customDetails ? (
+                customDetails
+              ) : (
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <div>
+                      <span className="text-gray-800 font-semibold">Время в пути до точки</span>
+                      <p className="text-gray-600 text-sm">{time}</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <div>
+                      <span className="text-gray-800 font-semibold">Километров в пути до точки</span>
+                      <p className="text-gray-600 text-sm">{distance}</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <div>
+                      <span className="text-gray-800 font-semibold">Местоположение</span>
+                      <p className="text-gray-600 text-sm">{location}</p>
+                    </div>
+                  </li>
+                </ul>
+              )}
             </div>
             {extraInfo}
             <div className="bg-green-50 p-6 rounded-lg">
@@ -73,9 +79,11 @@ export const ExcursionTemplate = ({
               <div className="space-y-2">
                 {rendertCurrencies(price)}
                 <div className="text-xs text-gray-500 mt-2">
-                  {!isFullPrice && (
-                    <span>* В стоимость не включены входные билеты. Гид оплачивается отдельно, по запросу</span>
-                  )}
+                  {customPriceCondition
+                    ? customPriceCondition
+                    : !isFullPrice && (
+                        <span>* В стоимость не включены входные билеты. Гид оплачивается отдельно, по запросу</span>
+                      )}
                 </div>
               </div>
             </div>

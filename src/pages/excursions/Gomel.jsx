@@ -27,7 +27,8 @@ export const GomelPage = () => {
           Гомель, Гомельская область, Беларусь
         </a>
       }
-      price={690}
+      price={<>690 BYN / 19000 RUB / 230 USD</>}
+      customPriceCondition={<span>* Гид оплачивается отдельно, по запросу</span>}
     />
   );
 };

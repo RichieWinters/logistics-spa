@@ -29,7 +29,7 @@ export const BaranovichiPage = () => {
           </a>
         </>
       }
-      price={350}
+      price={<>350 BYN / 9700 RUB / 120 USD</>}
     />
   );
 };
