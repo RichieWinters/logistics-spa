@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import ScrollToContactButton from "@/components/ScrollToContactButton";
 import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
-export default function Section({ type }) {
+export default function Section({ type, heroImg }) {
   // Apply SEO based on section type
   const seoKey =
     type === SECTION_TYPES.services.value
@@ -35,8 +35,10 @@ export default function Section({ type }) {
     <>
       {/* Dark Overlay */}
       <div
-        className="inset-0 bg-black/30 min-h-[80vh] bg-cover bg-center bg-no-repeat flex items-center h-full"
-        style={{ backgroundImage: `url(${mercedesLarge})` }}
+        className={`${
+          heroImg ? "hero" : ""
+        } relative inset-0 bg-black/30 min-h-[80vh] bg-cover bg-center bg-no-repeat flex items-center h-full`}
+        style={{ backgroundImage: `url(${heroImg ?? mercedesLarge})` }}
       >
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-start justify-center text-start">
@@ -48,7 +50,7 @@ export default function Section({ type }) {
           <HeaderButtons />
         </div>
       </div>
-
+      {/* overlay */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, index) => (

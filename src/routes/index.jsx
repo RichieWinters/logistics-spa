@@ -23,6 +23,7 @@ import { BelazPage } from "@/pages/excursions/Belaz";
 import { MinskPage } from "@/pages/excursions/Minsk";
 import { BaranovichiPage } from "@/pages/excursions/Baranovichi";
 import { GomelPage } from "@/pages/excursions/Gomel";
+import ExcursionHeroImg from "/excursion/hero.jpg";
 
 // Roadside assistance pages
 import { FuelDeliveryPage } from "@/pages/roadside-assistance/fuel-delivery";
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
       },
       {
         path: PAGES.excursions.main.path,
-        element: <Section type={SECTION_TYPES.excursions.value} />,
+        element: <Section type={SECTION_TYPES.excursions.value} heroImg={ExcursionHeroImg} />,
       },
       {
         path: PAGES.roadsideAssistance.main.path,
