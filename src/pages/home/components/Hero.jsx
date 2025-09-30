@@ -49,7 +49,7 @@ export default function Hero() {
           </div>
           <p className="text-md text-white italic my-4 p-1 bg-green-500/60 rounded-lg border-emerald-600 border-2 flex items-center gap-2">
             <CircleAlert />
-            <span>При звонке с 24:00 до 6:00 заявка будет обработана после 6:00.</span>
+            <span>С 24:00 до 6:00 заявка будет обработана после 6:00.</span>
           </p>
         </div>
       </div>

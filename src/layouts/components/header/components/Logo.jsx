@@ -10,7 +10,7 @@ const Logo = () => {
         textShadow: "0 0 20px rgba(23,191,36, 0.5), 0 0 40px rgba(23,191,36, 0.3)",
       }}
     >
-      Logistics Transfers
+      Transfer24.by
     </Link>
   );
 };
