@@ -59,10 +59,6 @@ export const AirportTransferPage = () => {
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-600">Встреча с табличкой в зале прилета</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-600">Помощь с багажом</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -78,7 +74,7 @@ export const AirportTransferPage = () => {
               <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-gray-800 mb-2">💡 Рекомендация</h4>
                 <p className="text-gray-600">
-                  Бронируйте трансфер за 1-2 часа до вылета для гарантированного места и лучшей цены.
+                  Бронируйте трансфер за 12 часов до вылета для гарантированного места и лучшей цены.
                 </p>
               </div>
             </div>
@@ -139,7 +135,7 @@ export const AirportTransferPage = () => {
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-lg mb-2">Аэропорт → Области</h4>
                 <p className="text-gray-600 mb-2">По договоренности</p>
-                <p className="text-green-600 font-bold text-xl">договор</p>
+                <p className="text-green-600 font-bold text-xl">по договоренности</p>
               </div>
             </div>
           </div>
