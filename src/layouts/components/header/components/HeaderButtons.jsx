@@ -12,7 +12,7 @@ export const HeaderButtons = () => {
         asChild
         className="bg-green-400 hover:bg-green-500 text-gray-900 font-semibold px-9 py-6 min-w-[150px] text-lg transition-colors disabled:opacity-50 cursor-pointer rounded-xl"
       >
-        <a href="tel:+375291234567">+375 29 123 45 67</a>
+        <a href="tel:+375257118000">+375 25 711 8000</a>
       </Button>
     </div>
   );
