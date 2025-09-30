@@ -2,7 +2,16 @@ import { CheckCircle } from "lucide-react";
 import ExcursionsCarousel from "@/components/ExcursionsCarousel";
 import { RUB_RATE, USD_RATE } from "@/constants";
 
-export const ExcursionTemplate = ({ title, description, images, time, distance, location, price }) => {
+export const ExcursionTemplate = ({
+  title,
+  description,
+  images,
+  time,
+  distance,
+  location,
+  price,
+  extraInfo = null,
+}) => {
   const rendertCurrencies = (price) => {
     if (!Number.isNaN(Number(price))) {
       return (
@@ -57,11 +66,14 @@ export const ExcursionTemplate = ({ title, description, images, time, distance, 
                 </li>
               </ul>
             </div>
+            {extraInfo}
             <div className="bg-green-50 p-6 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Цена:</h4>
               <div className="space-y-2">
                 {rendertCurrencies(price)}
-                <div className="text-xs text-gray-500 mt-2">* В стоимость включены: транспорт, гид, входные билеты</div>
+                <div className="text-xs text-gray-500 mt-2">
+                  * В стоимость не включены входные билеты. Гид оплачивается отдельно, по запросу
+                </div>
               </div>
             </div>
           </div>

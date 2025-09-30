@@ -29,7 +29,7 @@ export const MirNesvizhSulaPage = () => {
           Мир, Гродненская область, Беларусь
         </a>
       }
-      price={435}
+      price={<>435 BYN / 2000 RUB / 140 USD</>}
     />
   );
 };
