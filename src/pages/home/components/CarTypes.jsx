@@ -29,6 +29,15 @@ const renderLuggageIcons = (luggage) => {
           </span>
         </p>
       )}
+      {luggage?.small > 0 && (
+        <p className="flex items-center gap-1">
+          <img src={littleSuitcaseIcon} alt="Small Luggage" className="w-3 h-3" />
+          <span>
+            {luggage.small}{" "}
+            {wordCountForms(luggage.small, "маленький чемодан", "маленьких чемодана", "маленьких чемоданов")}
+          </span>
+        </p>
+      )}
       {luggage?.hand > 0 && (
         <p className="flex items-center gap-2 ml-1">
           <img src={handBagIcon} alt="Hand Luggage" className="w-2 h-2.5" />
