@@ -8,7 +8,7 @@ export default function Benefits() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Benefit 1 */}
           <div className="text-center">
-            <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-20 h-20 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
               <Shield className="w-10 h-10 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-4">Безопасность и надежность</h3>
@@ -20,7 +20,7 @@ export default function Benefits() {
 
           {/* Benefit 2 */}
           <div className="text-center">
-            <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-20 h-20 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
               <Clock className="w-10 h-10 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-800 mb-4">Пунктуальность</h3>
@@ -32,13 +32,12 @@ export default function Benefits() {
 
           {/* Benefit 3 */}
           <div className="text-center">
-            <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-20 h-20 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
               <Star className="w-10 h-10 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Премиум качество</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Комфорт и качество</h3>
             <p className="text-gray-600 leading-relaxed">
-              Современный автопарк премиум-класса с кондиционером и всеми удобствами. Путешествуйте с комфортом и
-              стилем.
+              Современный автопарк с кондиционером и всеми удобствами. Путешествуйте с комфортом и стилем.
             </p>
           </div>
         </div>

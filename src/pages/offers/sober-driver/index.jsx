@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Shield, Clock, Car, Phone, CheckCircle, AlertTriangle, Heart, Star } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service1 from "@/assets/images/Service1.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const SoberDriverPage = () => {
   return (
@@ -20,6 +21,7 @@ export const SoberDriverPage = () => {
                   Безопасная доставка домой на вашем автомобиле в любое время
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -59,7 +61,7 @@ export const SoberDriverPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Star className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                  <Star className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Корпоративы</span>
                     <p className="text-gray-600 text-sm">Деловые ужины, праздничные мероприятия</p>
@@ -103,15 +105,15 @@ export const SoberDriverPage = () => {
                   <span className="text-gray-600">Конфиденциальность и деликатность</span>
                 </li>
               </ul>
-              <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-lg">
+              <div className="bg-emerald-50 border-l-4 border-emerald-400 p-6 rounded-lg">
                 <div className="flex items-start">
-                  <Clock className="w-6 h-6 text-amber-500 mr-3 flex-shrink-0 mt-0.5" />
+                  <Clock className="w-6 h-6 text-emerald-500 mr-3 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-amber-800 mb-2">Важно! Ночное время (00:00 - 06:00)</h4>
-                    <p className="text-amber-700 mb-2">
+                    <h4 className="font-semibold text-emerald-800 mb-2">Важно! Ночное время (00:00 - 06:00)</h4>
+                    <p className="text-emerald-700 mb-2">
                       <strong>Звоните по телефону, а не пишите сообщения!</strong>
                     </p>
-                    <p className="text-amber-700 text-sm">
+                    <p className="text-emerald-700 text-sm">
                       В ночное время наши диспетчеры работают только по телефонным звонкам для быстрого реагирования.
                       Сообщения могут быть обработаны с задержкой.
                     </p>
@@ -153,7 +155,7 @@ export const SoberDriverPage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg mb-6">
+              <div className="bg-green-50 p-6 rounded-lg mb-6">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Тарифы:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -212,15 +214,6 @@ export const SoberDriverPage = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600 italic">"Безопасность не имеет цены. Доверьте свою жизнь профессионалам."</p>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Вызвать трезвого водителя</h3>
-              <p className="text-gray-600">Безопасная доставка домой - звоните в любое время</p>
-            </div>
-            <ContactForm title="Заказать трезвого водителя" description="Укажите контакты для экстренного вызова" />
           </div>
         </div>
       </div>

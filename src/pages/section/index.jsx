@@ -6,6 +6,9 @@ import { assistItems, excursionItems, serviceItems } from "./constants";
 import { useMemo } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import { PAGE_SEO_CONFIG } from "@/utils/seo";
+import { Button } from "@/components/ui/button";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export default function Section({ type }) {
   // Apply SEO based on section type
@@ -28,7 +31,6 @@ export default function Section({ type }) {
         return [];
     }
   }, [type]);
-
   return (
     <>
       {/* Dark Overlay */}
@@ -43,6 +45,7 @@ export default function Section({ type }) {
             </h1>
             <Breadcrumbs className="text-xl" />
           </div>
+          <HeaderButtons />
         </div>
       </div>
 

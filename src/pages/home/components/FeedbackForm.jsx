@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { CheckCircle } from "lucide-react";
 import {
   DISTANCE_COEFFICIENT,
   validateName,
@@ -21,10 +22,13 @@ import {
   prepareFormData,
   submitForm,
 } from "./feedbackFormUtils";
+import { PhoneInput } from "@/components/ui/phone-input";
+import CarTypes from "./CarTypes";
 
 export default function FeedbackForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [selectedCarType, setSelectedCarType] = useState("sedan");
   const [routeData, setRouteData] = useState({
     distance: 0,
     duration: 0,
@@ -52,6 +56,7 @@ export default function FeedbackForm() {
     watch,
     reset,
     setError,
+    control,
     clearErrors,
   } = useForm({
     defaultValues: {
@@ -68,36 +73,33 @@ export default function FeedbackForm() {
   const watchedStartAddress = watch("startAddress");
   const watchedEndAddress = watch("endAddress");
 
-  // Handle start address autocomplete
-  const handleStartAutocomplete = debounce(async (value) => {
-    if (!value.trim()) {
-      setStartSuggestions([]);
-      setShowStartSuggestions(false);
-      return;
-    }
+  // Handle start address autocomplete (debounced)
+  // Memoize debounced autocomplete handlers with useRef to avoid useCallback dependency issues
+  const handleStartAutocompleteRef = useRef(
+    debounce(async (value) => {
+      if (!value.trim()) {
+        setStartSuggestions([]);
+        setShowStartSuggestions(false);
+        return;
+      }
+      const suggestions = await getSimilarRoutes(value);
+      setStartSuggestions(suggestions);
+      setShowStartSuggestions(suggestions.length > 0);
+    }, 700),
+  );
 
-    const suggestions = await getSimilarRoutes(value);
-    setStartSuggestions(suggestions);
-    setShowStartSuggestions(suggestions.length > 0);
-  });
-
-  // Handle end address autocomplete
-  const handleEndAutocomplete = debounce(async (value) => {
-    if (!value.trim()) {
-      setEndSuggestions([]);
-      setShowEndSuggestions(false);
-      return;
-    }
-
-    const suggestions = await getSimilarRoutes(value);
-    setEndSuggestions(suggestions);
-    setShowEndSuggestions(suggestions.length > 0);
-  });
-
-  // Map update handler
-  const handleUpdateRouteInfo = () => {
-    updateRouteInfo(multiRouteRef, myMapRef, balloonRef, setRouteData);
-  };
+  const handleEndAutocompleteRef = useRef(
+    debounce(async (value) => {
+      if (!value.trim()) {
+        setEndSuggestions([]);
+        setShowEndSuggestions(false);
+        return;
+      }
+      const suggestions = await getSimilarRoutes(value);
+      setEndSuggestions(suggestions);
+      setShowEndSuggestions(suggestions.length > 0);
+    }, 700),
+  );
 
   // Build route handler
   const handleBuildRoute = async () => {
@@ -115,7 +117,11 @@ export default function FeedbackForm() {
     setIsLoading(true);
 
     try {
-      const formData = prepareFormData(data, routeData);
+      const formData = {
+        ...prepareFormData(data, routeData, selectedCarType),
+        paymentMethod: data.paymentMethod,
+        contactMethod: data.contactMethod,
+      };
       await submitForm(formData);
 
       setShowSuccess(true);
@@ -150,24 +156,31 @@ export default function FeedbackForm() {
     setValue("tripDate", today);
   }, [setValue]);
 
-  // Initialize map
+  // Initialize map ТОЛЬКО ОДИН РАЗ
   useEffect(() => {
     if (typeof window.ymaps !== "undefined") {
       window.ymaps.ready(() => {
-        initMap(mapRef, multiRouteRef, myMapRef, balloonRef, handleUpdateRouteInfo);
+        // Создаем карту только если она еще не создана
+        if (!myMapRef.current) {
+          initMap(mapRef, multiRouteRef, myMapRef, balloonRef, () => {
+            // В этом колбэке мы не передаем selectedCarType, чтобы не создавать зависимость
+            // Обновление цены будет происходить через отдельный useEffect
+            updateRouteInfo(multiRouteRef, myMapRef, balloonRef, setRouteData);
+          });
+        }
       });
     } else {
       console.error("Yandex Maps API не загружен");
     }
-  }, []);
+  }, []); // Пустой массив зависимостей - карта создается только один раз
 
   // Handle autocomplete
   useEffect(() => {
-    handleStartAutocomplete(watchedStartAddress);
+    handleStartAutocompleteRef.current(watchedStartAddress);
   }, [watchedStartAddress]);
 
   useEffect(() => {
-    handleEndAutocomplete(watchedEndAddress);
+    handleEndAutocompleteRef.current(watchedEndAddress);
   }, [watchedEndAddress]);
 
   // Close suggestions when clicking outside
@@ -183,12 +196,19 @@ export default function FeedbackForm() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  // Update route info when car type changes
+  useEffect(() => {
+    if (multiRouteRef.current && routeData.distance > 0) {
+      updateRouteInfo(multiRouteRef, myMapRef, balloonRef, setRouteData, selectedCarType);
+    }
+  }, [selectedCarType, routeData.distance]);
+
   return (
     <div className="pb-16" id="form">
       <div className="container mx-auto px-4 max-w-8xl">
         <Card className="p-8 shadow-lg bg-black/90 backdrop-blur-sm border-white/20 text-white rounded-4xl">
           <div className="text-center mb-8">
-            <span className="text-sm font-bold text-yellow-400 mb-2">Легко и удобно</span>
+            <span className="text-sm font-bold text-green-400 mb-2">Легко и удобно</span>
             <h2 className="text-white text-3xl font-bold">ЗАКАЗАТЬ ТРАНСФЕР</h2>
           </div>
 
@@ -197,7 +217,10 @@ export default function FeedbackForm() {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 <Label htmlFor="name" className="text-sm font-medium text-white/80 mb-2 block">
-                  Имя <span className="text-red-500">*</span>
+                  Имя{" "}
+                  {watch("name") && validateName(watch("name")) === null && (
+                    <span className="text-green-500 font-bold">✓</span>
+                  )}
                 </Label>
                 <Input
                   id="name"
@@ -208,31 +231,42 @@ export default function FeedbackForm() {
                   })}
                   className={
                     errors.name
-                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
+                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                   }
                 />
                 {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
               </div>
 
               <div className="flex-1">
-                <Label htmlFor="phone" className="text-sm font-medium text-white/80 mb-2 block">
-                  Номер телефона <span className="text-red-500">*</span>
-                </Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="+375 29 123 45 67"
-                  {...register("phone", {
+                <Controller
+                  name="phone"
+                  control={control}
+                  rules={{
                     validate: validatePhone,
-                  })}
-                  className={
-                    errors.phone
-                      ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
-                  }
+                  }}
+                  render={({ field }) => (
+                    <>
+                      <Label htmlFor="phone" className="text-sm font-medium text-white/80 mb-2 block">
+                        Номер телефона{" "}
+                        {watch("phone") && validatePhone(watch("phone")) === null && (
+                          <span className="text-green-500 font-bold">✓</span>
+                        )}
+                      </Label>
+                      <PhoneInput
+                        id="phone"
+                        {...field}
+                        placeholder="Введите ваш номер телефона"
+                        className={
+                          errors.phone
+                            ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
+                            : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
+                        }
+                      />
+                      {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>}
+                    </>
+                  )}
                 />
-                {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>}
               </div>
             </div>
 
@@ -240,7 +274,10 @@ export default function FeedbackForm() {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 <Label htmlFor="tripDate" className="text-sm font-medium text-white/80 mb-2 block">
-                  Дата поездки <span className="text-red-500">*</span>
+                  Дата поездки{" "}
+                  {watch("tripDate") && validateDate(watch("tripDate")) === null && (
+                    <span className="text-green-500 font-bold">✓</span>
+                  )}
                 </Label>
                 <Input
                   id="tripDate"
@@ -250,8 +287,8 @@ export default function FeedbackForm() {
                   })}
                   className={
                     errors.tripDate
-                      ? "border-red-500 bg-white text-gray-900 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      ? "border-red-500 bg-white text-gray-900 focus:border-green-400 focus:ring-green-400/20"
+                      : "bg-white text-gray-900 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                   }
                 />
                 {errors.tripDate && <p className="text-red-400 text-sm mt-1">{errors.tripDate.message}</p>}
@@ -259,7 +296,10 @@ export default function FeedbackForm() {
 
               <div className="flex-1">
                 <Label htmlFor="tripTime" className="text-sm font-medium text-white/80 mb-2 block">
-                  Ориентировочное время <span className="text-red-500">*</span>
+                  Ориентировочное время{" "}
+                  {watch("tripTime") && validateTime(watch("tripTime")) === null && (
+                    <span className="text-green-500 font-bold">✓</span>
+                  )}
                 </Label>
                 <Input
                   id="tripTime"
@@ -269,13 +309,16 @@ export default function FeedbackForm() {
                   })}
                   className={
                     errors.tripTime
-                      ? "border-red-500 bg-white text-gray-900 focus:border-yellow-400 focus:ring-yellow-400/20"
-                      : "bg-white text-gray-900 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      ? "border-red-500 bg-white text-gray-900 focus:border-green-400 focus:ring-green-400/20"
+                      : "bg-white text-gray-900 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                   }
                 />
                 {errors.tripTime && <p className="text-red-400 text-sm mt-1">{errors.tripTime.message}</p>}
               </div>
             </div>
+
+            {/* Car Selection Section */}
+            <CarTypes selectedCarType={selectedCarType} onCarTypeChange={setSelectedCarType} />
 
             {/* Map and Route Selection */}
             <div>
@@ -292,7 +335,7 @@ export default function FeedbackForm() {
                     <Input
                       placeholder="Введите адрес отправления"
                       {...register("startAddress")}
-                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                     />
                     {showStartSuggestions && startSuggestions.length > 0 && (
                       <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-48 overflow-y-auto">
@@ -303,6 +346,7 @@ export default function FeedbackForm() {
                             onClick={() => {
                               setValue("startAddress", suggestion.text || suggestion?.address?.formatted_address);
                               setShowStartSuggestions(false);
+                              setStartSuggestions([]);
                             }}
                           >
                             <div className="font-medium text-gray-900">
@@ -323,7 +367,7 @@ export default function FeedbackForm() {
                     <Input
                       placeholder="Введите адрес назначения"
                       {...register("endAddress")}
-                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                      className="w-full bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                     />
                     {showEndSuggestions && endSuggestions.length > 0 && (
                       <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-48 overflow-y-auto">
@@ -334,6 +378,7 @@ export default function FeedbackForm() {
                             onClick={() => {
                               setValue("endAddress", suggestion.text || suggestion?.address?.formatted_address);
                               setShowEndSuggestions(false);
+                              setEndSuggestions([]);
                             }}
                           >
                             <div className="font-medium text-gray-900">
@@ -354,7 +399,7 @@ export default function FeedbackForm() {
                 <Button
                   type="button"
                   onClick={handleBuildRoute}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 transition-colors cursor-pointer"
+                  className="bg-green-400 hover:bg-green-500 text-gray-900 font-semibold px-6 py-2 transition-colors cursor-pointer"
                 >
                   Построить маршрут
                 </Button>
@@ -363,6 +408,28 @@ export default function FeedbackForm() {
 
             {/* Message */}
             <div>
+              {/* Preferred contact method dropdown */}
+              <div className="mb-4">
+                <Label htmlFor="contactMethod" className="text-sm font-medium text-white/80 mb-2 block">
+                  Как с вами лучше связаться?
+                </Label>
+                <div className="relative">
+                  <select
+                    id="contactMethod"
+                    {...register("contactMethod")}
+                    className="w-full bg-white text-gray-900 border border-gray-300 rounded-lg px-3 py-2 focus:border-green-400 focus:ring-green-400/20 appearance-none cursor-pointer"
+                    defaultValue=""
+                  >
+                    <option value="">Выберите способ связи (не обязательно)</option>
+                    <option value="phone">Позвонить по телефону</option>
+                    <option value="telegram">Написать в Telegram</option>
+                    <option value="whatsapp">Написать в WhatsApp</option>
+                    <option value="viber">Написать в Viber</option>
+                  </select>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">▼</span>
+                </div>
+              </div>
+
               <Label htmlFor="message" className="text-sm lg:text-base font-medium text-white/80 mb-2 block">
                 Сообщение
               </Label>
@@ -375,15 +442,42 @@ export default function FeedbackForm() {
                 })}
                 className={
                   errors.message
-                    ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-yellow-400 focus:ring-yellow-400/20"
-                    : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-yellow-400 focus:ring-yellow-400/20"
+                    ? "border-red-500 bg-white text-gray-900 placeholder:text-gray-500 focus:border-green-400 focus:ring-green-400/20"
+                    : "bg-white text-gray-900 placeholder:text-gray-500 border-gray-300 focus:border-green-400 focus:ring-green-400/20"
                 }
               />
               {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
             </div>
 
+            {/* Payment method radio buttons */}
+            <div className="mb-4 flex gap-6 items-center">
+              <span className="text-sm font-medium text-white/80">Способ оплаты:</span>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  value="cash"
+                  {...register("paymentMethod", { required: true })}
+                  className="accent-green-400"
+                />
+                <span className="text-white">Наличный расчет</span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  value="card"
+                  {...register("paymentMethod", { required: true })}
+                  className="accent-green-400"
+                />
+                <span className="text-white">Безналичный</span>
+              </label>
+            </div>
+            {errors.paymentMethod && <p className="text-red-400 text-sm mb-2">Пожалуйста, выберите способ оплаты</p>}
+
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="w-full text-center text-xs text-gray-300 mb-2">
+                * Цена примерная, окончательная стоимость обсуждается после оформления заявки с менеджером.
+              </div>
               <Button
                 type="button"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-3 min-w-[200px] transition-colors"
@@ -395,7 +489,7 @@ export default function FeedbackForm() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-3 min-w-[150px] transition-colors disabled:opacity-50 cursor-pointer"
+                className="bg-green-400 hover:bg-green-500 text-gray-900 font-semibold px-6 py-3 min-w-[150px] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {isLoading ? "Отправка..." : "Отправить"}
               </Button>

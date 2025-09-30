@@ -9,7 +9,7 @@ const DialogForm = ({ handleFormSubmit, formData, handleInputChange, isSubmittin
   return (
     <DialogContent className="max-w-[90vw] w-full  sm:max-w-md bg-black/90 backdrop-blur-sm border-white/20 text-white max-h-[90vh] overflow-y-auto">
       <DialogHeader>
-        <DialogTitle className="text-yellow-400 text-lg sm:text-xl">Заказать обратный звонок</DialogTitle>
+        <DialogTitle className="text-green-400 text-lg sm:text-xl">Заказать обратный звонок</DialogTitle>
       </DialogHeader>
       <form onSubmit={handleFormSubmit} className="space-y-4">
         <div className="space-y-2">
@@ -56,7 +56,7 @@ const DialogForm = ({ handleFormSubmit, formData, handleInputChange, isSubmittin
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="flex-1 bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300 h-12 text-base"
+            className="flex-1 bg-green-400 text-black hover:bg-green-300 transition-all duration-300 h-12 text-base"
           >
             {isSubmitting ? "Отправка..." : "Отправить"}
           </Button>

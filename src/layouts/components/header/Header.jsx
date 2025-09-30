@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, Scroll, X } from "lucide-react";
 import Logo from "@/layouts/components/header/components/Logo";
 import { navigationItems } from "@/layouts/components/header/constants";
 import NavList from "@/layouts/components/header/components/NavList";
 import MobileNavList from "@/layouts/components/header/components/MobileNavList";
-import CallbackDialog from "@/components/CallbackDialog";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,18 +24,13 @@ const Header = () => {
           <Logo />
           <div className="hidden lg:flex items-center space-x-8">
             <NavList items={navigationItems} isActive={isActive} />
-            <CallbackDialog
-              variant="outline"
-              className="cursor-pointer bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
-            />
+            <ScrollToContactButton className="cursor-pointer bg-green-400/20 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105" />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-2">
-            <CallbackDialog
-              size="sm"
-              variant="outline"
-              className="cursor-pointer bg-yellow-400/20 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
+            <ScrollToContactButton
+              className="cursor-pointer bg-green-400/20 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300"
               showIcon={false}
             />
 
@@ -66,7 +61,7 @@ const Header = () => {
         >
           <div className="py-4 space-y-2">
             <div className="px-3 pb-2">
-              <CallbackDialog className="cursor-pointer w-full bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300" />
+              <ScrollToContactButton className="cursor-pointer w-full bg-green-400 text-black hover:bg-green-300 transition-all duration-300" />
             </div>
 
             <MobileNavList

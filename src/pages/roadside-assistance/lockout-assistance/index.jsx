@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Phone, CheckCircle, Battery, Shield, Zap, Car } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
 import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const LockoutAssistancePage = () => {
   return (
@@ -20,6 +20,7 @@ export const LockoutAssistancePage = () => {
                   Быстрая помощь при разряженном аккумуляторе - запустим ваш автомобиль с помощью проводов
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -52,7 +53,7 @@ export const LockoutAssistancePage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Zap className="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <Zap className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Слабый заряд батареи</span>
                     <p className="text-gray-600 text-sm">Стартер крутит медленно, двигатель не запускается</p>
@@ -150,7 +151,7 @@ export const LockoutAssistancePage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость услуги:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -164,7 +165,7 @@ export const LockoutAssistancePage = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">⚡ Что нужно знать</h5>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Глушим двигатель автомобиля-донора</li>
@@ -174,18 +175,6 @@ export const LockoutAssistancePage = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Разрядился аккумулятор?</h3>
-              <p className="text-gray-600">Вызовите нашего специалиста и мы быстро запустим ваш автомобиль</p>
-            </div>
-            <ContactForm
-              title="Заказать прикуривание авто"
-              description="Укажите марку автомобиля и ваше местоположение"
-            />
           </div>
         </div>
       </div>

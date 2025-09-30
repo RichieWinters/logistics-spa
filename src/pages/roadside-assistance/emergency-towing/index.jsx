@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Wrench, Phone, CheckCircle, Truck, AlertTriangle, Shield } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import mercedes from "@/assets/images/mercedes.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const EmergencyTowingPage = () => {
   return (
@@ -22,6 +23,7 @@ export const EmergencyTowingPage = () => {
                   Профессиональная буксировка легковых и грузовых автомобилей в Минске и области
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -54,7 +56,7 @@ export const EmergencyTowingPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <AlertTriangle className="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <AlertTriangle className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Проблемы с трансмиссией</span>
                     <p className="text-gray-600 text-sm">Не включаются передачи, пробуксовка сцепления</p>
@@ -147,7 +149,7 @@ export const EmergencyTowingPage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость буксировки:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -170,7 +172,7 @@ export const EmergencyTowingPage = () => {
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">🚗 Как заказать буксировку</h5>
                 <ol className="text-sm text-gray-600 space-y-1 list-decimal list-inside">
                   <li>Обратитесь к нам по телефону или через форму</li>
@@ -180,15 +182,6 @@ export const EmergencyTowingPage = () => {
                 </ol>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Нужна буксировка автомобиля?</h3>
-              <p className="text-gray-600">Заполните форму, и мы быстро организуем буксировку вашего авто</p>
-            </div>
-            <ContactForm title="Заказать буксировку" description="Укажите откуда и куда нужно буксировать автомобиль" />
           </div>
         </div>
       </div>

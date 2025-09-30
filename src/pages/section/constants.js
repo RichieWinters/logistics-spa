@@ -17,12 +17,16 @@ export const serviceItems = PAGES.concreteServices.map(({ path, title }, index) 
   imageAlt: title,
 }));
 
-export const excursionItems = PAGES.concreteExcursions.map(({ path, title }, index) => ({
-  path,
-  title,
-  image: excursionImages[index % excursionImages.length],
-  imageAlt: title,
-}));
+export const excursionItems = PAGES.concreteExcursions.map(({ path, title, subtitle, highlight }, index) => {
+  return {
+    path,
+    title,
+    image: excursionImages[index % excursionImages.length],
+    imageAlt: title,
+    subtitle,
+    highlight,
+  };
+});
 
 export const assistItems = PAGES.concreteAssistances.map(({ path, title }, index) => ({
   path,

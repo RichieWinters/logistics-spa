@@ -5,12 +5,18 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, User, Send } from "lucide-react";
 import { toast } from "sonner";
+import { PhoneInput } from "@/components/ui/phone-input";
+import { useLocation } from "react-router-dom";
+import { PAGES } from "@/routes/pageNames";
+import { pageNamesMap } from "@/constants";
 
 const ContactForm = ({ title = "Заказать услугу", description = "Оставьте свои контакты и мы свяжемся с вами" }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    category: "",
   });
+  const location = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (field, value) => {
@@ -25,6 +31,8 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
     const data = {
       name: formData.name.trim(),
       phone: formData.phone.trim(),
+      type: pageNamesMap.get(location.pathname.split("/").pop()) || location.pathname.split("/").pop(),
+      category: formData.category || null,
       message: "Заявка с контактной формы",
       tripDateTime: null,
       timestamp: new Date().toISOString(),
@@ -49,7 +57,7 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
         description: "Мы свяжемся с вами в ближайшее время",
       });
 
-      setFormData({ name: "", phone: "" });
+      setFormData({ name: "", phone: "", category: "" });
     } catch {
       toast.error("Ошибка", {
         description: "Не удалось отправить заявку. Попробуйте позже.",
@@ -60,8 +68,8 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto shadow-lg border-yellow-200">
-      <CardHeader className="text-center bg-gradient-to-r from-yellow-50 to-amber-50">
+    <Card id="form" className="w-full max-w-md mx-auto shadow-lg border-green-200">
+      <CardHeader className="text-center bg-gradient-to-r from-green-50 to-emerald-50">
         <CardTitle className="text-2xl font-bold text-gray-800 mb-2">{title}</CardTitle>
         <p className="text-gray-600 text-sm">{description}</p>
       </CardHeader>
@@ -69,14 +77,14 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="contact-name" className="text-gray-700 font-medium flex items-center">
-              <User className="w-4 h-4 mr-2 text-yellow-500" />
+              <User className="w-4 h-4 mr-2 text-green-500" />
               Ваше имя
             </Label>
             <Input
               id="contact-name"
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
-              className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+              className="border-gray-300 focus:border-green-400 focus:ring-green-400"
               placeholder="Введите ваше имя"
               required
             />
@@ -84,24 +92,43 @@ const ContactForm = ({ title = "Заказать услугу", description = "�
 
           <div className="space-y-2">
             <Label htmlFor="contact-phone" className="text-gray-700 font-medium flex items-center">
-              <Phone className="w-4 h-4 mr-2 text-yellow-500" />
+              <Phone className="w-4 h-4 mr-2 text-green-500" />
               Номер телефона
             </Label>
-            <Input
+            <PhoneInput
               id="contact-phone"
               type="tel"
               value={formData.phone}
-              onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="border-gray-300 focus:border-yellow-400 focus:ring-yellow-400"
+              onChange={(value) => handleInputChange("phone", value)}
+              className="border-gray-300 focus:border-green-400 focus:ring-green-400"
               placeholder="+375 (XX) XXX-XX-XX"
               required
             />
           </div>
 
+          {location && location.pathname === PAGES.services.carWithDriver.path && (
+            <div className="space-y-2">
+              <Label htmlFor="contact-category" className="text-gray-700 font-medium">
+                Категория услуги (предварительно)
+              </Label>
+              <select
+                id="contact-category"
+                value={formData.category}
+                onChange={(e) => handleInputChange("category", e.target.value)}
+                className="w-full border border-gray-300 focus:border-green-400 focus:ring-green-400 rounded px-3 py-2"
+              >
+                <option value="">Не выбрано</option>
+                <option value="basic">Базовый</option>
+                <option value="premium">Премиум</option>
+                <option value="vip">VIP</option>
+              </select>
+            </div>
+          )}
+
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-green-400 hover:bg-green-500 text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105"
           >
             {isSubmitting ? (
               <>

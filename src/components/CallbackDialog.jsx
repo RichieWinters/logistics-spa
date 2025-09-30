@@ -82,7 +82,7 @@ const CallbackDialog = ({ trigger, variant = "default", size = "default", classN
           </div>
         </DialogClose>
         <DialogHeader>
-          <DialogTitle className="text-yellow-400">Заказать обратный звонок</DialogTitle>
+          <DialogTitle className="text-green-400">Заказать обратный звонок</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleFormSubmit} className="space-y-4">
           <div className="space-y-2">
@@ -93,7 +93,7 @@ const CallbackDialog = ({ trigger, variant = "default", size = "default", classN
               id="callback-name"
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-yellow-400 focus:ring-yellow-400/20"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-green-400 focus:ring-green-400/20"
               placeholder="Ваше имя"
               required
             />
@@ -107,7 +107,7 @@ const CallbackDialog = ({ trigger, variant = "default", size = "default", classN
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-yellow-400 focus:ring-yellow-400/20"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-green-400 focus:ring-green-400/20"
               placeholder="+375 (XX) XXX-XX-XX"
               required
             />
@@ -120,7 +120,7 @@ const CallbackDialog = ({ trigger, variant = "default", size = "default", classN
               id="callback-comment"
               value={formData.comment}
               onChange={(e) => handleInputChange("comment", e.target.value)}
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/50 resize-none focus:border-yellow-400 focus:ring-yellow-400/20"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/50 resize-none focus:border-green-400 focus:ring-green-400/20"
               placeholder="Дополнительная информация"
               rows={3}
             />
@@ -129,7 +129,7 @@ const CallbackDialog = ({ trigger, variant = "default", size = "default", classN
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="cursor-pointer flex-1 bg-yellow-400 text-black hover:bg-yellow-300 transition-all duration-300"
+              className="cursor-pointer flex-1 bg-green-400 text-black hover:bg-green-300 transition-all duration-300"
             >
               {isSubmitting ? "Отправка..." : "Отправить"}
             </Button>

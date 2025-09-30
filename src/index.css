@@ -1,5 +1,50 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .animate-pulse-support-ring {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    background: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    animation: pulse-support-ring 1.5s infinite;
+    z-index: 1;
+  }
+}
+
+@keyframes pulse-support-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@layer utilities {
+  .animate-pulse-support {
+    animation: pulse-support 1.5s infinite;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+}
+
+@keyframes pulse-support {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -51,4 +96,8 @@
   html {
     font-size: 120%;
   }
+}
+
+.h-inherit {
+  height: inherit;
 }

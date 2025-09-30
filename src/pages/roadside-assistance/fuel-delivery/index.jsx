@@ -1,7 +1,8 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Phone, CheckCircle, Fuel, Zap, AlertTriangle, Gauge } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
+import ScrollToContactButton from "@/components/ScrollToContactButton";
 import Service2 from "@/assets/images/Service2.jpg";
+import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const FuelDeliveryPage = () => {
   return (
@@ -20,6 +21,7 @@ export const FuelDeliveryPage = () => {
                   Экстренная доставка топлива прямо к вашему автомобилю в любое время
                 </p>
               </div>
+              <HeaderButtons />
             </div>
           </div>
         </div>
@@ -59,7 +61,7 @@ export const FuelDeliveryPage = () => {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <Gauge className="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <Gauge className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-gray-800 font-semibold">Минимальная заправка</span>
                     <p className="text-gray-600 text-sm">От 5 литров - достаточно до ближайшей АЗС</p>
@@ -134,7 +136,7 @@ export const FuelDeliveryPage = () => {
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-semibold text-gray-800 mb-3">Стоимость услуги:</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
@@ -143,21 +145,29 @@ export const FuelDeliveryPage = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Бензин АИ-95:</span>
-                    <span className="font-semibold">2.65 BYN/л</span>
+                    <span className="font-semibold">2.60 BYN/л</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Бензин АИ-98:</span>
+                    <span className="font-semibold">2.82 BYN/л</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Бензин АИ-100:</span>
+                    <span className="font-semibold">2.83 BYN/л</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Дизельное топливо:</span>
-                    <span className="font-semibold">2.40 BYN/л</span>
+                    <span className="font-semibold">2.60 BYN/л</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Стоимость доставки:</span>
-                    <span className="font-semibold">20 BYN</span>
+                    <span className="font-semibold">40 BYN</span>
                   </div>
                   <div className="text-xs text-gray-500 mt-2">* За город - дополнительно 1 BYN за км</div>
                 </div>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg mt-4">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <h5 className="font-semibold text-gray-800 mb-2">💡 Полезные советы</h5>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Всегда следите за уровнем топлива</li>
@@ -167,15 +177,6 @@ export const FuelDeliveryPage = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="mt-16 bg-gray-50 p-8 rounded-lg">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Закончилось топливо?</h3>
-              <p className="text-gray-600">Закажите доставку топлива и мы быстро решим вашу проблему</p>
-            </div>
-            <ContactForm title="Заказать доставку топлива" description="Укажите тип топлива и ваше местоположение" />
           </div>
         </div>
       </div>
