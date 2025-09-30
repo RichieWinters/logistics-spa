@@ -83,14 +83,6 @@ export const WheelSwapping = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-600">Гидравлический домкрат</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-600">Баллонный ключ с усилителем</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-gray-600">Проверка давления в шинах</span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -103,9 +95,7 @@ export const WheelSwapping = () => {
                 <h4 className="font-semibold text-gray-800 mb-2">🔧 Дополнительные услуги</h4>
                 <ul className="text-gray-600 space-y-1 text-sm">
                   <li>• Доставка нового колеса (при необходимости)</li>
-                  <li>• Ремонт прокола на месте (если возможно)</li>
                   <li>• Проверка состояния всех колёс</li>
-                  <li>• Рекомендации по выбору шин</li>
                 </ul>
               </div>
             </div>
@@ -164,7 +154,6 @@ export const WheelSwapping = () => {
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Проверяем исправность колеса</li>
                   <li>• Работаем в любую погоду</li>
-                  <li>• Гарантия качества выполненной работы</li>
                 </ul>
               </div>
             </div>

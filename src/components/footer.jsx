@@ -1,6 +1,7 @@
 import InstagramIcon from "@/assets/icons/instagram.png";
 import TelegramIcon from "@/assets/icons/telegram.svg?react";
 import WhatsappIcon from "@/assets/icons/whatsapp.svg?react";
+import ViberIcon from "@/assets/icons/viber.svg?react";
 import { PAGES } from "@/routes/pageNames";
 import { Link } from "react-router-dom";
 
@@ -55,7 +56,7 @@ export default function Footer() {
           <h4 className="text-lg font-bold text-white mb-4">Социальные сети</h4>
           <div className="flex justify-start gap-4 items-center">
             <a href="#">
-              <img src={InstagramIcon} alt="Instagram" className="w-8 h-8 rounded-2xl" />
+              <ViberIcon className="w-8 h-8 rounded-2xl" />
             </a>
             <a href="#">
               <TelegramIcon className="w-8 h-8 rounded-2xl" />
@@ -108,7 +109,7 @@ export default function Footer() {
           <h4 className="text-lg font-bold text-white mb-4">Социальные сети</h4>
           <div className="flex gap-4 justify-start">
             <a href="#">
-              <img src={InstagramIcon} alt="Instagram" className="w-8 h-8 rounded-2xl" />
+              <ViberIcon className="w-8 h-8 rounded-2xl" />
             </a>
             <a href="#">
               <TelegramIcon className="w-8 h-8 rounded-2xl" />

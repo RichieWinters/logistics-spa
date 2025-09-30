@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import supportIcon from "@/assets/icons/support.png";
-import InstagramIcon from "@/assets/icons/instagram.png";
+import ViberIcon from "@/assets/icons/viber.svg?react";
 import TelegramIcon from "@/assets/icons/telegram.svg?react";
 import WhatsappIcon from "@/assets/icons/whatsapp.svg?react";
 import { Phone } from "lucide-react";
 
 const socials = [
   {
-    name: "Instagram",
-    icon: <img src={InstagramIcon} alt="Instagram" className="w-8 h-8 rounded-2xl" />,
+    name: "Viber",
+    icon: <ViberIcon className="w-8 h-8 rounded-2xl" />,
     href: "#",
   },
   {

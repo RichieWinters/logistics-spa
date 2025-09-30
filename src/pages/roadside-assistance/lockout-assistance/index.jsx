@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Phone, CheckCircle, Battery, Shield, Zap, Car } from "lucide-react";
 import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
+import lockoutAssistanceImg from "/roadside-assistance/lockout-assistance/image.jpg";
 import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const LockoutAssistancePage = () => {
@@ -8,7 +9,10 @@ export const LockoutAssistancePage = () => {
     <>
       {/* Hero Section */}
       <div className="relative">
-        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${mercedesLarge})` }}>
+        <div
+          className="h-[400px] bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${lockoutAssistanceImg})` }}
+        >
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
 
@@ -116,7 +120,7 @@ export const LockoutAssistancePage = () => {
             {/* Right Column - Image and Features */}
             <div>
               <img
-                src={mercedesLarge}
+                src={lockoutAssistanceImg}
                 alt="Прикуривание автомобиля"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />
