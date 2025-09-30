@@ -11,6 +11,7 @@ export const ExcursionTemplate = ({
   location,
   price,
   extraInfo = null,
+  isFullPrice = false,
 }) => {
   const rendertCurrencies = (price) => {
     if (!Number.isNaN(Number(price))) {
@@ -72,7 +73,9 @@ export const ExcursionTemplate = ({
               <div className="space-y-2">
                 {rendertCurrencies(price)}
                 <div className="text-xs text-gray-500 mt-2">
-                  * В стоимость не включены входные билеты. Гид оплачивается отдельно, по запросу
+                  {!isFullPrice && (
+                    <span>* В стоимость не включены входные билеты. Гид оплачивается отдельно, по запросу</span>
+                  )}
                 </div>
               </div>
             </div>

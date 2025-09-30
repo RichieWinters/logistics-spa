@@ -7,18 +7,21 @@ import image4 from "@/../public/lidskiy-castle/4.jpg";
 import image5 from "@/../public/lidskiy-castle/5.jpg";
 import image6 from "@/../public/lidskiy-castle/6.jpg";
 import image7 from "@/../public/lidskiy-castle/7.jpg";
+import image8 from "@/../public/lidskiy-castle/8.webp";
+import image9 from "@/../public/lidskiy-castle/9.jpg";
+import image10 from "@/../public/lidskiy-castle/10.jpg";
 
 const WithoutGuidePrice = 530;
-const WithGuidePrice = 560;
+const WithGuidePrice = 650;
 
 export const GrodnoLidskyCastlePage = () => {
   return (
     <ExcursionTemplate
-      title={"Гродно - Лидский замок"}
+      title={"Гродно + Лидский замок"}
       description={
         "Гродно - это город с богатой историей, известный своей архитектурой и культурным наследием. Лидский замок - одна из главных исторических достопримечательностей региона. Здесь можно узнать о средневековой истории Беларуси, а также насладиться красивыми видами на окрестности. Экскурсия включает посещение Лидского замка, прогулку по историческому центру Гродно и знакомство с местной культурой и традициями."
       }
-      images={[image1, image2, image3, image4, image5, image6, image7]}
+      images={[image10, image1, image2, image9, image3, image4, image5, image6, image8, image7]}
       time={"3 ч от Минска"}
       distance={"277 км в одну сторону от Минска"}
       location={
@@ -36,15 +39,12 @@ export const GrodnoLidskyCastlePage = () => {
       price={
         <>
           <div>
-            {WithoutGuidePrice} BYN / {(WithoutGuidePrice * RUB_RATE).toFixed(0)} RUB /{" "}
-            {(WithoutGuidePrice * USD_RATE).toFixed(0)} USD без гида
+            {WithoutGuidePrice} BYN / 14600 RUB / {(WithoutGuidePrice * USD_RATE).toFixed(0)} USD без гида
           </div>
-          <div>
-            {WithGuidePrice} BYN / {(WithGuidePrice * RUB_RATE).toFixed(0)} RUB /{" "}
-            {(WithGuidePrice * USD_RATE).toFixed(0)} USD + гид
-          </div>
+          <div>{WithGuidePrice} BYN / 17900 RUB / 220 USD + гид</div>
         </>
       }
+      isFullPrice={true}
     />
   );
 };

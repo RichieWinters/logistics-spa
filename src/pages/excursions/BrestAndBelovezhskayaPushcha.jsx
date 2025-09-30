@@ -1,14 +1,12 @@
 import { ExcursionTemplate } from "./components/ExcursionTemplate";
 import { RUB_RATE, USD_RATE } from "@/constants";
-import image1 from "@/../public/sula/1.jpeg";
-import image2 from "@/../public/sula/2.webp";
-import image3 from "@/../public/sula/3.jpg";
-import image4 from "@/../public/sula/4.jpg";
-import image5 from "@/../public/sula/5.jpg";
-import image6 from "@/../public/sula/6.webp";
-import image7 from "@/../public/sula/7.jpg";
-import image8 from "@/../public/sula/8.jpg";
-import image9 from "@/../public/sula/9.jpeg";
+import image1 from "@/../public/brest-fortress-and-belovezhskaya-pushcha/1.jpg";
+import image2 from "@/../public/brest-fortress-and-belovezhskaya-pushcha/2.jpg";
+import image3 from "@/../public/brest-fortress-and-belovezhskaya-pushcha/3.jpg";
+import image4 from "@/../public/brest-fortress-and-belovezhskaya-pushcha/4.jpg";
+import image5 from "@/../public/brest-fortress-and-belovezhskaya-pushcha/5.jpg";
+import image6 from "@/../public/brest-fortress-and-belovezhskaya-pushcha/6.webp";
+import image7 from "@/../public/brest-fortress-and-belovezhskaya-pushcha/7.jpg";
 
 const WithoutGuidePrice = 600;
 const WithGuidePrice = 750;
@@ -20,7 +18,7 @@ export const BrestAndBelovezhskayaPushchaPage = () => {
       description={
         "Брест - это город с богатой историей, известный своей крепостью и близостью к Беловежской Пущи. Здесь можно узнать о военной истории Беларуси, а также насладиться уникальной природой заповедника."
       }
-      images={[image1, image2, image3, image4, image5, image6, image7, image8, image9]}
+      images={[image1, image2, image3, image4, image5, image6, image7]}
       time={"3ч 47 мин от Минска"}
       distance={"344 км в одну сторону от Минска"}
       location={
@@ -35,16 +33,13 @@ export const BrestAndBelovezhskayaPushchaPage = () => {
       }
       price={
         <>
+          <div>{WithoutGuidePrice} BYN / 16500 RUB / 195 USD без гида</div>
           <div>
-            {WithoutGuidePrice} BYN / {(WithoutGuidePrice * RUB_RATE).toFixed(0)} RUB /{" "}
-            {(WithoutGuidePrice * USD_RATE).toFixed(0)} USD без гида
-          </div>
-          <div>
-            {WithGuidePrice} BYN / {(WithGuidePrice * RUB_RATE).toFixed(0)} RUB /{" "}
-            {(WithGuidePrice * USD_RATE).toFixed(0)} USD + гид
+            {WithGuidePrice} BYN / 20700 RUB / {(WithGuidePrice * USD_RATE).toFixed(0)} USD + гид
           </div>
         </>
       }
+      isFullPrice={true}
     />
   );
 };

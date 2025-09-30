@@ -19,6 +19,7 @@ export const DudutkiPage = () => {
       distance={"45 км в одну сторону от Минска"}
       location={
         <a
+          className="text-blue-500 underline font-bold"
           href="https://www.google.com/maps/place/%D0%94%D1%83%D0%B4%D1%83%D1%82%D0%BA%D0%B8/@53.5950804,26.3768367,8.22z/data=!4m6!3m5!1s0x46d986b66eaaaaab:0xcda7b9c05e8d26de!8m2!3d53.5962212!4d27.6832218!16s%2Fg%2F1hm4w19m2?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
@@ -26,7 +27,7 @@ export const DudutkiPage = () => {
           д.Птичь, Птичь, Минская область, Беларусь
         </a>
       }
-      price={150}
+      price={<>150 BYN / 4200 RUB / 50 USD</>}
     />
   );
 };

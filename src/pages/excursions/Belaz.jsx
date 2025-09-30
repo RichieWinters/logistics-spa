@@ -19,7 +19,7 @@ export const BelazPage = () => {
       distance={"55 км от Минска"}
       location={
         <a
-          href="https://www.google.com/maps/place/%D0%9E%D0%90%D0%9E+%22%D0%91%D0%95%D0%9B%D0%90%D0%97%22+-+%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B0%D1%8F+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F+%D1%85%D0%BE%D0%BB%D0%B4%D0%B8%D0%BD%D0%B3%D0%B0+%22%D0%91%D0%95%D0%9B%D0%90%D0%97-%D0%A5%D0%9E%D0%9B%D0%94%D0%98%D0%9D%D0%93%22/@53.8451929,26.8276571,7.58z/data=!4m10!1m2!2m1!1z0LHQtdC70LDQtw!3m6!1s0x46da504b73fe5827:0x1c1d010cc1d45cd4!8m2!3d54.1010124!4d28.3285245!15sCgrQsdC10LvQsNC3WgwiCtCx0LXQu9Cw0LeSAQtjYXJfZmFjdG9yeZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSdE9Ga3lTVU5uRUFFqgFNCgkvbS8wN3ZkczAQASoOIgrQsdC10LvQsNC3KA0yHhABIhpIwGhAXkjma3p7hPF-qS_VCfXesHuARLoJ3DIOEAIiCtCx0LXQu9Cw0LfgAQD6AQUIvQcQMg!16s%2Fg%2F1hc5t3r5m?entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D"
+          href="https://www.google.com/maps/place/%D0%9E%D0%90%D0%9E+%22%D0%91%D0%95%D0%9B%D0%90%D0%97%22+-+%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B0%D1%8F+%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F+%D1%85%D0%BE%D0%BB%D0%B4%D0%B8%D0%BD%D0%B3%D0%B0+%22%D0%91%D0%95%D0%9B%D0%90%D0%97-%D0%A5%D0%9E%D0%9B%D0%94%D0%98%D0%9D%D0%93%22/@54.1010124,28.2729833,13z/data=!4m6!3m5!1s0x46da504b73fe5827:0x1c1d010cc1d45cd4!8m2!3d54.1010124!4d28.3285245!16s%2Fg%2F1hc5t3r5m?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D"
           className="text-blue-500 underline font-bold"
           target="_blank"
           rel="noopener noreferrer"
@@ -27,7 +27,7 @@ export const BelazPage = () => {
           улица 40 лет Октября 4, Жодино, Минская область, Беларусь
         </a>
       }
-      price={180}
+      price={<>180 BYN / 5000 RUB / 60 USD</>}
     />
   );
 };
