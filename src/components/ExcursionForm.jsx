@@ -181,7 +181,7 @@ const ExcursionForm = ({
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-green-400 hover:bg-green-500 text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105"
+            className="cursor-pointer w-full bg-green-400 hover:bg-green-500 text-black font-semibold py-3 transition-all duration-300 transform hover:scale-105"
           >
             {isSubmitting ? (
               <>

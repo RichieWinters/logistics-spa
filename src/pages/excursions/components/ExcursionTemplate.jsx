@@ -14,6 +14,7 @@ export const ExcursionTemplate = ({
   customDetails = null,
   isFullPrice = false,
   customPriceCondition = null,
+  afterDescription = null,
 }) => {
   const rendertCurrencies = (price) => {
     if (!Number.isNaN(Number(price))) {
@@ -43,6 +44,7 @@ export const ExcursionTemplate = ({
 
               <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
 
+              {afterDescription ? afterDescription : null}
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Детали поездки:</h3>
 
               {customDetails ? (
