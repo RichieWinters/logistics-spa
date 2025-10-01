@@ -1,6 +1,6 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MapPin, Clock, Wrench, Phone, CheckCircle, Settings, Zap, Shield } from "lucide-react";
-import Service1 from "@/assets/images/Service1.jpg";
+import image3 from "@/../public/roadside-assistance/lockout-assistance/3.jpg";
 import { HeaderButtons } from "@/layouts/components/header/components/HeaderButtons";
 
 export const WheelSwapping = () => {
@@ -8,7 +8,7 @@ export const WheelSwapping = () => {
     <>
       {/* Hero Section */}
       <div className="relative">
-        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Service1})` }}>
+        <div className="h-[400px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${image3})` }}>
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
 
@@ -103,7 +103,7 @@ export const WheelSwapping = () => {
             {/* Right Column - Image and Features */}
             <div>
               <img
-                src={Service1}
+                src={image3}
                 alt="Замена колеса на дороге"
                 className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
               />

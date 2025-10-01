@@ -6,11 +6,12 @@ import mercedes from "@/assets/images/mercedes.jpg";
 import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
 import roadside1 from "@/../public/roadside-assistance/lockout-assistance/image.jpg";
 import roadside2 from "@/../public/roadside-assistance/lockout-assistance/2.jpg";
+import roadside3 from "@/../public/roadside-assistance/lockout-assistance/3.jpg";
 
 // Массив изображений для разнообразия
 const serviceImages = [Service2, Service1Large, mercedes, mercedesLarge, Service1];
 const excursionImages = [Service1, Service1Large, mercedesLarge, Service2];
-const assistImages = [roadside1, roadside2, mercedesLarge];
+const assistImages = [roadside1, roadside2, roadside3];
 
 export const serviceItems = PAGES.concreteServices.map(({ path, title }, index) => ({
   path,
