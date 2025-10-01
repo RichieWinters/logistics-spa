@@ -2,7 +2,7 @@ import { ExcursionTemplate } from "./components/ExcursionTemplate";
 import image1 from "@/../public/mir-nesvizh/1.jpg";
 import image2 from "@/../public/mir-nesvizh/2.jpg";
 import image3 from "@/../public/mir-nesvizh/3.jpeg";
-import image4 from "@/../public/mir-nesvizh/4.png";
+import image4 from "@/../public/mir-nesvizh/4.jpg";
 import image5 from "@/../public/mir-nesvizh/5.jpg";
 import image6 from "@/../public/mir-nesvizh/6.jpg";
 import image7 from "@/../public/mir-nesvizh/7.jpeg";
