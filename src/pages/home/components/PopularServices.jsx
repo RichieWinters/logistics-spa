@@ -1,9 +1,14 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
-import Service1 from "@/assets/images/Service1.jpg";
 import { PAGES } from "@/routes/pageNames";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import Service1Large from "@/assets/images/Service1Large.jpg";
+import MirNesvizh from "/mir-nesvizh/2.jpg";
+import Sula from "/sula/3.jpg";
+import Grodno from "/grodno/1.jpg";
+import Minsk from "/minsk/8.jpg";
+import Belaz from "/belaz/8.jpeg";
 
 export default function PopularServices() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,43 +19,43 @@ export default function PopularServices() {
       id: 1,
       title: PAGES.services.airportTransfer.title,
       description: "Быстрая и комфортная доставка в аэропорт",
-      image: Service1,
+      image: Service1Large,
       path: PAGES.services.airportTransfer.path,
     },
     {
       id: 2,
-      title: PAGES.services.personalTransfer.title,
-      description: "Персональный маршрут с учетом ваших пожеланий и гибким графиком",
-      image: Service1,
-      path: PAGES.services.personalTransfer.path,
+      title: PAGES.excursions.mirNesvizh.title,
+      description: "Посещение исторических дворцово-парковых ансамблей, прогулки по территории и фотоместа.",
+      image: MirNesvizh,
+      path: PAGES.excursions.mirNesvizh.path,
     },
     {
       id: 3,
-      title: PAGES.services.soberDriver.title,
-      description: "Безопасная поездка домой с опытным водителем",
-      image: Service1,
-      path: PAGES.services.soberDriver.path,
+      title: PAGES.excursions.sula.title,
+      description: "Маршруты вдоль живописных берегов, природные тропы и комфортные остановки для отдыха.",
+      image: Sula,
+      path: PAGES.excursions.sula.path,
     },
     {
       id: 4,
-      title: PAGES.services.carWithDriver.title,
-      description: "Полноценный транспорт с профессиональным водителем на любой срок",
-      image: Service1,
-      path: PAGES.services.carWithDriver.path,
+      title: PAGES.excursions.grodnoLidskiyCastle.title,
+      description: "Прогулка по историческому центру с посещением ключевых памятников и комфортным трансфером.",
+      image: Grodno,
+      path: PAGES.excursions.grodnoLidskiyCastle.path,
     },
     {
       id: 5,
-      title: PAGES.roadsideAssistance.lockoutAssistance.title,
-      description: "Быстрая помощь при разряженном аккумуляторе - запустим ваш автомобиль с помощью проводов",
-      image: Service1,
-      path: PAGES.roadsideAssistance.lockoutAssistance.path,
+      title: PAGES.excursions.minskExcursion.title,
+      description: "Обзор главных достопримечательностей города с удобным маршрутом и остановками для фото.",
+      image: Minsk,
+      path: PAGES.excursions.minskExcursion.path,
     },
     {
       id: 6,
-      title: PAGES.roadsideAssistance.fuelDelivery.title,
-      description: "Подвезем топливо прямо к вашему автомобтлю в любое время",
-      image: Service1,
-      path: PAGES.roadsideAssistance.fuelDelivery.path,
+      title: PAGES.excursions.belAZTour.title,
+      description: "Экскурсия на производство с демонстрацией техники и безопасными зонами просмотра.",
+      image: Belaz,
+      path: PAGES.excursions.belAZTour.path,
     },
   ];
 

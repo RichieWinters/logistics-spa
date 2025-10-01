@@ -20,7 +20,7 @@ const ScrollToContactButton = ({ text = "Обратный звонок", classNa
       variant={variant}
     >
       <Phone className="w-4 h-4 mr-2" />
-      {text}
+      <div className="relative -top-0.25">{text}</div>
     </Button>
   );
 };

@@ -108,8 +108,8 @@ export const AirportTransferPage = () => {
 
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
                   <Users className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                  <h4 className="font-semibold text-gray-800">1-8 мест</h4>
-                  <p className="text-sm text-gray-600">Любые группы</p>
+                  <h4 className="font-semibold text-gray-800">3-4 ч.</h4>
+                  <p className="text-sm text-gray-600">+багаж</p>
                 </div>
               </div>
             </div>

@@ -57,11 +57,13 @@ export default function CarTypes({ selectedCarType, onCarTypeChange }) {
           <div
             key={carType.id}
             className={`
-              relative border rounded-lg p-4 cursor-pointer transition-all duration-200
+              relative border rounded-lg p-4 ${
+                carType.active ? "cursor-pointer" : "cursor-not-allowed"
+              } transition-all duration-200
               ${
                 selectedCarType === carType.id
                   ? "border-green-500 bg-green-400/70"
-                  : "border-gray-600 hover:border-gray-400 bg-green-400/40"
+                  : `border-gray-600 ${carType.active ? "hover:border-gray-400" : ""} bg-green-400/40`
               }
               ${!carType.active ? "opacity-30 cursor-not-allowed" : ""}
             `}
@@ -101,7 +103,8 @@ export default function CarTypes({ selectedCarType, onCarTypeChange }) {
               {/* Price per km */}
 
               <div className="text-green-400 font-semibold text-sm mt-auto w-full text-center">
-                {carType.pricePerKm} byn/км
+                {!carType.active ? "-" : null}
+                {carType.active ? `${carType.pricePerKm} byn/км` : null}
               </div>
             </div>
 
