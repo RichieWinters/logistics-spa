@@ -59,6 +59,7 @@ export const PAGES = {
           <div>300 BYN</div>
         </>
       ),
+      highlight: true,
     },
     brestFortressAndBelovezhskayaPushcha: {
       path: "/excursions/brest-fortress-and-belovezhskaya-pushcha",

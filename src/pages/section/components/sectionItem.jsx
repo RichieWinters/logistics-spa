@@ -6,7 +6,9 @@ export const SectionItem = ({ title, path, image, imageAlt, subtitle, highlight 
     <Link
       to={path}
       className={`group block bg-white rounded-lg overflow-hidden transition-all duration-300 transform hover:-translate-y-1 ${
-        highlight ? "ring-2 ring-green-200 shadow-2xl" : "shadow-lg hover:shadow-xl"
+        highlight
+          ? "ring-4 ring-green-400/40 shadow-[0_10px_30px_rgba(34,197,94,0.25)] hover:scale-[1.01]"
+          : "shadow-lg hover:shadow-xl"
       }`}
     >
       <div className="relative overflow-hidden">
@@ -17,7 +19,7 @@ export const SectionItem = ({ title, path, image, imageAlt, subtitle, highlight 
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
         {highlight && (
-          <span className="absolute top-3 left-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
+          <span className="absolute top-3 left-3 bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-lg shadow-[0_6px_18px_rgba(34,197,94,0.28)] ring-1 ring-green-300/60">
             В ТОПЕ
           </span>
         )}
