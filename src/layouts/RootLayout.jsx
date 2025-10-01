@@ -28,7 +28,13 @@ export default function RootLayout() {
       </main>
 
       {/* Contact Form Section */}
-      {allExcursionsPaths.some((path) => location.pathname === path) ? <ExcursionForm /> : <ContactFormSection />}
+      {location.pathname === PAGES.privacy.path ? null : allExcursionsPaths.some(
+          (path) => location.pathname === path,
+        ) ? (
+        <ExcursionForm />
+      ) : (
+        <ContactFormSection />
+      )}
 
       {/* Footer */}
       <footer className="mt-auto bg-black pb-1">
@@ -37,7 +43,7 @@ export default function RootLayout() {
           <p className="text-center text-muted-foreground text-gray-400 text-xs">
             Copyright © 2025. All rights reserved.
           </p>
-          <Link to={"#"} className="text-gray-400 text-xs">
+          <Link to={PAGES.privacy.path} className="text-gray-400 text-xs">
             Политика обработки персональных данных
           </Link>
         </div>

@@ -30,6 +30,7 @@ import roadsideAssistanceImg from "@/assets/images/roadHelp.jpg";
 import { FuelDeliveryPage } from "@/pages/roadside-assistance/fuel-delivery";
 import { LockoutAssistancePage } from "@/pages/roadside-assistance/lockout-assistance";
 import { WheelSwapping } from "@/pages/roadside-assistance/wheel-swapping";
+import PrivacyPolicy from "@/pages/privacy/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -82,6 +83,8 @@ export const router = createBrowserRouter([
       { path: PAGES.roadsideAssistance.lockoutAssistance.path, element: <LockoutAssistancePage /> },
       { path: PAGES.roadsideAssistance.fuelDelivery.path, element: <FuelDeliveryPage /> },
       { path: PAGES.roadsideAssistance.wheelSwapping.path, element: <WheelSwapping /> },
+      // Privacy policy
+      { path: PAGES.privacy.path, element: <PrivacyPolicy /> },
     ],
   },
   {

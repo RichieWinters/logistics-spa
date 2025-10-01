@@ -175,6 +175,10 @@ export const PAGES = {
       title: "Подкачка колеса",
     },
   },
+  privacy: {
+    path: "/privacy-policy",
+    title: "Политика обработки персональных данных",
+  },
 };
 
 Object.defineProperty(PAGES, "concreteServices", {
