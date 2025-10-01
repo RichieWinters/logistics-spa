@@ -3,7 +3,6 @@ import Service2 from "@/assets/images/Service2.jpg";
 import Service1 from "@/assets/images/Service1.jpg";
 import Service1Large from "@/assets/images/Service1Large.jpg";
 import mercedes from "@/assets/images/mercedes.jpg";
-import mercedesLarge from "@/assets/images/mercedesLarge.jpg";
 import roadside1 from "@/../public/roadside-assistance/lockout-assistance/image.jpg";
 import roadside2 from "@/../public/roadside-assistance/lockout-assistance/2.jpg";
 import MirNesvizh from "/mir-nesvizh/2.jpg";
@@ -18,6 +17,7 @@ import Minsk from "/minsk/8.jpg";
 import BaranovichiZoo from "/baranovichi-zoo/2.webp";
 import RumyantsevsAndPaskeviches from "/rumyantsevs-and-paskeviches/8.jpg";
 import Belaz from "/belaz/8.jpeg";
+import roadside3 from "@/../public/roadside-assistance/lockout-assistance/3.jpg";
 
 // Массив изображений для разнообразия
 const serviceImages = [Service1Large, mercedes, Service1, Service2];
@@ -35,7 +35,7 @@ const excursionImages = [
   BaranovichiZoo,
   RumyantsevsAndPaskeviches,
 ];
-const assistImages = [roadside1, roadside2, mercedesLarge];
+const assistImages = [roadside1, roadside2, roadside3];
 
 export const serviceItems = PAGES.concreteServices.map(({ path, title }, index) => ({
   path,
