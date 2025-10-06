@@ -74,7 +74,12 @@ export default function Footer() {
         <div className="flex justify-between gap-4">
           {/* Services section */}
           <div className="flex flex-col w-fit">
-            <h4 className="text-lg font-bold text-white mb-3">Услуги</h4>
+            <Link
+              to={PAGES.services.main.path}
+              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
+            >
+              Услуги
+            </Link>
             <ul className="space-y-2 flex flex-col gap-2">
               {PAGES.concreteServices.map((s) => (
                 <Link
@@ -89,7 +94,12 @@ export default function Footer() {
           </div>
           {/* Roadside assistance section */}
           <div className="flex flex-col w-fit">
-            <h3 className="text-lg font-bold text-white mb-3">Помощь на дороге</h3>
+            <Link
+              to={PAGES.roadsideAssistance.main.path}
+              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
+            >
+              Помощь на дороге
+            </Link>
             <ul className="space-y-2 flex flex-col gap-2">
               {PAGES.concreteAssistances.map((s) => (
                 <Link
@@ -101,6 +111,15 @@ export default function Footer() {
                 </Link>
               ))}
             </ul>
+          </div>
+
+          <div className="flex flex-col w-fit">
+            <Link
+              to={PAGES.excursions.main.path}
+              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
+            >
+              Экскурсии
+            </Link>
           </div>
         </div>
 

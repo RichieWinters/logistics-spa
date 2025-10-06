@@ -24,26 +24,12 @@ const socials = [
   {
     name: "Телефон",
     icon: <Phone />,
-    href: "#",
+    href: "tel:+375257118000",
   },
 ];
 
 const Support = () => {
   const [open, setOpen] = useState(false);
-  const handleScrollToForm = (e) => {
-    e.preventDefault();
-    const element = document.getElementById("form");
-    if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerHeight;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      setOpen(false);
-    }
-  };
 
   return (
     <div className="fixed bottom-4 right-4 flex flex-col items-end z-50">
@@ -71,7 +57,6 @@ const Support = () => {
             <a
               key={item.name}
               href={item.href}
-              onClick={item.name === "Телефон" ? handleScrollToForm : undefined}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white/95 backdrop-blur-sm border border-gray-200/60 hover:bg-green-50 px-3 py-2 rounded-2xl shadow-2xl transition-colors justify-between"

@@ -75,11 +75,7 @@ export default function CarTypes({ selectedCarType, onCarTypeChange }) {
           >
             {/* Car Icon */}
             <div className="flex justify-center mb-3">
-              {carType.id === "universal" ? (
-                <img src={carType.icon} alt={carType.name} className="w-35 h-12 object-cover bg-no-repeat" />
-              ) : (
-                <img src={carType.icon} alt={carType.name} className="w-30 h-12 object-contain" />
-              )}
+              <img src={carType.icon} alt={carType.name} className="w-30 h-12 object-contain" />
             </div>
 
             {/* Car Name */}

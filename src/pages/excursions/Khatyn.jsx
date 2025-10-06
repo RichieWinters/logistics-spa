@@ -1,5 +1,5 @@
 import { ExcursionTemplate } from "./components/ExcursionTemplate";
-import image1 from "@/../public/khatyn/1.webp";
+import image1 from "@/../public/khatyn/1.jpg";
 import image2 from "@/../public/khatyn/2.jpg";
 import image3 from "@/../public/khatyn/3.jpg";
 import image4 from "@/../public/khatyn/4.jpg";

@@ -13,7 +13,6 @@ import {
   validateMessage,
   validateDate,
   validateTime,
-  formatPhone,
   debounce,
   getSimilarRoutes,
   initMap,
@@ -21,6 +20,7 @@ import {
   buildRoute,
   prepareFormData,
   submitForm,
+  getCarTypePriceCoefficient,
 } from "./feedbackFormUtils";
 import { PhoneInput } from "@/components/ui/phone-input";
 import CarTypes from "./CarTypes";
@@ -55,9 +55,7 @@ export default function FeedbackForm() {
     setValue,
     watch,
     reset,
-    setError,
     control,
-    clearErrors,
   } = useForm({
     defaultValues: {
       name: "",
@@ -483,7 +481,7 @@ export default function FeedbackForm() {
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-3 min-w-[200px] transition-colors"
                 disabled
               >
-                Стоимость: {(routeData.distance * DISTANCE_COEFFICIENT).toFixed(2)} BYN
+                Стоимость: {(routeData.distance * getCarTypePriceCoefficient(selectedCarType)).toFixed(2)} BYN
               </Button>
 
               <Button

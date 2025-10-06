@@ -55,7 +55,7 @@ export const SulaPage = () => {
           Сула, Минская область, Беларусь
         </a>
       }
-      price={<>300 BYN / 8300 RUB / 98 USD</>}
+      price={<>300 BYN / 8300 RUB / 100 USD</>}
       extraInfo={
         <div className="bg-green-50 p-6 rounded-lg">
           <div className="space-y-2">
