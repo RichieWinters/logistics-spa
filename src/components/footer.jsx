@@ -92,6 +92,27 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          <div className="flex flex-col w-fit">
+            <Link
+              to={PAGES.excursions.main.path}
+              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
+            >
+              Экскурсии
+            </Link>
+            <ul className="space-y-2 flex flex-col gap-2">
+              {PAGES.concreteExcursions.map((s) => (
+                <Link
+                  key={s.path}
+                  className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
+                  to={s.path}
+                >
+                  {s.title}
+                </Link>
+              ))}
+            </ul>
+          </div>
+
           {/* Roadside assistance section */}
           <div className="flex flex-col w-fit">
             <Link
@@ -111,15 +132,6 @@ export default function Footer() {
                 </Link>
               ))}
             </ul>
-          </div>
-
-          <div className="flex flex-col w-fit">
-            <Link
-              to={PAGES.excursions.main.path}
-              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
-            >
-              Экскурсии
-            </Link>
           </div>
         </div>
 
