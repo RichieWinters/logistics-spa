@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
 import {
   DISTANCE_COEFFICIENT,
   validateName,
@@ -13,7 +12,6 @@ import {
   validateMessage,
   validateDate,
   validateTime,
-  formatPhone,
   debounce,
   getSimilarRoutes,
   initMap,
@@ -55,9 +53,7 @@ export default function FeedbackForm() {
     setValue,
     watch,
     reset,
-    setError,
     control,
-    clearErrors,
   } = useForm({
     defaultValues: {
       name: "",

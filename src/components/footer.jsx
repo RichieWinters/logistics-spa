@@ -71,12 +71,12 @@ export default function Footer() {
       {/* Mobile layout (< 640px) */}
       <div className="flex flex-col space-y-6 sm:hidden w-9/10 mx-auto">
         {/* Services and Roadside assistance in same row */}
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between gap-[1vw]">
           {/* Services section */}
           <div className="flex flex-col w-fit">
             <Link
               to={PAGES.services.main.path}
-              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
+              className="text-md font-bold text-white mb-3 underline underline-offset-2"
             >
               Услуги
             </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
               {PAGES.concreteServices.map((s) => (
                 <Link
                   key={s.path}
-                  className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
+                  className="flex items-center mr-3 text-gray-300 text-xs font-semibold hover:text-gray-50"
                   to={s.path}
                 >
                   {s.title}
@@ -96,7 +96,7 @@ export default function Footer() {
           <div className="flex flex-col w-fit">
             <Link
               to={PAGES.excursions.main.path}
-              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
+              className="text-md font-bold text-white mb-3 underline underline-offset-2"
             >
               Экскурсии
             </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
               {PAGES.concreteExcursions.map((s) => (
                 <Link
                   key={s.path}
-                  className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
+                  className="flex items-center mr-3 text-gray-300 text-xs font-semibold hover:text-gray-50"
                   to={s.path}
                 >
                   {s.title}
@@ -117,7 +117,7 @@ export default function Footer() {
           <div className="flex flex-col w-fit">
             <Link
               to={PAGES.roadsideAssistance.main.path}
-              className="text-lg font-bold text-white mb-3 underline underline-offset-2"
+              className="text-md font-bold text-white mb-3 underline underline-offset-2"
             >
               Помощь на дороге
             </Link>
@@ -125,7 +125,7 @@ export default function Footer() {
               {PAGES.concreteAssistances.map((s) => (
                 <Link
                   key={s.path}
-                  className="flex items-center mr-3 text-gray-300 text-sm font-semibold hover:text-gray-50"
+                  className="flex items-center mr-3 text-gray-300 text-xs font-semibold hover:text-gray-50"
                   to={s.path}
                 >
                   {s.title}
