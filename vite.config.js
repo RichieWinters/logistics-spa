@@ -31,4 +31,14 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://83.220.168.74:3000",
+        changeOrigin: true,
+        secure: false, // Игнорировать SSL ошибки
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });
